@@ -1,8 +1,10 @@
+import 'package:crockery_app/screens/all_categoryies_screen.dart';
 import 'package:crockery_app/widgets/avilabeloffers.dart';
 import 'package:crockery_app/widgets/featureproduct.dart';
 import 'package:crockery_app/widgets/shopswidget.dart';
 import 'package:flutter/material.dart';
 
+import '../bottom/bottom_sheet.dart';
 import '../widgets/slider.dart';
 
 class Home extends StatefulWidget {
@@ -52,13 +54,13 @@ class _HomeState extends State<Home> {
             children: [
               Container(
                 child: Padding(
-                  padding: EdgeInsets.all(20),
+                  padding: EdgeInsets.all(15),
                   child: Row(
                     children: [
                       const Text(
                         '03*********',
                         style: TextStyle(
-                            color: Color(0xFFAB4D24),
+                            color: Colors.black,
                             fontSize: 18,
                             fontWeight: FontWeight.bold),
                       ),
@@ -99,6 +101,7 @@ class _HomeState extends State<Home> {
                   ),
                 ),
               ),
+
               //for search
               showSearch
                   ? Container(
@@ -143,11 +146,10 @@ class _HomeState extends State<Home> {
                   : Container(
                       height: 40,
                       width: 350,
-                      child: const Center(
-                          child: Text(
+                      child: Text(
                         'What do you want to buy?',
                         style: TextStyle(color: Colors.grey, fontSize: 12),
-                      )),
+                      ),
                     ),
               const HorizontalSlider(),
               //shop.....
@@ -168,9 +170,9 @@ class _HomeState extends State<Home> {
                     ),
                     InkWell(
                       onTap: () {
-                        // Navigator.push(context, MaterialPageRoute(
-                        //     builder: (context) => DealsScreen()),
-                        // );
+                         Navigator.push(context, MaterialPageRoute(
+                             builder: (context) => BottomNavigate(i: 4),),
+                        );
                       },
                       child: RichText(
                         text: const TextSpan(
@@ -206,10 +208,55 @@ class _HomeState extends State<Home> {
                     scrollDirection: Axis.horizontal,
                     itemCount: 4,
                     itemBuilder: (context, index) {
-                      return ShopWidget(
-                        image: _shopimg[index],
-                        title: _shopname[index],
-                        colour: _color[index],
+                      return InkWell(
+                        onTap: (){
+                          //here home page four card navigate
+                          if(index==0){
+                            // Navigator.pushReplacement(
+                            //     NavigationService.navigatorKey.currentContext!,
+                            //     MaterialPageRoute(builder: (context) => BottomNavigate(i:4)));
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => BottomNavigate(i: 5,),
+                              ),
+                            );
+                          }else if(index==1){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => BottomNavigate(i: 6,),
+                              ),
+                            );
+                          }
+                          else if(index==2){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => BottomNavigate(i: 7,),
+                              ),
+                            );
+                          }
+                          else if(index==3){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => BottomNavigate(i: 8,),
+                              ),
+                            );
+                          }
+                          else if(index==1){}else{print('invalid');}
+
+                          // Navigator.pushReplacement(
+                          //     NavigationService.navigatorKey.currentContext!,
+                          //     MaterialPageRoute(builder: (context) => GroceryScreen()));
+
+                        },
+                        child: ShopWidget(
+                          image: _shopimg[index],
+                          title: _shopname[index],
+                          colour: _color[index],
+                        ),
                       );
                     }),
               ),
@@ -330,15 +377,8 @@ class _HomeState extends State<Home> {
                 ),
               ),
               Container(
-                decoration: const BoxDecoration(
-                  // border: Border(top: BorderSide(color: Colors.grey, width: 5)),
-                  borderRadius: BorderRadius.only(
-                    // topLeft: Radius.circular(50.0),
-                    // topRight: Radius.circular(50.0),
-                  ),
-                ),
-
-                height: 300,
+                color: Colors.transparent,
+                height: 350,
                 width: MediaQuery.of(context).size.width,
                 // width: 150,
                 child: ListView.builder(

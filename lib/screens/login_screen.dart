@@ -1,3 +1,4 @@
+import 'package:crockery_app/bottom/bottom_sheet.dart';
 import 'package:crockery_app/buttons/rounded_button.dart';
 import 'package:crockery_app/buttons/long_rounded_button.dart';
 import 'package:crockery_app/screens/enter_otp_screen.dart';
@@ -63,7 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 Column(
                   children:[ LongRoundButton(text: 'Login', onPressed: (){
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>  OptNumber()));
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>  BottomNavigate()));
                   }),
                     SizedBox(height: 20,),
                     const Text('-------------------------or------------------------'),

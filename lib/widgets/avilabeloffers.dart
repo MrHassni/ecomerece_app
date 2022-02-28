@@ -1,4 +1,5 @@
 
+import 'package:crockery_app/buttons/cartbutton.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../helper/navigator.dart';
@@ -16,15 +17,15 @@ class _AvilabelOffersState extends State<AvilabelOffers> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 8),
+      margin: const EdgeInsets.only(left: 20.0,bottom: 20),
       width: MediaQuery.of(context).size.width * 0.75,
       child: Card(
-        margin: EdgeInsets.only(left: 20.0,bottom: 20),
+        // margin: EdgeInsets.only(left: 20.0,bottom: 20),
         // color: Colors.red,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
         ),
-        elevation: 20,
+        elevation: 7.5,
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children:<Widget>[
@@ -48,7 +49,7 @@ class _AvilabelOffersState extends State<AvilabelOffers> {
                   //     ),
                   //     child: Image.asset('images/img.png',)),
                   Container(
-                    margin: EdgeInsets.only(top: 10,left: 250),
+                    margin: const EdgeInsets.only(top: 10,left: 250),
                     // child: Row(
                     //   mainAxisSize: MainAxisSize.max,
                     //   children: [
@@ -56,7 +57,7 @@ class _AvilabelOffersState extends State<AvilabelOffers> {
                     //     SizedBox(width: MediaQuery.of( NavigationService.navigatorKey.currentContext!,).size.width*0.2),
                         // const Icon(Icons.favorite,color: Colors.white),
                         child:InkWell(
-                          child: Icon(Icons.favorite,color: _favIconColor,),
+                          child: Icon(Icons.favorite_border,color: _favIconColor,),
 
                           onTap: () {
                             print('favorite icon clicked...');
@@ -80,10 +81,11 @@ class _AvilabelOffersState extends State<AvilabelOffers> {
                     // ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 50,),
+                    margin: const EdgeInsets.only(top: 30,),
 
-                    height: 30.0,
-                    width: MediaQuery.of( NavigationService.navigatorKey.currentContext!,).size.width*0.3,
+                    height: 40.0,
+                    width: 100.0,
+                    // width: MediaQuery.of( NavigationService.navigatorKey.currentContext!,).size.width*0.3,
                     decoration: const BoxDecoration(
                       // color: Colors.deepOrange,
                       image: DecorationImage(image:AssetImage("images/offbuttonimg.png"),),
@@ -94,12 +96,30 @@ class _AvilabelOffersState extends State<AvilabelOffers> {
                     child: const Center(
                       child: Text('upto 60% Off', style: TextStyle(color: Colors.white),),),
                   ),
+                  Container(
+                    margin: const EdgeInsets.only(top: 90,left: 10),
+                    height: 20.0,
+                    width: 50.0,
+                    // width: MediaQuery.of( NavigationService.navigatorKey.currentContext!,).size.width*0.1,
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(12.0),
+                      ),
+                    ),
+                    child: Row(
+                      children: const [
+                        Icon(Icons.access_time_outlined,color: Colors.black,size: 14,),
+                        Text('30 min',style: TextStyle(color: Colors.black,fontSize: 10),),
+                      ],
+                    ),
+                  ),
                 ],
 
               ),
 
               Padding(
-                padding: const EdgeInsets.all(5.0),
+                padding: const EdgeInsets.all(15.0),
                 child: Container(
                   // color: Colors.white,
                   height: 95,
@@ -108,33 +128,37 @@ class _AvilabelOffersState extends State<AvilabelOffers> {
                   child:Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      Container(
-                        child: Row(
-                          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Text('Waris Nihari House',),
-                              SizedBox(width: MediaQuery.of( NavigationService.navigatorKey.currentContext!,).size.width*0.2),
-                              Container(
-                                height: 30.0,
-                                width: MediaQuery.of( NavigationService.navigatorKey.currentContext!,).size.width*0.3,
-                                decoration: const BoxDecoration(
-                                  color: Colors.deepOrange,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(12.0),
-                                  ),
-                                ),
-                                child: Row(
-                                  children: [
-                                    const Icon(Icons.star_outlined,color: Colors.deepOrange,),
-                                  ],
+                      Row(
+                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Text('Dinning Set',style: TextStyle(fontWeight: FontWeight.bold),),
+                            //SizedBox(width: MediaQuery.of( NavigationService.navigatorKey.currentContext!,).size.width*0.3),
+                            const Spacer(),
+                            Container(
+                              padding: const EdgeInsets.all(2.5),
+                              height: 23.0,
+                              width: 50.0,
+                              // width: MediaQuery.of( NavigationService.navigatorKey.currentContext!,).size.width*0.1,
+                              decoration: const BoxDecoration(
+                                color: Colors.green,
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(12.0),
                                 ),
                               ),
-                              const Text('5.0'),
-                            ]
-                        ),
+                              child: Row(
+                                children: const [
+
+                                  FittedBox
+                                    (child: Text('5.0',style: TextStyle(color: Colors.white),)),
+                                  Icon(Icons.star_outlined,color: Colors.white,size: 18,),
+                                ],
+                              ),
+                            ),
+
+                          ]
                       ),
-                      Align(alignment: Alignment.centerLeft,
-                        child: const Text('200 mg',style: TextStyle(color: Colors.grey),)),
+                      const Align(alignment: Alignment.centerLeft,
+                        child: Text('200 mg',style: TextStyle(color: Colors.grey),)),
                       Row(
                         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -151,6 +175,14 @@ class _AvilabelOffersState extends State<AvilabelOffers> {
 
                 ),
               ),
+              Container(height: 2,width: MediaQuery.of(context).size.width * 0.75,color: Colors.grey[200],),
+
+             Padding(
+               padding: EdgeInsets.only(right: 10,top: 10),
+               child: Align(alignment: Alignment.centerRight,
+                   child: CartButton(onPressed: () {  }, text: 'Add to cart',)),
+             ),
+
 
 
             ] ),

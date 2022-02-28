@@ -8,7 +8,7 @@ import '../helper/navigator.dart';
 
 List<String> images = [
   'images/steel.png',
-  'images/steel.png',
+  'images/giftshopimg.png',
   'images/steel.png'
   // "https://images.wallpapersden.com/image/download/purple-sunrise-4k-vaporwave_bGplZmiUmZqaraWkpJRmbmdlrWZlbWU.jpg",
   // "https://wallpaperaccess.com/full/2637581.jpg",
@@ -28,7 +28,7 @@ class _HorizontalSliderState extends State<HorizontalSlider> {
     return CarouselSlider(
       options: CarouselOptions(
         viewportFraction: 1.0,
-        height: 150,
+        height: 110,
         scrollDirection: Axis.horizontal,
         autoPlay: true,
       ),
@@ -55,7 +55,7 @@ final List<Widget> imageSliders = images
             end: Alignment.topCenter,
           ),
         ),
-        child: Image.asset(item, fit: BoxFit.fitWidth, width: MediaQuery.of(NavigationService.navigatorKey.currentContext!).size.width),
+        child: Image.asset(item, fit: BoxFit.fitWidth, width: MediaQuery.of(NavigationService.navigatorKey.currentContext!).size.width,),
       ),
     ),
     // Positioned(

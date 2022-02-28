@@ -27,7 +27,7 @@ class _FeaturedProductsState extends State<FeaturedProducts> {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
         ),
-        elevation: 20,
+        elevation: 7.5,
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children:<Widget>[
@@ -56,7 +56,7 @@ class _FeaturedProductsState extends State<FeaturedProducts> {
                   Container(
                     margin: EdgeInsets.only(top: 10,left: 10),
                     child: InkWell(
-                      child: Icon(Icons.favorite,color: _favIconColor,),
+                      child: Icon(Icons.favorite_border,color: _favIconColor,),
 
                       onTap: () {
                         print('favorite icon clicked...');

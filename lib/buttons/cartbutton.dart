@@ -24,7 +24,7 @@ class CartButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(30.0)
       ),
       child: Container(
-        constraints: BoxConstraints(maxWidth: 100.0, minHeight: 25.0),
+        constraints: BoxConstraints(maxWidth: 100.0, minHeight: 20.0),
         alignment: Alignment.center,
 
              child: Text(
