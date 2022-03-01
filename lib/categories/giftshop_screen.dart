@@ -1,6 +1,6 @@
 
 import 'package:crockery_app/widgets/avilabeloffers.dart';
-import 'package:crockery_app/widgets/shopswidget.dart';
+import 'package:crockery_app/widgets/shopslistwidget.dart';
 import 'package:crockery_app/widgets/slider.dart';
 import 'package:flutter/material.dart';
 import '../screens/home_screen.dart';

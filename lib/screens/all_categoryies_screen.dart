@@ -1,5 +1,5 @@
 
-import 'package:crockery_app/widgets/shopswidget.dart';
+import 'package:crockery_app/widgets/shopslistwidget.dart';
 import 'package:flutter/material.dart';
 
 import 'home_screen.dart';

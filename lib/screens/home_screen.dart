@@ -1,7 +1,7 @@
 import 'package:crockery_app/screens/all_categoryies_screen.dart';
 import 'package:crockery_app/widgets/avilabeloffers.dart';
 import 'package:crockery_app/widgets/featureproduct.dart';
-import 'package:crockery_app/widgets/shopswidget.dart';
+import 'package:crockery_app/widgets/shopslistwidget.dart';
 import 'package:flutter/material.dart';
 
 import '../bottom/bottom_sheet.dart';
