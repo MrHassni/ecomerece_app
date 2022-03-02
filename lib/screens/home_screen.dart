@@ -19,6 +19,7 @@ class _HomeState extends State<Home> {
     'Dining & kitchen',
     'Home Decor',
     'Lighting',
+
   ];
 
   final List _shopimg = [
@@ -64,9 +65,7 @@ class _HomeState extends State<Home> {
                             fontSize: 18,
                             fontWeight: FontWeight.bold),
                       ),
-                      const SizedBox(
-                        width: 200,
-                      ),
+                    Spacer(),
                       InkWell(
                         onTap: () {
                           setState(() {
@@ -245,14 +244,15 @@ class _HomeState extends State<Home> {
                               ),
                             );
                           }
-                          else if(index==1){}else{print('invalid');}
+                          // else if(index==1){}
+                          else{print('invalid');}
 
                           // Navigator.pushReplacement(
                           //     NavigationService.navigatorKey.currentContext!,
                           //     MaterialPageRoute(builder: (context) => GroceryScreen()));
 
                         },
-                        child: ShopWidget(
+                        child: ShopListWidget(
                           image: _shopimg[index],
                           title: _shopname[index],
                           colour: _color[index],

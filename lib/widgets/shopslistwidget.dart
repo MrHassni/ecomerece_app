@@ -2,8 +2,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ShopWidget extends StatelessWidget {
-  ShopWidget({required this.title,required this.image,required this.colour});
+class ShopListWidget extends StatelessWidget {
+  ShopListWidget({required this.title,required this.image,required this.colour});
   // final Color? colour;
   final String title;
   // final VoidCallback onPressed;

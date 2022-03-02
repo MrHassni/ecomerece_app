@@ -1,107 +1,54 @@
 
+import 'package:crockery_app/widgets/crockerywidget.dart';
 import 'package:crockery_app/widgets/shopslistwidget.dart';
 import 'package:crockery_app/widgets/shopwidgets.dart';
 import 'package:flutter/material.dart';
 
 import '../bottom/bottom_sheet.dart';
-import 'home_screen.dart';
 
 
-class AllCategoriesScreen  extends StatefulWidget {
-  const AllCategoriesScreen({Key? key}) : super(key: key);
+
+class CrockeryScreen  extends StatefulWidget {
+  const CrockeryScreen({Key? key}) : super(key: key);
 
 
   @override
   _State createState() => _State();
 }
 
-class _State extends State< AllCategoriesScreen> {
+class _State extends State< CrockeryScreen> {
   final List allCatagoriesImg =[
-    'images/giftpic.png',
-    'images/decorpic.png',
-    'images/diningkitchen.png',
-    'images/lighting.png',
-    'images/book.png',
-    'images/giftpic.png',
-    'images/decorpic.png',
-    'images/diningkitchen.png',
-    'images/book.png',
-    'images/giftpic.png',
-    'images/decorpic.png',
-    'images/diningkitchen.png',
-    'images/book.png',
+    'images/cutlery.png',
+    'images/buffet_set.png',
+    'images/dinner_set.png',
+    'images/drinkware.png',
+    'images/bowls.png',
+    'images/hot_pot_set.png',
+    'images/grathers.png',
+    'images/cake_stand.png',
+    'images/thermos.png',
+    'images/cookware_set.png',
+    'images/ice_cream_setlery.png',
+
   ];
   final List allCategoriesName =[
-    'Gift Shop',
-    'dinning&Kitchen',
-    'Home Decor',
-    'Lighting',
-    'bookpp',
-    'Gift Shop',
-    'dinning&Kitchen',
-    'Home Decor',
-    'Lighting',
-    'Gift Shop',
-    'dinning&Kitchen',
-    'Home Decor',
-    'Lighting',
-  ];
-  final List _allShopName = [
-    'Gift shop',
-    'Dining & kitchen',
-    'Home Decor',
-    'Lighting',
-    'Gift shop',
-    'Dining & kitchen',
-    'Home Decor',
-    'Lighting',
-    'Gift shop',
-    'Dining & kitchen',
-    'Home Decor',
-    'Lighting',
-    'Gift shop',
-    'Dining & kitchen',
-    'Home Decor',
-    'Lighting',
-  ];
-
-  final List _allShopImg = [
-    'images/giftimg.png',
-    'images/diningimg.png',
-    'images/decorimg.png',
-    'images/lightingimg.png',
-     'images/giftimg.png',
-    'images/diningimg.png',
-    'images/decorimg.png',
-    'images/lightingimg.png',
-    'images/giftimg.png',
-    'images/diningimg.png',
-    'images/decorimg.png',
-    'images/lightingimg.png',
-    'images/giftimg.png',
-    'images/diningimg.png',
-    'images/decorimg.png',
-    'images/lightingimg.png',
-  ];
-  final List _colorBg = [
-    Colors.red[50],
-    Colors.yellow[50],
-    Colors.blue[50],
-    Colors.green[50],
-    Colors.red[50],
-    Colors.yellow[50],
-    Colors.blue[50],
-    Colors.green[50],
-    Colors.red[50],
-    Colors.yellow[50],
-    Colors.blue[50],
-    Colors.green[50],
-    Colors.red[50],
-    Colors.yellow[50],
-    Colors.blue[50],
-    Colors.green[50],
+    'Cutlery',
+    'Buffet Set_Up',
+    'Dinner Sets',
+    'Drinkware',
+    'Bowls',
+    'Hot Pot Set',
+    'Graters',
+    'Cake Stands',
+    'Thermos',
+    'Cookware Sets',
+    'Ice Cream & setlery',
 
   ];
+
+
+
+
   bool showSearch = false;
   @override
   Widget build(BuildContext context) {
@@ -118,14 +65,14 @@ class _State extends State< AllCategoriesScreen> {
                     child: Row(
                       children: [
                         InkWell(
-                          onTap: (){
-                            Navigator.push(context, MaterialPageRoute(
-                                builder: (context) => Home()),
-                            );
-                          },
+                            onTap: (){
+                            //   Navigator.push(context, MaterialPageRoute(
+                            //       builder: (context) => Home()),
+                            //   );
+                            },
                             child: Icon(Icons.arrow_back_ios, color: Color(0xFFAB4D24),)),
-                         const Text(
-                          'Categories',
+                        const Text(
+                          'Crockery',
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 18,
@@ -215,12 +162,12 @@ class _State extends State< AllCategoriesScreen> {
                   height: 40,
                   width: 350,
                   child: Text(
-                    'View all Categories?',
+                    'Crockery Products Details',
                     style: TextStyle(color: Colors.grey, fontSize: 12),
                   ),
                 ),
 
-       // All Categories  here....
+                // All Categories  here....
                 Container(
                   height: MediaQuery.of(context).size.height,
                   child: GridView.count(
@@ -231,8 +178,8 @@ class _State extends State< AllCategoriesScreen> {
                     // padding: EdgeInsets.all(10.0),
                     // scrollDirection: Axis.vertical,
                     // padding: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
-                    crossAxisCount: 2,
-                    children: List.generate(5,(index){
+                    crossAxisCount: 3,
+                    children: List.generate(10,(index){
 
                       return  InkWell(
                         onTap: () {
@@ -243,14 +190,14 @@ class _State extends State< AllCategoriesScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => BottomNavigate(i: 5,),
+                                builder: (context) => BottomNavigate(i: 12,),
                               ),
                             );
                           }else if(index==1){
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => BottomNavigate(i: 6,),
+                                builder: (context) => BottomNavigate(i: 13,),
                               ),
                             );
                           }
@@ -258,7 +205,7 @@ class _State extends State< AllCategoriesScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => BottomNavigate(i: 7,),
+                                builder: (context) => BottomNavigate(i: 14,),
                               ),
                             );
                           }
@@ -266,7 +213,7 @@ class _State extends State< AllCategoriesScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => BottomNavigate(i: 8,),
+                                builder: (context) => BottomNavigate(i: 15,),
                               ),
                             );
                           }
@@ -279,21 +226,21 @@ class _State extends State< AllCategoriesScreen> {
                         },
                         // child: Padding(
                         // padding: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
-                        child: ShopWidget(allCateImg: allCatagoriesImg[index], allCateName: allCategoriesName[index],
-                        // ShopListWidget(image:_allShopImg[index] , title:  _allShopName[index], colour: _colorBg[index],
+                        child: CrockeryWidget(allCateImg: allCatagoriesImg[index], allCateName: allCategoriesName[index],
+                          // ShopListWidget(image:_allShopImg[index] , title:  _allShopName[index], colour: _colorBg[index],
 
                         ),
                       );
 
                     }),
                   ),
-    ),
+                ),
 
 
 
               ],),
           ),
         ),
-    ),);
+      ),);
   }
 }

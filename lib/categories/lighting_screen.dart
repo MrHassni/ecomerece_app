@@ -4,48 +4,47 @@ import 'package:crockery_app/widgets/mostpurchased.dart';
 import 'package:crockery_app/widgets/shopslistwidget.dart';
 import 'package:crockery_app/widgets/slider.dart';
 import 'package:flutter/material.dart';
-import '../bottom/bottom_sheet.dart';
 import '../screens/home_screen.dart';
 import '../widgets/featureproduct.dart';
 import '../widgets/shopwidgets.dart';
 
 
-class DinningKitchenScreen  extends StatefulWidget {
-  const DinningKitchenScreen({Key? key}) : super(key: key);
+class LightingScreen  extends StatefulWidget {
+  const LightingScreen({Key? key}) : super(key: key);
 
 
   @override
   _State createState() => _State();
 }
 
-class _State extends State< DinningKitchenScreen> {
+class _State extends State< LightingScreen> {
   final List allCatagoriesImg =[
-    'images/crockeryimg.png',
-    'images/tableimg.png',
-    'images/trolleyimg.png',
-    'images/book.png',
-    'images/giftpic.png',
-    'images/decorpic.png',
-    'images/diningkitchen.png',
-    'images/book.png',
-    'images/giftpic.png',
-    'images/decorpic.png',
-    'images/diningkitchen.png',
-    'images/book.png',
+    'images/lightone.png',
+    'images/lighttwo.png',
+    'images/lighting.png',
+    'images/lightthree.png',
+    // 'images/giftpic.png',
+    // 'images/decorpic.png',
+    // 'images/diningkitchen.png',
+    // 'images/book.png',
+    // 'images/giftpic.png',
+    // 'images/decorpic.png',
+    // 'images/diningkitchen.png',
+    // 'images/book.png',
   ];
   final List allCategoriesName =[
-    'Crockery Shop',
-    'Tables Shop',
-    'Trolleys & Carts',
-    'Lighting',
-    'Gift Shop',
-    'dinning&Kitchen',
-    'Home Decor',
-    'Lighting',
-    'Gift Shop',
-    'dinning&Kitchen',
-    'Home Decor',
-    'Lighting',
+    'Wall lights',
+    'Drop Lights',
+    'Table Lights',
+    'Floor Lighjts',
+    // 'Gift Shop',
+    // 'dinning&Kitchen',
+    // 'Home Decor',
+    // 'Lighting',
+    // 'Gift Shop',
+    // 'dinning&Kitchen',
+    // 'Home Decor',
+    // 'Lighting',
   ];
   final List mostPurchased =[
     'images/study.png',
@@ -56,62 +55,7 @@ class _State extends State< DinningKitchenScreen> {
     'images/gupshuptable.png',
 
   ];
-  // final List _allShopName = [
-  //   'Gift shop',
-  //   'Dining & kitchen',
-  //   'Home Decor',
-  //   'Lighting',
-  //   'Gift shop',
-  //   'Dining & kitchen',
-  //   'Home Decor',
-  //   'Lighting',
-  //   'Gift shop',
-  //   'Dining & kitchen',
-  //   'Home Decor',
-  //   'Lighting',
-  //   'Gift shop',
-  //   'Dining & kitchen',
-  //   'Home Decor',
-  //   'Lighting',
-  // ];
-  //
-  // final List _allShopImg = [
-  //   'images/giftimg.png',
-  //   'images/diningimg.png',
-  //   'images/decorimg.png',
-  //   'images/lightingimg.png',
-  //   'images/giftimg.png',
-  //   'images/diningimg.png',
-  //   'images/decorimg.png',
-  //   'images/lightingimg.png',
-  //   'images/giftimg.png',
-  //   'images/diningimg.png',
-  //   'images/decorimg.png',
-  //   'images/lightingimg.png',
-  //   'images/giftimg.png',
-  //   'images/diningimg.png',
-  //   'images/decorimg.png',
-  //   'images/lightingimg.png',
-  // ];
-  // final List _colorBg = [
-  //   Colors.red[50],
-  //   Colors.yellow[50],
-  //   Colors.blue[50],
-  //   Colors.green[50],
-  //   Colors.red[50],
-  //   Colors.yellow[50],
-  //   Colors.blue[50],
-  //   Colors.green[50],
-  //   Colors.red[50],
-  //   Colors.yellow[50],
-  //   Colors.blue[50],
-  //   Colors.green[50],
-  //   Colors.red[50],
-  //   Colors.yellow[50],
-  //   Colors.blue[50],
-  //   Colors.green[50],
-  //
-  // ];
+
   bool showSearch = false;
   @override
   Widget build(BuildContext context) {
@@ -133,7 +77,7 @@ class _State extends State< DinningKitchenScreen> {
                         },
                         child: Icon(Icons.arrow_back_ios, color: Color(0xFFAB4D24),)),
                     const Text(
-                      'Dinning & Kitchen',
+                      'Lighting',
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 18,
@@ -222,7 +166,7 @@ class _State extends State< DinningKitchenScreen> {
                 height: 40,
                 width: 350,
                 child: Text(
-                  'Dinning & Kitchen products Detail',
+                  'Lighting products Detail',
                   style: TextStyle(color: Colors.grey, fontSize: 12),
                 ),
               ),
@@ -257,40 +201,11 @@ class _State extends State< DinningKitchenScreen> {
                     // scrollDirection: Axis.vertical,
                     // padding: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
                     crossAxisCount: 2,
-                    children: List.generate(3,(index){
+                    children: List.generate(4,(index){
 
                       return  InkWell(
                         onTap: () {
-                          //here home page four card navigate
-                          if(index==0){
-                            // Navigator.pushReplacement(
-                            //     NavigationService.navigatorKey.currentContext!,
-                            //     MaterialPageRoute(builder: (context) => BottomNavigate(i:4)));
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => BottomNavigate(i: 9,),
-                              ),
-                            );
-                          }else if(index==1){
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => BottomNavigate(i: 10,),
-                              ),
-                            );
-                          }
-                          else if(index==2){
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => BottomNavigate(i: 11,),
-                              ),
-                            );
-                          }
-
-                          else if(index==1){}else{print('invalid');}
-
+                          // MaterialPageRoute(builder: (context) => GroceryScreen());
                         },
                         // child: Padding(
                         // padding: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
@@ -355,31 +270,11 @@ class _State extends State< DinningKitchenScreen> {
                   ],
                 ),
               ),
-              //
-              // Container(
-              //   decoration: const BoxDecoration(
-              //     // border: Border(top: BorderSide(color: Colors.grey, width: 5)),
-              //     borderRadius: BorderRadius.only(
-              //       // topLeft: Radius.circular(50.0),
-              //       // topRight: Radius.circular(50.0),
-              //     ),
-              //   ),
-              //
-              //   height: 230,
-              //   width: MediaQuery.of(context).size.width,
-              //   // width: 150,
-              //   child: ListView.builder(
-              //       scrollDirection: Axis.horizontal,
-              //       itemCount: 3,
-              //       itemBuilder: (context, index) {
-              //         return MostPurchased(mostPurchasedImg: mostPurchased[index],
-              //         );
-              //       }),
-              // ),
+
               Container(
                 height: MediaQuery.of(context).size.height,
                 child: GridView.count(
-                  childAspectRatio: 4/7,
+                  childAspectRatio: 3/5,
                   crossAxisSpacing: 2.0,
                   // crossAxisSpacing: 20,
                   mainAxisSpacing: 5,
@@ -389,7 +284,7 @@ class _State extends State< DinningKitchenScreen> {
                   scrollDirection: Axis.vertical,
                   // padding: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
                   crossAxisCount: 3,
-                  children: List.generate(6,(index){
+                  children: List.generate(5,(index){
 
                     return  InkWell(
                       onTap: () {

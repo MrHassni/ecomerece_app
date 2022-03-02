@@ -1,14 +1,23 @@
 
+import 'package:crockery_app/categories/book_screen.dart';
 import 'package:crockery_app/categories/dinning&kitchen.dart';
 import 'package:crockery_app/categories/giftshop_screen.dart';
+import 'package:crockery_app/categories/lighting_screen.dart';
 import 'package:crockery_app/pages/account_page.dart';
 import 'package:crockery_app/pages/orders_page.dart';
 import 'package:crockery_app/pages/wish_list.dart';
 import 'package:crockery_app/screens/all_categoryies_screen.dart';
+import 'package:crockery_app/sub_categories/crockery_screen.dart';
+import 'package:crockery_app/sub_categories/tabel_shop_screen.dart';
+import 'package:crockery_app/sub_categories/trolley_cart_shop_screen.dart';
+import 'package:crockery_app/sub_categories_categrories/buffet_set_screen.dart';
+import 'package:crockery_app/sub_categories_categrories/cutlery_screen.dart';
+import 'package:crockery_app/sub_categories_categrories/dinner_set_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../screens/home_screen.dart';
+import '../sub_categories_categrories/drinkware_screen.dart';
 
 
 class BottomNavigate  extends StatefulWidget {
@@ -28,6 +37,16 @@ class _State extends State< BottomNavigate> {
     AllCategoriesScreen(),
     GiftShopScreen(),
     DinningKitchenScreen(),
+    BookScreen(),
+    LightingScreen(),
+    CrockeryScreen(),
+    Table_shop_Screen(),
+    Trolley_Cart__screen(),
+    CutleryScreen(),
+    BuffetSetScreen(),
+    DinnerSetScreen(),
+    DrinkWare(),
+
     // DealsScreen(),
     // AccountScreen(),
     // CartScreen(),

@@ -28,7 +28,7 @@ class _HorizontalSliderState extends State<HorizontalSlider> {
     return CarouselSlider(
       options: CarouselOptions(
         viewportFraction: 1.0,
-        height: 110,
+        height: 90,
         scrollDirection: Axis.horizontal,
         autoPlay: true,
       ),
