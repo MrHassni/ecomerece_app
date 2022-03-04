@@ -65,7 +65,7 @@ class _State extends State<DrinkWare> with TickerProviderStateMixin {
                             },
                             child: Icon(Icons.arrow_back_ios, color: Color(0xFFAB4D24),)),
                         const Text(
-                          'Cutlery',
+                          'Drinkware',
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 18,
@@ -155,7 +155,7 @@ class _State extends State<DrinkWare> with TickerProviderStateMixin {
                   height: 40,
                   width: 350,
                   child: Text(
-                    'Cultery Products Details',
+                    'Drinkware Products Details',
                     style: TextStyle(color: Colors.grey, fontSize: 12),
                   ),
                 ),
@@ -174,14 +174,14 @@ class _State extends State<DrinkWare> with TickerProviderStateMixin {
                             width: 70.0,
                             child: const Text(
                               'Glass Set',
-                              style: TextStyle(fontSize: 15),
+                              style: TextStyle(fontSize: 12),
                             ),
                           ),
                           Container(
                             width: 75.0,
                             child:const Text(
                               'Jugs',
-                              style: TextStyle(fontSize: 15),
+                              style: TextStyle(fontSize: 12),
                             ),
                           ),
 
@@ -189,7 +189,7 @@ class _State extends State<DrinkWare> with TickerProviderStateMixin {
                             width: 75.0,
                             child:const Text(
                               'Other',
-                              style: TextStyle(fontSize: 15),
+                              style: TextStyle(fontSize: 12),
                             ),
                           ),
                         ],
@@ -224,7 +224,37 @@ class _State extends State<DrinkWare> with TickerProviderStateMixin {
                                 crossAxisCount: 3,
                                 children: List.generate(7,(index){
 
-                                  return  CutleryWidget(cutleryimg: drinkWareImg[index],);
+                                  return  InkWell(onTap: (){
+                                    if(index==0){
+                                      // Navigator.pushReplacement(
+                                      //     NavigationService.navigatorKey.currentContext!,
+                                      //     MaterialPageRoute(builder: (context) => BottomNavigate(i:4)));
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => BottomNavigate(i: 16,),
+                                        ),
+                                      );
+                                    }else if(index==1){
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => BottomNavigate(i: 16,),
+                                        ),
+                                      );
+                                    }
+                                    else if(index==2){
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => BottomNavigate(i: 16,),
+                                        ),
+                                      );
+                                    }
+
+                                    else if(index==1){}else{print('invalid');}
+                                  },
+                                      child: CutleryWidget(cutleryimg: drinkWareImg[index],));
 
                                 }),
                               ),

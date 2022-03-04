@@ -41,12 +41,9 @@ margin: EdgeInsets.zero,
               width: MediaQuery.of(context).size.width,
               // color: Colors.red,
               child:Center(
-                child: Padding(
-                  padding: EdgeInsets.only(left: 15,right: 15,top: 10),
-                  child: Text(widget.allCateName,
-                    style: TextStyle(fontSize: 18),
-                    // style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
+                child: Text(widget.allCateName,
+                  style: TextStyle(fontSize: 16,fontFamily: 'Nuntio-Light.ttf'),
+                  // style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
 

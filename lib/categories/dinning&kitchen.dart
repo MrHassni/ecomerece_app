@@ -56,62 +56,7 @@ class _State extends State< DinningKitchenScreen> {
     'images/gupshuptable.png',
 
   ];
-  // final List _allShopName = [
-  //   'Gift shop',
-  //   'Dining & kitchen',
-  //   'Home Decor',
-  //   'Lighting',
-  //   'Gift shop',
-  //   'Dining & kitchen',
-  //   'Home Decor',
-  //   'Lighting',
-  //   'Gift shop',
-  //   'Dining & kitchen',
-  //   'Home Decor',
-  //   'Lighting',
-  //   'Gift shop',
-  //   'Dining & kitchen',
-  //   'Home Decor',
-  //   'Lighting',
-  // ];
-  //
-  // final List _allShopImg = [
-  //   'images/giftimg.png',
-  //   'images/diningimg.png',
-  //   'images/decorimg.png',
-  //   'images/lightingimg.png',
-  //   'images/giftimg.png',
-  //   'images/diningimg.png',
-  //   'images/decorimg.png',
-  //   'images/lightingimg.png',
-  //   'images/giftimg.png',
-  //   'images/diningimg.png',
-  //   'images/decorimg.png',
-  //   'images/lightingimg.png',
-  //   'images/giftimg.png',
-  //   'images/diningimg.png',
-  //   'images/decorimg.png',
-  //   'images/lightingimg.png',
-  // ];
-  // final List _colorBg = [
-  //   Colors.red[50],
-  //   Colors.yellow[50],
-  //   Colors.blue[50],
-  //   Colors.green[50],
-  //   Colors.red[50],
-  //   Colors.yellow[50],
-  //   Colors.blue[50],
-  //   Colors.green[50],
-  //   Colors.red[50],
-  //   Colors.yellow[50],
-  //   Colors.blue[50],
-  //   Colors.green[50],
-  //   Colors.red[50],
-  //   Colors.yellow[50],
-  //   Colors.blue[50],
-  //   Colors.green[50],
-  //
-  // ];
+
   bool showSearch = false;
   @override
   Widget build(BuildContext context) {
@@ -137,7 +82,7 @@ class _State extends State< DinningKitchenScreen> {
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 18,
-                          fontWeight: FontWeight.bold),
+                          fontWeight: FontWeight.bold,),
                     ),
                     // const SizedBox(
                     //   width: 170,
