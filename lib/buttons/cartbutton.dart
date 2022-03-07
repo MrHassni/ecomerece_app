@@ -1,3 +1,4 @@
+import 'package:crockery_app/constant/constant.dart';
 import 'package:flutter/material.dart';
 
 class CartButton extends StatelessWidget {
@@ -19,7 +20,7 @@ class CartButton extends StatelessWidget {
     padding: EdgeInsets.all(0.0),
     child: Ink(
       decoration: BoxDecoration(
-          color: Color(0xFFAB4D24),
+          color: Constants.kDarkOrangeColor,
 
           borderRadius: BorderRadius.circular(30.0)
       ),
@@ -31,7 +32,7 @@ class CartButton extends StatelessWidget {
                 text,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                  color: Colors.white,
+                  color: Constants.kWhiteAccent,
                   fontSize: 12,
                 ),
               ),

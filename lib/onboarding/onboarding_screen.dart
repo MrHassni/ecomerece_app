@@ -1,8 +1,9 @@
+import 'package:crockery_app/constant/constant.dart';
 import 'package:crockery_app/screens/enter_mob_num_screen.dart';
 import 'package:flutter/material.dart';
 
 
-import '../pages/onboardingpage.dart';
+import '../screens/onboardingpage.dart';
 import '../screens/home_screen.dart';
 
 class Onbording extends StatefulWidget {
@@ -57,7 +58,7 @@ class _OnbordingState extends State<Onbording> {
                           ),
                           Text(
                             contents[i].title,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                                 fontFamily:'Nuntio-Light.ttf'
@@ -67,9 +68,9 @@ class _OnbordingState extends State<Onbording> {
                           Text(
                             contents[i].discription,
                             textAlign: TextAlign.center,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 16,
-                              color: Colors.grey,
+                              color: Constants.kGreyColor,
                                 fontFamily:'Nuntio-Light.ttf'
                             ),
                           )
@@ -108,8 +109,8 @@ class _OnbordingState extends State<Onbording> {
                       curve: Curves.bounceIn,
                     );
                   },
-                  color: Color(0xFFAB4D24),
-                  textColor: Colors.white,
+                  color: Constants.kDarkOrangeColor,
+                  textColor: Constants.kWhiteAccent,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
@@ -142,7 +143,7 @@ class _OnbordingState extends State<Onbording> {
       margin: EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color:  Color(0xFFAB4D24),
+        color:  Constants.kDarkOrangeColor,
       ),
     );
   }

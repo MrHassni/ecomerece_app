@@ -1,5 +1,6 @@
 
 import 'package:crockery_app/buttons/cartbutton.dart';
+import 'package:crockery_app/constant/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../helper/navigator.dart';
@@ -14,7 +15,7 @@ class FeaturedProducts extends StatefulWidget {
 
 class _FeaturedProductsState extends State<FeaturedProducts> {
   // final String pic;
-  Color _favIconColor = Colors.white;
+  Color _favIconColor = Constants.kWhiteAccent;
 
   @override
   Widget build(BuildContext context) {
@@ -61,14 +62,14 @@ class _FeaturedProductsState extends State<FeaturedProducts> {
                       onTap: () {
                         print('favorite icon clicked...');
 
-                        if(_favIconColor == Colors.white){
+                        if(_favIconColor == Constants.kWhiteAccent){
                           setState(() {
-                            _favIconColor = Colors.red;
+                            _favIconColor = Constants.kRedColor;
                           });
 
                         }else{
                           setState(() {
-                            _favIconColor = Colors.white;
+                            _favIconColor = Constants.kWhiteAccent;
                           });
 
                         }
@@ -87,7 +88,7 @@ class _FeaturedProductsState extends State<FeaturedProducts> {
                   // color: Colors.white,
                   height: 50,
                   width: MediaQuery.of(context).size.width * 0.4,
-                  color: Colors.white,
+                  color: Constants.kWhiteAccent,
                   child:Align(
                     alignment: Alignment.centerLeft,
                     child: Column(
@@ -95,9 +96,9 @@ class _FeaturedProductsState extends State<FeaturedProducts> {
                         children:   const [
                           Text('Opal Dinner Set',style: TextStyle(fontSize: 12,fontWeight: FontWeight.bold),),
                           SizedBox(width: 10,),
-                          Text('500 gm          ',style: TextStyle(fontSize: 12,color: Colors.grey),),
+                          Text('500 gm          ',style: TextStyle(fontSize: 12,color: Constants.kGreyColor),),
                           SizedBox(width: 10,),
-                          Text('Rs 300          ',style: TextStyle(fontSize: 12,color: Colors.grey),),
+                          Text('Rs 300          ',style: TextStyle(fontSize: 12,color: Constants.kGreyColor),),
 
 
 

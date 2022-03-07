@@ -15,7 +15,7 @@ class CrockeryWidget extends StatefulWidget {
 class _CrockeryWidgetState extends State<CrockeryWidget> {
 
   // final String pic;
-  Color _favIconColor = Colors.white;
+  // Color _favIconColor = Colors.white;
 
   @override
   Widget build(BuildContext context) {

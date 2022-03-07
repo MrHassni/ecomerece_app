@@ -1,8 +1,7 @@
-import 'package:crockery_app/screens/home_screen.dart';
+
+import 'package:crockery_app/screens/cart_detail_screen.dart';
 import 'package:crockery_app/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
-
-import 'bottom/bottom_sheet.dart';
 import 'helper/navigator.dart';
 
 
@@ -17,7 +16,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home: SplashScreen(),
+      // home: SplashScreen(),
+      home: CartDetail(),
       // home: BottomNavigate(),
     );
   }

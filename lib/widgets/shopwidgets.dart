@@ -15,7 +15,7 @@ class ShopWidget extends StatefulWidget {
 class _ShopWidgetState extends State<ShopWidget> {
 
   // final String pic;
-  Color _favIconColor = Colors.white;
+  // Color _favIconColor = Colors.white;
 
   @override
   Widget build(BuildContext context) {

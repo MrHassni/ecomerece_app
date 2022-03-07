@@ -1,4 +1,5 @@
 import 'package:crockery_app/buttons/rounded_button.dart';
+import 'package:crockery_app/constant/constant.dart';
 import 'package:crockery_app/screens/enter_otp_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -41,15 +42,15 @@ class _MobileNumberState extends State<MobileNumber> {
                  controller: PhoneNumController,
                  decoration: const InputDecoration(
                    border: OutlineInputBorder(
-                     borderSide: BorderSide(color:Color(0xFFAB4D24),),
+                     borderSide: BorderSide(color:Constants.kDarkOrangeColor,),
                    ),
                    enabledBorder: OutlineInputBorder(
-                     borderSide: BorderSide(color: Color(0xFFAB4D24),),
+                     borderSide: BorderSide(color:Constants.kDarkOrangeColor,),
                    ) ,
                    focusedBorder: OutlineInputBorder(
-                       borderSide: BorderSide(color: Color(0xFFAB4D24),),),
+                       borderSide: BorderSide(color: Constants.kDarkOrangeColor,),),
                    labelText: 'Mobile Number',
-                   prefixIcon: Icon(Icons.mobile_friendly,color: Color(0xFFAB4D24),),
+                   prefixIcon: Icon(Icons.mobile_friendly,color: Constants.kDarkOrangeColor,),
                  ),
                  onChanged: (text) {
                    setState(() {

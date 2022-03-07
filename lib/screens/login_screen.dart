@@ -1,9 +1,9 @@
 import 'package:crockery_app/bottom/bottom_sheet.dart';
-import 'package:crockery_app/buttons/rounded_button.dart';
 import 'package:crockery_app/buttons/long_rounded_button.dart';
-import 'package:crockery_app/screens/enter_otp_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../constant/constant.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -12,85 +12,159 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController PhoneNumController = TextEditingController();
+  TextEditingController PasswordController = TextEditingController();
 
   String Mobile_Number = '';
+  String Password = '';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(40),
+          padding: EdgeInsets.all(30),
           child: SingleChildScrollView(
             child: Column(
               // mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 150,
+                SizedBox(
+                  height: 150,
                   width: 150,
                   child: Image.asset('images/moblogin.png'),
                 ),
-                const SizedBox(height: 40,),
-                const Align(alignment: Alignment.centerLeft,
+                const SizedBox(
+                  height: 40,
+                ),
+                const Align(
+                    alignment: Alignment.centerLeft,
                     child: Text('Phone Number')),
-                SizedBox(height: 10,),
+                const SizedBox(
+                  height: 10,
+                ),
+                Container(
+                    // margin: EdgeInsets.all(20),
+                    child: TextField(
+                  controller: PhoneNumController,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Constants.kDarkOrangeColor,
+                      ),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Constants.kDarkOrangeColor,
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Constants.kDarkOrangeColor,
+                      ),
+                    ),
+                    labelText: 'Enter Mobile Number',
+                    prefixIcon: Icon(
+                      Icons.mobile_friendly,
+                      color: Constants.kDarkOrangeColor,
+                    ),
+                  ),
+                  onChanged: (text) {
+                    setState(() {
+                      Mobile_Number = text;
+                      //you can access nameController in its scope to get
+                      // the value of text entered as shown below
+                      //fullName = nameController.text;
+                    });
+                  },
+                )),
+                const SizedBox(height: 10,),
+                const Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text('Password')),
+                const SizedBox(height: 5,),
                 Container(
                   // margin: EdgeInsets.all(20),
                     child: TextField(
-                      controller: PhoneNumController,
+                      controller: PasswordController,
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(
-                          borderSide: BorderSide(color:Color(0xFFAB4D24),),
+                          borderSide: BorderSide(color: Constants.kDarkOrangeColor,),
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFFAB4D24),),
+                          borderSide: BorderSide(color: Constants.kDarkOrangeColor,),
                         ) ,
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFFAB4D24),),),
-                        labelText: 'Enter Mobile Number',
-                        prefixIcon: Icon(Icons.mobile_friendly,color: Color(0xFFAB4D24),),
+                          borderSide: BorderSide(color: Constants.kDarkOrangeColor,),),
+                        labelText: 'Password',
+                        prefixIcon: Icon(Icons.lock,color: Constants.kDarkOrangeColor,),
                       ),
                       onChanged: (text) {
                         setState(() {
-                          Mobile_Number = text;
+                          Password = text;
                           //you can access nameController in its scope to get
                           // the value of text entered as shown below
                           //fullName = nameController.text;
                         });
                       },
                     )),
+
                 Container(
-                  margin: EdgeInsets.all(20),
+                  // margin: EdgeInsets.all(20),
+                  child: Text(Password),
+                ),
+                Container(
+                  margin: EdgeInsets.all(5),
                   child: Text(Mobile_Number),
                 ),
-                Column(
-                  children:[ LongRoundButton(text: 'Login', onPressed: (){
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>  BottomNavigate()));
-                  }),
-                    SizedBox(height: 20,),
-                    const Text('-------------------------or------------------------'),
-                    SizedBox(height: 20,),
-                    SizedBox(height: 45,
-                      width: 300,
-                      child: Container(
-                          decoration: BoxDecoration(border: Border.all(color: Colors.grey,width: 1),
-                              borderRadius: BorderRadius.circular(30.0),
-                          ),
-                          child: TextButton(onPressed: (){},
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              // SizedBox(width: 8,),
-                              Image.asset('images/google.png',height: 20,width: 20,),
-                              Text('Login With Google',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: Colors.blueGrey),),
-                            ],
-                          ),
-                          ),
+                Column(children: [
+                  LongRoundButton(
+                      text: 'Login',
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => BottomNavigate()));
+                      }),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Text(
+                      '-------------------------or------------------------'),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  SizedBox(
+                    height: 45,
+                    width: 300,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Constants.kDarkGreyColor, width: 1),
+                        borderRadius: BorderRadius.circular(30.0),
                       ),
-                    )
+                      child: TextButton(
+                        onPressed: () {},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            // SizedBox(width: 8,),
+                            Image.asset(
+                              'images/google.png',
+                              height: 20,
+                              width: 20,
+                            ),
+                            const Text(
+                              'LOGIN WITH GOOGLE',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15,
+                                  color: Constants.kGraniteGreyColor),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
                 ]),
-
-
-
               ],
             ),
           ),

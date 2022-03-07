@@ -2,6 +2,7 @@
 import 'package:crockery_app/buttons/cartbutton.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../constant/constant.dart';
 import '../helper/navigator.dart';
 
 class AvilabelOffers extends StatefulWidget {
@@ -62,14 +63,14 @@ class _AvilabelOffersState extends State<AvilabelOffers> {
                           onTap: () {
                             print('favorite icon clicked...');
 
-                            if(_favIconColor == Colors.white){
+                            if(_favIconColor == Constants.kWhiteAccent){
                               setState(() {
-                                _favIconColor = Colors.red;
+                                _favIconColor = Constants.kRedColor;
                               });
 
                             }else{
                               setState(() {
-                                _favIconColor = Colors.white;
+                                _favIconColor = Constants.kWhiteAccent;
                               });
 
                             }
@@ -94,7 +95,7 @@ class _AvilabelOffersState extends State<AvilabelOffers> {
                       ),
                     ),
                     child: const Center(
-                      child: Text('upto 60% Off', style: TextStyle(color: Colors.white),),),
+                      child: Text('upto 60% Off', style: TextStyle(color: Constants.kWhiteAccent,),),),
                   ),
                   Container(
                     margin: const EdgeInsets.only(top: 90,left: 10),
@@ -102,15 +103,15 @@ class _AvilabelOffersState extends State<AvilabelOffers> {
                     width: 50.0,
                     // width: MediaQuery.of( NavigationService.navigatorKey.currentContext!,).size.width*0.1,
                     decoration: const BoxDecoration(
-                      color: Colors.white,
+                      color: Constants.kWhiteAccent,
                       borderRadius: BorderRadius.all(
                         Radius.circular(12.0),
                       ),
                     ),
                     child: Row(
                       children: const [
-                        Icon(Icons.access_time_outlined,color: Colors.black,size: 14,),
-                        Text('30 min',style: TextStyle(color: Colors.black,fontSize: 10),),
+                        Icon(Icons.access_time_outlined,color: Constants.kBlackColor,size: 14,),
+                        Text('30 min',style: TextStyle(color: Constants.kBlackColor,fontSize: 10),),
                       ],
                     ),
                   ),
@@ -124,7 +125,7 @@ class _AvilabelOffersState extends State<AvilabelOffers> {
                   // color: Colors.white,
                   height: 95,
                   width: MediaQuery.of(context).size.width * 0.75,
-                  color: Colors.white,
+                  color: Constants.kWhiteAccent,
                   child:Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
@@ -140,7 +141,7 @@ class _AvilabelOffersState extends State<AvilabelOffers> {
                               width: 50.0,
                               // width: MediaQuery.of( NavigationService.navigatorKey.currentContext!,).size.width*0.1,
                               decoration: const BoxDecoration(
-                                color: Colors.green,
+                                // color: Colors.green,
                                 borderRadius: BorderRadius.all(
                                   Radius.circular(12.0),
                                 ),
@@ -149,8 +150,8 @@ class _AvilabelOffersState extends State<AvilabelOffers> {
                                 children: const [
 
                                   FittedBox
-                                    (child: Text('5.0',style: TextStyle(color: Colors.white),)),
-                                  Icon(Icons.star_outlined,color: Colors.white,size: 18,),
+                                    (child: Text('5.0',style: TextStyle(color: Constants.kWhiteAccent),)),
+                                  Icon(Icons.star_outlined,color: Constants.kWhiteAccent,size: 18,),
                                 ],
                               ),
                             ),
@@ -158,14 +159,14 @@ class _AvilabelOffersState extends State<AvilabelOffers> {
                           ]
                       ),
                       const Align(alignment: Alignment.centerLeft,
-                        child: Text('200 mg',style: TextStyle(color: Colors.grey),)),
+                        child: Text('200 mg',style: TextStyle(color: Constants.kGreyColor),)),
                       Row(
                         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Text('Rs100',style: TextStyle(color: Colors.deepOrange,fontWeight: FontWeight.bold),),
+                            const Text('Rs100',style: TextStyle(color: Constants.kDarkOrangeColor,fontWeight: FontWeight.bold),),
                             SizedBox(width: MediaQuery.of( NavigationService.navigatorKey.currentContext!,).size.width*0.1),
                             // Icon(Icons.star_border,color: Colors.deepOrange,),
-                            const Text('200',style: TextStyle(color: Colors.grey),),
+                            const Text('200',style: TextStyle(color: Constants.kGreyColor),),
                           ]
                       ),
 

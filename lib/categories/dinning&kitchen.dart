@@ -5,6 +5,7 @@ import 'package:crockery_app/widgets/shopslistwidget.dart';
 import 'package:crockery_app/widgets/slider.dart';
 import 'package:flutter/material.dart';
 import '../bottom/bottom_sheet.dart';
+import '../constant/constant.dart';
 import '../screens/home_screen.dart';
 import '../widgets/featureproduct.dart';
 import '../widgets/shopwidgets.dart';
@@ -76,11 +77,11 @@ class _State extends State< DinningKitchenScreen> {
                               builder: (context) => Home()),
                           );
                         },
-                        child: Icon(Icons.arrow_back_ios, color: Color(0xFFAB4D24),)),
+                        child: Icon(Icons.arrow_back_ios, color:Constants.kDarkOrangeColor,)),
                     const Text(
                       'Dinning & Kitchen',
                       style: TextStyle(
-                          color: Colors.black,
+                          color: Constants.kBlackColor,
                           fontSize: 18,
                           fontWeight: FontWeight.bold,),
                     ),
@@ -101,16 +102,16 @@ class _State extends State< DinningKitchenScreen> {
                       },
                       child: const Icon(
                         Icons.search,
-                        color: Colors.grey,
+                        color: Constants.kGreyColor
                       ),
                     ),
                     const Icon(
                       Icons.doorbell_outlined,
-                      color: Color(0xFFAB4D24),
+                      color: Constants.kDarkOrangeColor,
                     ),
                     const Icon(
                       Icons.shopping_cart,
-                      color: Color(0xFFAB4D24),
+                      color: Constants.kDarkOrangeColor,
                     ),
                     //  IconTheme(
                     //   data: new IconThemeData(
@@ -133,10 +134,10 @@ class _State extends State< DinningKitchenScreen> {
                   },
                   // controller: searchEditingController,
                   decoration: InputDecoration(
-                      focusColor: Color(0xFFAB4D24),
+                      focusColor: Constants.kDarkOrangeColor,
                       prefixIcon: const Icon(
                         Icons.search,
-                        color: Color(0xFFAB4D24),
+                        color: Constants.kDarkOrangeColor,
                       ),
                       // border: OutlineInputBorder(
                       //   // width: 0.0 produces a thin "hairline" border
@@ -148,18 +149,18 @@ class _State extends State< DinningKitchenScreen> {
                       // ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: const BorderSide(
-                            color: Color(0xFFAB4D24), width: 2.0),
+                            color: Constants.kDarkOrangeColor, width: 2.0),
                         borderRadius: BorderRadius.circular(25.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: const BorderSide(
-                            color: Color(0xFFAB4D24), width: 2.0),
+                            color: Constants.kDarkOrangeColor, width: 2.0),
                         borderRadius: BorderRadius.circular(25.0),
                       ),
                       hintStyle: const TextStyle(
-                          color: Colors.grey, fontFamily: "WorkSansLight"),
+                          color: Constants.kGreyColor, fontFamily: "WorkSansLight"),
                       filled: true,
-                      fillColor: Colors.white54,
+                      fillColor: Constants.kWhite54Color,
                       hintText: 'Search by name...'),
                 ),
               )
@@ -168,7 +169,7 @@ class _State extends State< DinningKitchenScreen> {
                 width: 350,
                 child: Text(
                   'Dinning & Kitchen products Detail',
-                  style: TextStyle(color: Colors.grey, fontSize: 12),
+                  style: TextStyle(color: Constants.kGreyColor, fontSize: 12),
                 ),
               ),
               const Align(alignment: Alignment.centerLeft,
@@ -179,7 +180,7 @@ class _State extends State< DinningKitchenScreen> {
                     'Shops Categories',
                     // textAlign: TextAlign.left,
                     style: TextStyle(
-                        color: Colors.black,
+                        color: Constants.kBlackColor,
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
                         fontFamily: 'Nuntio-Bold.ttf'),
@@ -263,7 +264,7 @@ class _State extends State< DinningKitchenScreen> {
                       'Most Purchased',
                       textAlign: TextAlign.left,
                       style: TextStyle(
-                          color: Colors.black,
+                          color: Constants.kBlackColor,
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
                           fontFamily: 'Nuntio-Bold.ttf'),
@@ -285,11 +286,11 @@ class _State extends State< DinningKitchenScreen> {
                                 //   )
                                 // },
                                 style: TextStyle(
-                                    color: Color(0xFFAB4D24), fontSize: 15)),
+                                    color:Constants.kDarkOrangeColor, fontSize: 15)),
                             WidgetSpan(
                               child: Icon(
                                 Icons.arrow_forward_outlined,
-                                color: Color(0xFFAB4D24),
+                                color: Constants.kDarkOrangeColor,
                                 size: 20,
                               ),
                             ),

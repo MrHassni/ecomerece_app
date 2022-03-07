@@ -5,6 +5,7 @@ import 'package:otp_text_field/otp_text_field.dart';
 import 'package:otp_text_field/style.dart';
 
 import '../buttons/rounded_button.dart';
+import '../constant/constant.dart';
 
 // void main() => runApp(MyApp());
 //
@@ -64,7 +65,7 @@ class _OptNumberState extends State<OptNumber> {
                 SizedBox(height: 20,),
                 Center(
                   child: Container(
-                     decoration: BoxDecoration(border: Border.all(color: Color(0xFFAB4D24),width: 1),
+                     decoration: BoxDecoration(border: Border.all(color: Constants.kDarkOrangeColor,width: 1),
                          // borderRadius: BorderRadius.circular(10)
                      ),
 
@@ -93,7 +94,7 @@ class _OptNumberState extends State<OptNumber> {
                 ),
                 const SizedBox(height: 15,),
                 const Align(alignment: Alignment.centerRight,
-                    child: Text('Resend OTP',style: TextStyle(color: Color(0xffAB4D24)),)),
+                    child: Text('Resend OTP',style: TextStyle(color: Constants.kDarkOrangeColor),)),
                 SizedBox(height: 40,),
                 RoundedButton(text: 'Next', onPressed: (){
                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>  PasswordScreen()));

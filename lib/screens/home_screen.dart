@@ -1,3 +1,4 @@
+import 'package:crockery_app/constant/constant.dart';
 import 'package:crockery_app/screens/all_categoryies_screen.dart';
 import 'package:crockery_app/widgets/avilabeloffers.dart';
 import 'package:crockery_app/widgets/featureproduct.dart';
@@ -61,7 +62,7 @@ class _HomeState extends State<Home> {
                       const Text(
                         '03*********',
                         style: TextStyle(
-                            color: Colors.black,
+                            color: Constants.kBlackColor,
                             fontSize: 18,
                             fontWeight: FontWeight.bold),
                       ),
@@ -79,16 +80,16 @@ class _HomeState extends State<Home> {
                         },
                         child: const Icon(
                           Icons.search,
-                          color: Colors.grey,
+                          color: Constants.kBlackColor,
                         ),
                       ),
                       const Icon(
                         Icons.doorbell_outlined,
-                        color: Color(0xFFAB4D24),
+                        color: Constants.kDarkOrangeColor,
                       ),
                       const Icon(
                         Icons.shopping_cart,
-                        color: Color(0xFFAB4D24),
+                        color: Constants.kDarkOrangeColor,
                       ),
                       //  IconTheme(
                       //   data: new IconThemeData(
@@ -112,10 +113,10 @@ class _HomeState extends State<Home> {
                         },
                         // controller: searchEditingController,
                         decoration: InputDecoration(
-                            focusColor: Color(0xFFAB4D24),
+                            focusColor:Constants.kDarkOrangeColor,
                             prefixIcon: const Icon(
                               Icons.search,
-                              color: Color(0xFFAB4D24),
+                              color: Constants.kDarkOrangeColor,
                             ),
                             // border: OutlineInputBorder(
                             //   // width: 0.0 produces a thin "hairline" border
@@ -127,27 +128,27 @@ class _HomeState extends State<Home> {
                             // ),
                             focusedBorder: OutlineInputBorder(
                               borderSide: const BorderSide(
-                                  color: Color(0xFFAB4D24), width: 2.0),
+                                  color: Constants.kDarkOrangeColor, width: 2.0),
                               borderRadius: BorderRadius.circular(25.0),
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: const BorderSide(
-                                  color: Color(0xFFAB4D24), width: 2.0),
+                                  color: Constants.kDarkOrangeColor, width: 2.0),
                               borderRadius: BorderRadius.circular(25.0),
                             ),
                             hintStyle: const TextStyle(
-                                color: Colors.grey, fontFamily: "WorkSansLight"),
+                                color: Constants.kGreyColor, fontFamily: "WorkSansLight"),
                             filled: true,
-                            fillColor: Colors.white54,
+                            fillColor: Constants.kWhite54Color,
                             hintText: 'Search by name...'),
                       ),
                     )
                   : Container(
                       height: 40,
                       width: 350,
-                      child: Text(
+                      child: const Text(
                         'What do you want to buy?',
-                        style: TextStyle(color: Colors.grey, fontSize: 12),
+                        style: TextStyle(color: Constants.kDarkGreyColor, fontSize: 12),
                       ),
                     ),
               const HorizontalSlider(),
@@ -162,7 +163,7 @@ class _HomeState extends State<Home> {
                       'Shops',
                       textAlign: TextAlign.left,
                       style: TextStyle(
-                          color: Colors.black,
+                          color: Constants.kBlackColor,
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
                           fontFamily: 'Nuntio-Bold.ttf'),
@@ -184,11 +185,11 @@ class _HomeState extends State<Home> {
                                 //   )
                                 // },
                                 style: TextStyle(
-                                    color: Color(0xFFAB4D24), fontSize: 15)),
+                                    color: Constants.kDarkOrangeColor, fontSize: 15)),
                             WidgetSpan(
                               child: Icon(
                                 Icons.arrow_forward_outlined,
-                                color: Color(0xFFAB4D24),
+                                color: Constants.kDarkOrangeColor,
                                 size: 20,
                               ),
                             ),
@@ -200,7 +201,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
               Container(
-                color: Colors.white,
+                color: Constants.kWhiteAccent,
                 height: 110,
                 width: MediaQuery.of(context).size.width,
                 child: ListView.builder(
@@ -271,7 +272,7 @@ class _HomeState extends State<Home> {
                       'Featured products',
                       textAlign: TextAlign.left,
                       style: TextStyle(
-                          color: Colors.black,
+                          color: Constants.kBlackColor,
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
                           fontFamily: 'Nuntio-Bold.ttf'),
@@ -293,11 +294,11 @@ class _HomeState extends State<Home> {
                                 //   )
                                 // },
                                 style: TextStyle(
-                                    color: Color(0xFFAB4D24), fontSize: 15)),
+                                    color: Constants.kDarkOrangeColor, fontSize: 15)),
                             WidgetSpan(
                               child: Icon(
                                 Icons.arrow_forward_outlined,
-                                color: Color(0xFFAB4D24),
+                                color: Constants.kDarkOrangeColor,
                                 size: 20,
                               ),
                             ),
@@ -339,7 +340,7 @@ class _HomeState extends State<Home> {
                       'Available Offers',
                       textAlign: TextAlign.left,
                       style: TextStyle(
-                          color: Colors.black,
+                          color: Constants.kBlackColor,
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
                           fontFamily: 'Nuntio-Bold.ttf'),
@@ -361,11 +362,11 @@ class _HomeState extends State<Home> {
                                 //   )
                                 // },
                                 style: TextStyle(
-                                    color: Color(0xFFAB4D24), fontSize: 15)),
+                                    color:Constants.kDarkOrangeColor, fontSize: 15)),
                             WidgetSpan(
                               child: Icon(
                                 Icons.arrow_forward_outlined,
-                                color: Color(0xFFAB4D24),
+                                color: Constants.kDarkOrangeColor,
                                 size: 20,
                               ),
                             ),

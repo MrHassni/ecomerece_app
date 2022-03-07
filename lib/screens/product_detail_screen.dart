@@ -1,7 +1,8 @@
 import 'package:crockery_app/widgets/card_check_items.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../response_review_list_imgages_with_color/detail_list_images_with_color.dart';
+import '../constant/constant.dart';
+import '../widgets/product_list_image_with_color_widget.dart';
 
 class ProductDetail extends StatefulWidget {
   const ProductDetail({Key? key}) : super(key: key);
@@ -47,7 +48,7 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.all(15),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -64,12 +65,12 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                             },
                             child: const Icon(
                               Icons.arrow_back_ios,
-                              color: Color(0xFFAB4D24),
+                              color: Constants.kDarkOrangeColor,
                             )),
                         const Text(
                           'Product Detail',
                           style: TextStyle(
-                              color: Colors.black,
+                              color: Constants.kBlackColor,
                               fontSize: 18,
                               fontWeight: FontWeight.bold),
                         ),
@@ -82,7 +83,7 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                   width: 350,
                   child: Text(
                     'Check Product Details',
-                    style: TextStyle(color: Colors.grey, fontSize: 12),
+                    style: TextStyle(color: Constants.kGreyColor, fontSize: 12),
                   ),
                 ),
                 Container(
@@ -113,7 +114,7 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                               url = allProdImg[index];
                             });
                           },
-                          child: ResposeAndReviewListImageAndColor(
+                          child: ProductListImageAndColor(
                             allProductImg: allProdImg[index],
                             allProdctName: allProdName[index],
                           ),
@@ -123,21 +124,24 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                 Container(
                   height: 2,
                   width: MediaQuery.of(context).size.width,
-                  color: Colors.grey,
+                  color: Constants.kGreyColor,
                 ),
-                Row(
-                  children: const <Widget>[
-                    Text(
-                      'Nestle Nido Cup for Tea',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16),
-                    ),
-                    Spacer(),
-                    Icon(Icons.favorite_border),
-                    Icon(Icons.share),
-                  ],
+                Padding(
+                  padding: EdgeInsets.only(top: 15),
+                  child: Row(
+                    children: const <Widget>[
+                      Text(
+                        'Nestle Nido Cup for Tea',
+                        style: TextStyle(
+                            color: Constants.kBlackColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16),
+                      ),
+                      Spacer(),
+                      Icon(Icons.favorite_border),
+                      Icon(Icons.share),
+                    ],
+                  ),
                 ),
                 Column(
                   // mainAxisAlignment: MainAxisAlignment.start,
@@ -147,41 +151,47 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                         child: Text(
                           'Rs 100',
                           style: TextStyle(
-                              color: Color(0xFFAB4D24),
+                              color: Constants.kDarkOrangeColor,
                               fontWeight: FontWeight.bold),
                         )),
                     Row(
                       children: const <Widget>[
                         Icon(
                           Icons.star,
-                          color: Color(0xFFAB4D24),
+                          color: Constants.kOrangeColor,
                         ),
                         Icon(
                           Icons.star,
-                          color: Color(0xFFAB4D24),
+                          color: Constants.kOrangeColor,
                         ),
                         Icon(
                           Icons.star,
-                          color: Color(0xFFAB4D24),
+                          color: Constants.kOrangeColor,
                         ),
                         Icon(
                           Icons.star,
-                          color: Color(0xFFAB4D24),
+                          color: Constants.kOrangeColor,
                         ),
                         Icon(
                           Icons.star_outline,
-                          color: Color(0xFFAB4D24),
+                          color: Constants.kOrangeColor,
                         ),
                       ],
                     ),
-                    const Text(
+                    const Padding(padding: EdgeInsets.only(top: 15,bottom: 15),
+                      child: Text(
                         'an ornamental trophy in the form of a cup, usually made of gold or silver and having a stem and two handles, '
-                        'awarded as a prize in a sports contest.'),
+                        'awarded as a prize in a sports contest.',
+                        style: TextStyle(
+                            fontFamily: 'Nuntio-Bold.ttf',
+                            color: Constants.kDarkGreyColor),
+                      ),
+                    ),
                     Container(
                       margin: EdgeInsets.only(top: 5),
                       height: 2,
                       width: MediaQuery.of(context).size.width,
-                      color: Colors.grey,
+                      color: Constants.kDarkGreyColor,
                     ),
                     const Align(
                       alignment: Alignment.centerLeft,
@@ -190,7 +200,7 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                           child: Text(
                             'Rating & Reviews',
                             style: TextStyle(
-                                color: Colors.black,
+                                color: Constants.kBlackColor,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 15),
                           )),
@@ -208,7 +218,7 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                             Text(
                               'Regina Miles',
                               style: TextStyle(
-                                  color: Colors.black,
+                                  color: Constants.kBlackColor,
                                   fontWeight: FontWeight.bold),
                             ),
                             Text('03/02/2022'),
@@ -217,31 +227,35 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                         Spacer(),
                         const Icon(
                           Icons.star,
-                          color: Color(0xFFAB4D24),
+                          color: Constants.kOrangeColor,
                         ),
                         const Icon(
                           Icons.star,
-                          color: Color(0xFFAB4D24),
+                          color: Constants.kOrangeColor,
                         ),
                         const Icon(
                           Icons.star,
-                          color: Color(0xFFAB4D24),
+                          color: Constants.kOrangeColor,
                         ),
                         const Icon(
                           Icons.star,
-                          color: Color(0xFFAB4D24),
+                          color: Constants.kOrangeColor,
                         ),
                         const Icon(
                           Icons.star_outline,
-                          color: Color(0xFFAB4D24),
+                          color: Constants.kOrangeColor,
                         ),
                       ],
                     ),
                     const Padding(
-                      padding: EdgeInsets.only(top: 10),
+                      padding: EdgeInsets.only(top: 15,bottom: 15),
                       child: Text(
-                          'an ornamental trophy in the form of a cup, usually made of gold or silver and having a stem and two handles, '
-                          'awarded as a prize in a sports contest.'),
+                        'an ornamental trophy in the form of a cup, usually made of gold or silver and having a stem and two handles, '
+                        'awarded as a prize in a sports contest.',
+                        style: TextStyle(
+                            fontFamily: 'Nuntio-Bold.ttf',
+                            color: Constants.kDarkGreyColor),
+                      ),
                     ),
                     Padding(
                       padding: EdgeInsets.all(5),
@@ -252,7 +266,7 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                             height: 60,
                             width: 60,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 20,
                           ),
                           Image.asset(
@@ -267,7 +281,7 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                       margin: EdgeInsets.only(top: 5),
                       height: 2,
                       width: MediaQuery.of(context).size.width,
-                      color: Colors.grey,
+                      color: Constants.kGreyColor,
                     ),
                     Container(
                       margin: EdgeInsets.only(top: 20, left: 35),
@@ -291,22 +305,30 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                                 Text(
                                   'Crockery Bazar',
                                   style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold),
+                                      color: Constants.kBlackColor,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'Nuntio-Bold.ttf'),
                                 ),
                                 Spacer(),
                                 Text(
                                   '03/03/2022',
-                                  style: TextStyle(color: Color(0xFF666666)),
+                                  style:
+                                      TextStyle(color: Constants.kGrey55Color),
                                 ),
                               ],
                             ),
                           ),
                           Column(
                             children: const <Widget>[
-                              Text(
-                                'Hello Regina,thank you for your valuable feedback',
-                                style: TextStyle(color: Color(0xFF8C8C8C)),
+                              SizedBox(width: 250,
+                                height: 30,
+                                child: Text(
+                                  'Hello Regina,thank you for your valuable feedback',
+                                  style: TextStyle(
+                                    color: Constants.kGrey55Color,
+                                    fontFamily: 'Nuntio-Light.ttf',
+                                  ),
+                                ),
                               ),
                             ],
                           ),
@@ -317,10 +339,10 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                       margin: EdgeInsets.only(top: 20),
                       height: 2,
                       width: MediaQuery.of(context).size.width,
-                      color: Colors.grey,
+                      color: Constants.kDarkGreyColor,
                     ),
                     const Padding(
-                      padding: EdgeInsets.only(top: 20,bottom: 20),
+                      padding: EdgeInsets.only(top: 20, bottom: 20),
                       child: Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
@@ -346,18 +368,18 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                           }),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 5,bottom: 20),
+                      margin: EdgeInsets.only(top: 5, bottom: 20),
                       height: 2,
                       width: MediaQuery.of(context).size.width,
-                      color: Colors.grey,
+                      color: Constants.kGreyColor,
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                         CircleAvatar(
+                        CircleAvatar(
                           // foregroundColor: Colors.red,
                           radius: 25,
-                          backgroundColor: Colors.red,
+                          backgroundColor: Constants.kWhiteAccent,
                           child: Container(
                             height: 28,
                             width: 28,
@@ -365,24 +387,37 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                             // backgroundColor: Colors.white,
                             // backgroundImage: AssetImage('images/whtsupimg.png'),
                             decoration: const BoxDecoration(
-                              borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(30.0)),
                               color: Colors.transparent,
                             ),
                             child: FittedBox(
                               child: Image.asset(
-                                  'images/whtsupimg.png',
+                                'images/whtsupimg.png',
                               ),
                             ),
                           ),
                         ),
-                        MaterialButton(
-                            color: Colors.red,
-                            child: Text('Buy Now'),
-                            onPressed: (){}),
-                        MaterialButton(
-                            color: Colors.red,
-                            child: Text('Add to Cart'),
-                            onPressed: (){}),
+                        FlatButton(
+                          color: Constants.kOrangeColor,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0)),
+                          child: const Text(
+                            'Buy Now',
+                            style: TextStyle(color: Constants.kWhiteAccent),
+                          ),
+                          onPressed: () {},
+                        ),
+                        FlatButton(
+                          color: Constants.kDarkOrangeColor,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0)),
+                          child: const Text(
+                            'Add to Cart',
+                            style: TextStyle(color: Constants.kWhiteAccent),
+                          ),
+                          onPressed: () {},
+                        ),
                       ],
                     )
                   ],

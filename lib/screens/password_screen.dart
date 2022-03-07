@@ -1,5 +1,6 @@
 import 'package:crockery_app/buttons/rounded_button.dart';
 import 'package:crockery_app/buttons/long_rounded_button.dart';
+import 'package:crockery_app/constant/constant.dart';
 import 'package:crockery_app/screens/enter_otp_screen.dart';
 import 'package:crockery_app/screens/login_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -27,18 +28,18 @@ class _PasswordScreenState extends State<PasswordScreen> {
             child: Column(
               // mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 100,
+                const SizedBox(height: 100,
                     width: 250,
                     child: Text('For the Security & Safety Please choose password',textAlign: TextAlign.center,style: TextStyle(
                         fontSize: 16,
-                        color: Colors.grey,
-                        fontFamily:'Nuntio-Light.ttf'
+                        color: Constants.kGreyColor,
+                        fontFamily:'Nuntio-Light.ttf',
                     ),)),
                 SizedBox(height: 150,
                   width: 150,
                   child: Image.asset('images/moblogin.png'),
                 ),
-               Align(alignment: Alignment.centerLeft,
+               const Align(alignment: Alignment.centerLeft,
                    child: Text('Password')),
                 SizedBox(height: 10,),
                 Container(
@@ -47,15 +48,15 @@ class _PasswordScreenState extends State<PasswordScreen> {
                       controller: PasswordController,
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(
-                          borderSide: BorderSide(color:Color(0xFFAB4D24),),
+                          borderSide: BorderSide(color: Constants.kDarkOrangeColor,),
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFFAB4D24),),
+                          borderSide: BorderSide(color: Constants.kDarkOrangeColor,),
                         ) ,
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFFAB4D24),),),
+                          borderSide: BorderSide(color: Constants.kDarkOrangeColor,),),
                         labelText: 'Password',
-                        prefixIcon: Icon(Icons.lock,color: Color(0xFFAB4D24),),
+                        prefixIcon: Icon(Icons.lock,color: Constants.kDarkOrangeColor,),
                       ),
                       onChanged: (text) {
                         setState(() {
@@ -73,8 +74,8 @@ class _PasswordScreenState extends State<PasswordScreen> {
                 ),
 
                 // Confirm password...
-                SizedBox(height: 10,),
-                Align(alignment: Alignment.centerLeft,
+                const SizedBox(height: 10,),
+                const Align(alignment: Alignment.centerLeft,
                     child: Text('Confirm Password')),
                 SizedBox(height: 10,),
                 Container(
@@ -84,15 +85,15 @@ class _PasswordScreenState extends State<PasswordScreen> {
                       controller: ConfirmPasswordController,
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(
-                          borderSide: BorderSide(color:Color(0xFFAB4D24),),
+                          borderSide: BorderSide(color: Constants.kDarkOrangeColor,),
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFFAB4D24),),
+                          borderSide: BorderSide(color:  Constants.kDarkOrangeColor,),
                         ) ,
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFFAB4D24),),),
+                          borderSide: BorderSide(color:  Constants.kDarkOrangeColor,),),
                         labelText: 'Confirm Password',
-                        prefixIcon: Icon(Icons.lock,color: Color(0xFFAB4D24),),
+                        prefixIcon: Icon(Icons.lock,color:  Constants.kDarkOrangeColor,),
                       ),
                       onChanged: (text) {
                         setState(() {

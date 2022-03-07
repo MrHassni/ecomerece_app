@@ -1,3 +1,4 @@
+import 'package:crockery_app/constant/constant.dart';
 import 'package:crockery_app/widgets/crockerywidget.dart';
 import 'package:crockery_app/widgets/cutleryitemwidget.dart';
 import 'package:crockery_app/widgets/featureproduct.dart';
@@ -63,11 +64,11 @@ class _State extends State<DrinkWare> with TickerProviderStateMixin {
                               //       builder: (context) => Home()),
                               //   );
                             },
-                            child: Icon(Icons.arrow_back_ios, color: Color(0xFFAB4D24),)),
+                            child: Icon(Icons.arrow_back_ios, color: Constants.kDarkOrangeColor,)),
                         const Text(
                           'Drinkware',
                           style: TextStyle(
-                              color: Colors.black,
+                              color: Constants.kBlackColor,
                               fontSize: 18,
                               fontWeight: FontWeight.bold),
                         ),
@@ -88,16 +89,16 @@ class _State extends State<DrinkWare> with TickerProviderStateMixin {
                           },
                           child: const Icon(
                             Icons.search,
-                            color: Colors.grey,
+                            color: Constants.kGreyColor,
                           ),
                         ),
                         const Icon(
                           Icons.doorbell_outlined,
-                          color: Color(0xFFAB4D24),
+                          color: Constants.kDarkOrangeColor,
                         ),
                         const Icon(
                           Icons.shopping_cart,
-                          color: Color(0xFFAB4D24),
+                          color: Constants.kDarkOrangeColor,
                         ),
                         //  IconTheme(
                         //   data: new IconThemeData(
@@ -121,10 +122,10 @@ class _State extends State<DrinkWare> with TickerProviderStateMixin {
                     },
                     // controller: searchEditingController,
                     decoration: InputDecoration(
-                        focusColor: Color(0xFFAB4D24),
+                        focusColor: Constants.kDarkOrangeColor,
                         prefixIcon: const Icon(
                           Icons.search,
-                          color: Color(0xFFAB4D24),
+                          color:  Constants.kDarkOrangeColor,
                         ),
                         // border: OutlineInputBorder(
                         //   // width: 0.0 produces a thin "hairline" border
@@ -136,18 +137,18 @@ class _State extends State<DrinkWare> with TickerProviderStateMixin {
                         // ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: const BorderSide(
-                              color: Color(0xFFAB4D24), width: 2.0),
+                              color: Constants.kDarkOrangeColor, width: 2.0),
                           borderRadius: BorderRadius.circular(25.0),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: const BorderSide(
-                              color: Color(0xFFAB4D24), width: 2.0),
+                              color:  Constants.kDarkOrangeColor, width: 2.0),
                           borderRadius: BorderRadius.circular(25.0),
                         ),
                         hintStyle: const TextStyle(
-                            color: Colors.grey, fontFamily: "WorkSansLight"),
+                            color: Constants.kGreyColor, fontFamily: "WorkSansLight"),
                         filled: true,
-                        fillColor: Colors.white54,
+                        fillColor: Constants.kWhite54Color,
                         hintText: 'Search by name...'),
                   ),
                 )
@@ -156,7 +157,7 @@ class _State extends State<DrinkWare> with TickerProviderStateMixin {
                   width: 350,
                   child: Text(
                     'Drinkware Products Details',
-                    style: TextStyle(color: Colors.grey, fontSize: 12),
+                    style: TextStyle(color: Constants.kGreyColor, fontSize: 12),
                   ),
                 ),
                 HorizontalSlider(),
@@ -193,9 +194,9 @@ class _State extends State<DrinkWare> with TickerProviderStateMixin {
                             ),
                           ),
                         ],
-                        unselectedLabelColor: const Color(0xffacb3bf),
-                        indicatorColor: Color(0xFFAB4D24),
-                        labelColor: Colors.black,
+                        unselectedLabelColor: Constants.kGreyColor,
+                        indicatorColor: Constants.kLightOrangeColor,
+                        labelColor: Constants.kBlackColor,
                         indicatorSize: TabBarIndicatorSize.tab,
                         indicatorWeight: 3.0,
                         indicatorPadding: EdgeInsets.all(10),
@@ -213,10 +214,10 @@ class _State extends State<DrinkWare> with TickerProviderStateMixin {
                             child: Container(
                               height: MediaQuery.of(context).size.height,
                               child: GridView.count(
-                                childAspectRatio: 7/11,
-                                // crossAxisSpacing: 5.0,
+                                childAspectRatio: 5/8,
+                                crossAxisSpacing: 10.0,
                                 // crossAxisSpacing: 20,
-                                mainAxisSpacing: 5,
+                                mainAxisSpacing: 20,
                                 physics:  NeverScrollableScrollPhysics(),
                                 // padding: EdgeInsets.all(10.0),
                                 // scrollDirection: Axis.vertical,
