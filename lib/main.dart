@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      // home: SplashScreen(),
-      home: CartDetail(),
+      home: SplashScreen(),
+      // home: CartDetail(),
       // home: BottomNavigate(),
     );
   }

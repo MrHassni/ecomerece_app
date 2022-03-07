@@ -4,6 +4,7 @@ import 'package:crockery_app/categories/dinning&kitchen.dart';
 import 'package:crockery_app/categories/giftshop_screen.dart';
 import 'package:crockery_app/categories/lighting_screen.dart';
 import 'package:crockery_app/screens/account_page.dart';
+import 'package:crockery_app/screens/cart_detail_screen.dart';
 import 'package:crockery_app/screens/orders_page.dart';
 import 'package:crockery_app/screens/wish_list.dart';
 import 'package:crockery_app/screens/all_categoryies_screen.dart';
@@ -48,6 +49,7 @@ class _State extends State< BottomNavigate> {
     DinnerSetScreen(),
     DrinkWare(),
     ProductDetail(),
+    CartDetail(),
 
     // DealsScreen(),
     // AccountScreen(),
