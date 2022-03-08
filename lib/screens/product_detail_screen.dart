@@ -1,8 +1,9 @@
-import 'package:crockery_app/widgets/card_check_items.dart';
+import 'package:crockery_app/widgets/card_check_related_items.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../bottom/bottom_sheet.dart';
 import '../constant/constant.dart';
+
+import '../widgets/bottom_navigation/bottom_sheet.dart';
 import '../widgets/product_list_image_with_color_widget.dart';
 
 class ProductDetail extends StatefulWidget {

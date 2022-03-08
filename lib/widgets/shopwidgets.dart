@@ -1,5 +1,3 @@
-
-import 'package:crockery_app/buttons/cartbutton.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../helper/navigator.dart';
@@ -21,7 +19,7 @@ class _ShopWidgetState extends State<ShopWidget> {
   Widget build(BuildContext context) {
     return Card(
 margin: EdgeInsets.zero,
-      // margin: EdgeInsets.only(left: 20.0,bottom: 20),
+      // margin: EdgeInsets.only(left: 20.0,bottom_navigation: 20),
       // color: Colors.purple,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20.0),

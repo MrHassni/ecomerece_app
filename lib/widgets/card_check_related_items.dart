@@ -84,6 +84,7 @@ class _State extends State<CheckItemsWidget> {
                     width: MediaQuery.of(context).size.width * 0.27,
                     child: const Text(
                       'Nestle Nido Cup for tea',
+                      overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                           color: Constants.kBlackColor,
                           fontWeight: FontWeight.bold,
@@ -104,7 +105,7 @@ class _State extends State<CheckItemsWidget> {
                 children: [
                   Text('200ml'),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.1,
+                    height: 50,
                   ),
                   SizedBox(
                     height: 24,

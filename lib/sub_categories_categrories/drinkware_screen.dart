@@ -1,10 +1,9 @@
 import 'package:crockery_app/constant/constant.dart';
-import 'package:crockery_app/widgets/crockerywidget.dart';
 import 'package:crockery_app/widgets/cutleryitemwidget.dart';
-import 'package:crockery_app/widgets/featureproduct.dart';
 import 'package:crockery_app/widgets/slider.dart';
 import 'package:flutter/material.dart';
-import '../bottom/bottom_sheet.dart';
+
+import '../widgets/bottom_navigation/bottom_sheet.dart';
 
 
 

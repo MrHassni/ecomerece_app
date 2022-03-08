@@ -5,7 +5,10 @@ import 'package:crockery_app/categories/giftshop_screen.dart';
 import 'package:crockery_app/categories/lighting_screen.dart';
 import 'package:crockery_app/screens/account_page.dart';
 import 'package:crockery_app/screens/cart_detail_screen.dart';
+import 'package:crockery_app/screens/changeaddress_payment_screen.dart';
+import 'package:crockery_app/screens/order_history.dart';
 import 'package:crockery_app/screens/orders_page.dart';
+import 'package:crockery_app/screens/voucher_screen.dart';
 import 'package:crockery_app/screens/wish_list.dart';
 import 'package:crockery_app/screens/all_categoryies_screen.dart';
 import 'package:crockery_app/screens/product_detail_screen.dart';
@@ -18,8 +21,9 @@ import 'package:crockery_app/sub_categories_categrories/dinner_set_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../screens/home_screen.dart';
-import '../sub_categories_categrories/drinkware_screen.dart';
+import '../../screens/home_screen.dart';
+import '../../sub_categories_categrories/drinkware_screen.dart';
+
 
 
 class BottomNavigate  extends StatefulWidget {
@@ -50,6 +54,9 @@ class _State extends State< BottomNavigate> {
     DrinkWare(),
     ProductDetail(),
     CartDetail(),
+    VoucherScreen(),
+    ChangeAddressAndPayment(),
+    OrderHistory(),
 
     // DealsScreen(),
     // AccountScreen(),

@@ -4,7 +4,7 @@ import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/otp_text_field.dart';
 import 'package:otp_text_field/style.dart';
 
-import '../buttons/rounded_button.dart';
+import 'package:crockery_app/widgets/buttons/rounded_button.dart';
 import '../constant/constant.dart';
 
 // void main() => runApp(MyApp());

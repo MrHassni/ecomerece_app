@@ -1,9 +1,11 @@
-import 'package:crockery_app/bottom/bottom_sheet.dart';
-import 'package:crockery_app/buttons/long_rounded_button.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../constant/constant.dart';
+
+import '../widgets/bottom_navigation/bottom_sheet.dart';
+import '../widgets/buttons/long_rounded_button.dart';
 
 class LoginScreen extends StatefulWidget {
   @override

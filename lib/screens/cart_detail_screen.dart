@@ -1,10 +1,8 @@
-import 'package:crockery_app/buttons/square_button.dart';
-import 'package:crockery_app/widgets/card_check_items.dart';
 import 'package:crockery_app/widgets/cart_detail_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../buttons/long_rounded_button.dart';
 import '../constant/constant.dart';
+import '../widgets/bottom_navigation/bottom_sheet.dart';
 
 class CartDetail extends StatefulWidget {
   const CartDetail({Key? key}) : super(key: key);
@@ -88,7 +86,9 @@ class _State extends State<CartDetail> with TickerProviderStateMixin {
                           Dismissible(
                             secondaryBackground: Container(
                                 alignment: Alignment.centerRight,
-                                child: Icon(Icons.delete)),
+                                color: Colors.red[100],
+                                child: Icon(Icons.delete,color: Colors.red,),
+                            ),
                             direction: DismissDirection.endToStart,
                             background: Container(
                               color: Colors.green,
@@ -106,6 +106,12 @@ class _State extends State<CartDetail> with TickerProviderStateMixin {
                       }),
                 ),
                 InkWell(onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BottomNavigate(i: 18,),
+                    ),
+                  );
 
                 },
                     child: Image.asset('images/apply_coupon_code.png')),

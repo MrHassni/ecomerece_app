@@ -1,10 +1,10 @@
-import 'package:crockery_app/buttons/rounded_button.dart';
-import 'package:crockery_app/buttons/long_rounded_button.dart';
 import 'package:crockery_app/constant/constant.dart';
 import 'package:crockery_app/screens/enter_otp_screen.dart';
 import 'package:crockery_app/screens/login_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/buttons/long_rounded_button.dart';
 
 class PasswordScreen extends StatefulWidget {
   @override

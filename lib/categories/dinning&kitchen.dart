@@ -1,13 +1,10 @@
-
-import 'package:crockery_app/widgets/avilabeloffers.dart';
 import 'package:crockery_app/widgets/mostpurchased.dart';
-import 'package:crockery_app/widgets/shopslistwidget.dart';
 import 'package:crockery_app/widgets/slider.dart';
 import 'package:flutter/material.dart';
-import '../bottom/bottom_sheet.dart';
+
 import '../constant/constant.dart';
 import '../screens/home_screen.dart';
-import '../widgets/featureproduct.dart';
+import '../widgets/bottom_navigation/bottom_sheet.dart';
 import '../widgets/shopwidgets.dart';
 
 

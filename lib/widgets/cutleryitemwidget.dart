@@ -1,9 +1,9 @@
 
-import 'package:crockery_app/buttons/cartbutton.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constant/constant.dart';
 import '../helper/navigator.dart';
+import 'buttons/cartbutton.dart';
 
 class CutleryWidget extends StatefulWidget {
   CutleryWidget({required this.cutleryimg});
@@ -21,7 +21,7 @@ class _CutleryWidgetState extends State<CutleryWidget> {
   Widget build(BuildContext context) {
     return Card(
       margin: EdgeInsets.zero,
-      // margin: const EdgeInsets.only(left: 15.0,bottom: 20),
+      // margin: const EdgeInsets.only(left: 15.0,bottom_navigation: 20),
       // color: Colors.red,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.0),
@@ -88,7 +88,9 @@ class _CutleryWidgetState extends State<CutleryWidget> {
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children:   const [
-                        Text('Opal Dinner Set',style: TextStyle(fontSize: 12,fontWeight: FontWeight.bold),),
+                        Text('Opal Dinner Set best quality',
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(fontSize: 12,fontWeight: FontWeight.bold),),
                         // SizedBox(width: 10,),
                         Text('500 gm          ',style: TextStyle(fontSize: 12,color: Constants.kGreyColor),),
                         // SizedBox(height: 5,),

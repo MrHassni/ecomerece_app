@@ -1,9 +1,9 @@
 
-import 'package:crockery_app/buttons/cartbutton.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constant/constant.dart';
 import '../helper/navigator.dart';
+import 'buttons/cartbutton.dart';
 
 class AvilabelOffers extends StatefulWidget {
 
@@ -21,7 +21,7 @@ class _AvilabelOffersState extends State<AvilabelOffers> {
       margin: const EdgeInsets.only(left: 20.0,bottom: 20),
       width: MediaQuery.of(context).size.width * 0.75,
       child: Card(
-        // margin: EdgeInsets.only(left: 20.0,bottom: 20),
+        // margin: EdgeInsets.only(left: 20.0,bottom_navigation: 20),
         // color: Colors.red,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
@@ -50,7 +50,7 @@ class _AvilabelOffersState extends State<AvilabelOffers> {
                   //     ),
                   //     child: Image.asset('images/img.png',)),
                   Container(
-                    margin: const EdgeInsets.only(top: 10,left: 250),
+                    margin: const EdgeInsets.only(top: 10,left: 230),
                     // child: Row(
                     //   mainAxisSize: MainAxisSize.max,
                     //   children: [
@@ -136,12 +136,12 @@ class _AvilabelOffersState extends State<AvilabelOffers> {
                             //SizedBox(width: MediaQuery.of( NavigationService.navigatorKey.currentContext!,).size.width*0.3),
                             const Spacer(),
                             Container(
-                              padding: const EdgeInsets.all(2.5),
-                              height: 23.0,
+                              padding: const EdgeInsets.all(3),
+                              height: 22.0,
                               width: 50.0,
                               // width: MediaQuery.of( NavigationService.navigatorKey.currentContext!,).size.width*0.1,
                               decoration: const BoxDecoration(
-                                // color: Colors.green,
+                                color: Colors.green,
                                 borderRadius: BorderRadius.all(
                                   Radius.circular(12.0),
                                 ),
@@ -181,7 +181,8 @@ class _AvilabelOffersState extends State<AvilabelOffers> {
              Padding(
                padding: EdgeInsets.only(right: 10,top: 10),
                child: Align(alignment: Alignment.centerRight,
-                   child: CartButton(onPressed: () {  }, text: 'Add to cart',)),
+                   child: SizedBox(height: 35,
+                       child: CartButton(onPressed: () {  }, text: 'Add to cart',))),
              ),
 
 

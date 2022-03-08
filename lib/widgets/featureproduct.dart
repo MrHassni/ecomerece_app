@@ -1,9 +1,10 @@
 
-import 'package:crockery_app/buttons/cartbutton.dart';
+
 import 'package:crockery_app/constant/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../helper/navigator.dart';
+import 'buttons/cartbutton.dart';
 
 class FeaturedProducts extends StatefulWidget {
   // FeaturedProducts({required this.img});
@@ -23,7 +24,7 @@ class _FeaturedProductsState extends State<FeaturedProducts> {
       margin: const EdgeInsets.only(bottom: 8,left: 5),
       width: MediaQuery.of(context).size.width * 0.4,
       child: Card(
-        // margin: const EdgeInsets.only(left: 15.0,bottom: 20),
+        // margin: const EdgeInsets.only(left: 15.0,bottom_navigation: 20),
         // color: Colors.red,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),

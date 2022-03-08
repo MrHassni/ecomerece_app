@@ -1,9 +1,9 @@
 
-import 'package:crockery_app/buttons/cartbutton.dart';
 import 'package:crockery_app/constant/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../helper/navigator.dart';
+import 'buttons/cartbutton.dart';
 
 class MostPurchased extends StatefulWidget {
 
@@ -24,7 +24,7 @@ class _MostPurchasedState extends State<MostPurchased> {
       margin: const EdgeInsets.only(bottom: 8,left: 5),
       width: MediaQuery.of(context).size.width * 0.4,
       child: Card(
-        // margin: const EdgeInsets.only(left: 15.0,bottom: 20),
+        // margin: const EdgeInsets.only(left: 15.0,bottom_navigation: 20),
         // color: Colors.red,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
@@ -97,7 +97,9 @@ class _MostPurchasedState extends State<MostPurchased> {
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children:   const [
-                          Text('Opal Dinner Set',style: TextStyle(fontSize: 12,fontWeight: FontWeight.bold),),
+                          Text('Opal Dinner Set',
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(fontSize: 12,fontWeight: FontWeight.bold),),
                           SizedBox(width: 10,),
                           Text('500 gm          ',style: TextStyle(fontSize: 12,color: Constants.kGreyColor),),
                           SizedBox(width: 10,),

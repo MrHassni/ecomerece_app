@@ -1,10 +1,9 @@
 
-import 'package:crockery_app/widgets/shopslistwidget.dart';
 import 'package:crockery_app/widgets/shopwidgets.dart';
 import 'package:flutter/material.dart';
 
-import '../bottom/bottom_sheet.dart';
 import '../constant/constant.dart';
+import '../widgets/bottom_navigation/bottom_sheet.dart';
 import 'home_screen.dart';
 
 

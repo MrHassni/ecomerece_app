@@ -1,11 +1,10 @@
 
-import 'package:crockery_app/buttons/cartbutton.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../helper/navigator.dart';
+
 
 class CrockeryWidget extends StatefulWidget {
-  CrockeryWidget({required this.allCateImg, required this.allCateName});
+  const CrockeryWidget({required this.allCateImg, required this.allCateName});
   final String allCateImg;
   final String allCateName;
   @override
@@ -21,7 +20,7 @@ class _CrockeryWidgetState extends State<CrockeryWidget> {
   Widget build(BuildContext context) {
     return Card(
       margin: EdgeInsets.zero,
-      // margin: EdgeInsets.only(left: 20.0,bottom: 20),
+      // margin: EdgeInsets.only(left: 20.0,bottom_navigation: 20),
       // color: Colors.purple,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.0),
@@ -40,10 +39,12 @@ class _CrockeryWidgetState extends State<CrockeryWidget> {
               height: 25,
               width: MediaQuery.of(context).size.width,
               // color: Colors.red,
-              child:Center(
+              child:const Center(
                 child: Padding(
                   padding: EdgeInsets.only(left: 15,right: 15,),
-                  child: Text(widget.allCateName,
+                  child: Text('cake enter long text where did moon sun of',
+                    // widget.allCateName,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(fontSize: 12),
                     // style: TextStyle(fontWeight: FontWeight.bold),
                   ),
