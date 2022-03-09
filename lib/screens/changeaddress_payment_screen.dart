@@ -11,12 +11,14 @@ class ChangeAddressAndPayment extends StatefulWidget {
 
 class _State extends State<ChangeAddressAndPayment>
     with TickerProviderStateMixin {
-  final List cartDetailImg = [
-    'images/teaset.png',
-    'images/fruit_frok.png',
-    'images/teaset.png',
-    'images/fruit_frok.png',
-  ];
+  // final List cartDetailImg = [
+  //   'images/teaset.png',
+  //   'images/fruit_frok.png',
+  //   'images/teaset.png',
+  //   'images/fruit_frok.png',
+  // ];
+
+
   TextEditingController CardNumController = TextEditingController();
   TextEditingController NameOnCardController = TextEditingController();
   TextEditingController ExpirationDateController = TextEditingController();
@@ -26,7 +28,9 @@ class _State extends State<ChangeAddressAndPayment>
   String ExpirationDate = '';
   String SecurityCode = '';
   int? selectedRadio;
-  int? selectedRadioTile;
+
+  int? selectdRadioBilling;
+
   bool showPaymentMethod = false;
   bool showCardDetailEditField = false;
 
@@ -34,12 +38,15 @@ class _State extends State<ChangeAddressAndPayment>
   void initState() {
     super.initState();
     selectedRadio = 0;
-    selectedRadioTile = 0;
+
+    selectdRadioBilling =0;
+
   }
 
   setSelectedRadioTile(val) {
     setState(() {
-      selectedRadioTile = val;
+      selectedRadio = val;
+      selectdRadioBilling = val;
     });
   }
   @override
@@ -209,13 +216,15 @@ class _State extends State<ChangeAddressAndPayment>
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const CircleAvatar(
-                              radius: 25,
-                              backgroundColor: Colors.green,
-                              child: Icon(
-                                Icons.attach_money_outlined,
-                                color: Constants.kGraniteGreyColor,
-                                size: 30,
+                            Center(
+                              child: const CircleAvatar(
+                                radius: 25,
+                                backgroundColor: Colors.green,
+                                child: Icon(
+                                  Icons.attach_money_outlined,
+                                  color: Constants.kGraniteGreyColor,
+                                  size: 30,
+                                ),
                               ),
                             ),
                             Padding(
@@ -265,7 +274,7 @@ class _State extends State<ChangeAddressAndPayment>
                     children: [
                       RadioListTile(
                         value: 1,
-                        groupValue: selectedRadioTile,
+                        groupValue: selectedRadio,
                         title: Icon(Icons.credit_card_outlined),
                         // subtitle: Text("Radio 2 Subtitle"),
                         onChanged: (val) {
@@ -282,7 +291,7 @@ class _State extends State<ChangeAddressAndPayment>
                           color: Constants.kDarkGreyColor,),
                       RadioListTile(
                         value: 2,
-                        groupValue: selectedRadioTile,
+                        groupValue: selectedRadio,
                         title: Icon(Icons.play_arrow_rounded,color: Colors.red,),
                         // subtitle: Text("Radio 2 Subtitle"),
                         onChanged: (val) {
@@ -305,7 +314,7 @@ class _State extends State<ChangeAddressAndPayment>
                         color: Constants.kDarkGreyColor,),
                       RadioListTile(
                         value: 3,
-                        groupValue: selectedRadioTile,
+                        groupValue: selectedRadio,
                         title: Icon(Icons.money,color: Constants.kDarkOrangeColor,),
                         // subtitle: Text("Radio 2 Subtitle"),
                         onChanged: (val) {
@@ -464,11 +473,97 @@ class _State extends State<ChangeAddressAndPayment>
                   ),
                 ),
 
+                const Divider(height: 20,
+                    color: Constants.kDarkGreyColor,),
+
+                const Padding(
+                  padding: EdgeInsets.only(left: 20),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text('Billing Address',
+                      style: TextStyle(
+                        fontFamily: 'Nuntio-Bold.ttf',
+                        // fontWeight: FontWeight.bold,
+                        color: Constants.kBlackColor,
+                      fontSize: 20),),
+                  ),
+                ),
+                RadioListTile(
+                  value: 4,
+                  groupValue: selectdRadioBilling,
+                  title: Text('same as shiping billing address'),
+                  // subtitle: Text("Radio 2 Subtitle"),
+                  onChanged: (val) {
+                    print("Radio Tile pressed $val");
+                    setSelectedRadioTile(val);
+                  },
+                  activeColor: Colors.red,
+                  // secondary: Text("Credit/Debit Card"),
+                  selected: false,
+                ),
+
+
+                // Divider(height: 20,
+                //   color: Constants.kDarkGreyColor,),
+                RadioListTile(
+                  value: 5,
+                  groupValue:selectdRadioBilling,
+                  title: Text('use different billing address'),
+                  // subtitle: Text("Radio 2 Subtitle"),
+                  onChanged: (val) {
+                    // setState(() {
+                    //   setSelectedRadioTile(val);
+                    //   if(showCardDetailEditField == true){
+                    //     showCardDetailEditField = false;
+                    //   }else{
+                    //     showCardDetailEditField =true;
+                    //   }
+                    // });
+                    print("Radio Tile presseddddddddddd $val");
+
+                  },
+                  activeColor: Colors.red,
+                  // secondary: Text("Baksh online payment"),
+                  selected: false,
+                ),
+
+                const Divider(height: 20,
+                  color: Constants.kDarkGreyColor,),
+                Padding(
+                  padding: EdgeInsets.only(top: 20,left: 15,right: 15,bottom: 20),
+                  child: SizedBox(height: 150,
+                    child: Row(
+                      // crossAxisAlignment: CrossAxisAlignment.stretch,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+
+                        Column(
+                          children: const [
+                            Text('Subtotal',style: TextStyle(color: Constants.kDarkGreyColor),),
+                            SizedBox(height: 20,),
+                            Text('Delivery',style: TextStyle(color: Constants.kDarkGreyColor),),
+                            SizedBox(height: 40,),
+                            Text('Total',style: TextStyle(color: Constants.kBlackColor,fontWeight: FontWeight.bold),),
+                          ],
+                        ),
+
+                        // Spacer(),
+                        Column(
+                          children: const [
+                            Text('200',style: TextStyle(color: Constants.kDarkGreyColor),),
+                            SizedBox(height: 20,),
+                            Text('45',style: TextStyle(color: Constants.kDarkGreyColor),),
+                            SizedBox(height: 40,),
+                            Text('Rs 240',style: TextStyle(color: Constants.kBlackColor,fontWeight: FontWeight.bold),),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
                 Container(
                   height: 40,
-                  margin: const EdgeInsets.only(
-                    top: 300,
-                  ),
+                  margin: EdgeInsets.zero,
                   // margin: EdgeInsets.all(40),
                   // width: double.infinity,
                   width: 350,

@@ -1,9 +1,11 @@
 
+import 'package:crockery_app/widgets/ongoing_product_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constant/constant.dart';
 import '../widgets/bottom_navigation/bottom_sheet.dart';
 import '../widgets/cutleryitemwidget.dart';
+import '../widgets/past_product_widget.dart';
 
 class OrderHistory extends StatefulWidget {
   @override
@@ -12,24 +14,14 @@ class OrderHistory extends StatefulWidget {
 
 class _State extends State<OrderHistory>
     with TickerProviderStateMixin {
-  final List drinkWareImg =[
-    'images/bottle.png',
-    'images/bottleone.png',
-    'images/bottletwo.png',
-    'images/bottle.png',
-    'images/bottleone.png',
-    'images/bottletwo.png',
-    'images/bottle.png',
-    'images/bottleone.png',
-    'images/bottletwo.png',
-  ];
+
   TabController? _tabController ;
 
   @override
   void initState() {
 // TODO: implement initState
     super.initState();
-    _tabController =  TabController(length: 3, vsync: this);
+    _tabController =  TabController(length: 2, vsync: this);
   }
 
   @override
@@ -37,8 +29,27 @@ class _State extends State<OrderHistory>
     _tabController!.dispose();
     super.dispose();
   }
+
+  final List order_Id_past_prod =[
+    "123",
+    '456',
+    '678',
+    "123",
+    '456',
+    '678',
+  ];
+
+  final List order_Id_Ongoing_prod =[
+    "123",
+    '456',
+    '678',
+    "123",
+    '456',
+    '678',
+  ];
   @override
   Widget build(BuildContext context) {
+    print(order_Id_past_prod.length);
     // print(_allShopImg.length.toString());
     return Scaffold(
       body: SafeArea(
@@ -52,7 +63,7 @@ class _State extends State<OrderHistory>
               children: [
                 Container(
                   child: Padding(
-                    padding: EdgeInsets.all(15),
+                    padding: EdgeInsets.all(10),
                     child: Row(
                       children: [
                         InkWell(
@@ -88,32 +99,26 @@ class _State extends State<OrderHistory>
         Column(
           children: <Widget>[
             Container(
-              height: 60,
+              height: 50,
               margin: EdgeInsets.only(left: 20),
               child: TabBar(
                 tabs: [
                   Container(
                     width: 70.0,
                     child: const Text(
-                      'Glass Set',
+                      'Ongoing',
                       style: TextStyle(fontSize: 12),
                     ),
                   ),
                   Container(
-                    width: 75.0,
+                    width: 70.0,
                     child:const Text(
-                      'Jugs',
+                      'Past',
                       style: TextStyle(fontSize: 12),
                     ),
                   ),
 
-                  Container(
-                    width: 75.0,
-                    child:const Text(
-                      'Other',
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ),
+
                 ],
                 unselectedLabelColor: Constants.kGreyColor,
                 indicatorColor: Constants.kLightOrangeColor,
@@ -125,70 +130,39 @@ class _State extends State<OrderHistory>
                 controller: _tabController,
               ),
             ),
-            Container(
-              height: MediaQuery.of(context).size.height,
+          Container(
+              height: MediaQuery.of(context).size.height*0.5,
               child: TabBarView(
                 controller: _tabController,
                 children: <Widget>[
-                  Padding(
-                    padding: EdgeInsets.only(left: 10,right: 10),
-                    child: Container(
-                      height: MediaQuery.of(context).size.height,
-                      child: GridView.count(
-                        childAspectRatio: 5/8,
-                        crossAxisSpacing: 10.0,
-                        // crossAxisSpacing: 20,
-                        mainAxisSpacing: 20,
-                        physics:  NeverScrollableScrollPhysics(),
-                        // padding: EdgeInsets.all(10.0),
-                        // scrollDirection: Axis.vertical,
-                        // padding: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
-                        crossAxisCount: 3,
-                        children: List.generate(7,(index){
-
-                          return  InkWell(onTap: (){
-                            if(index==0){
-                              // Navigator.pushReplacement(
-                              //     NavigationService.navigatorKey.currentContext!,
-                              //     MaterialPageRoute(builder: (context) => BottomNavigate(i:4)));
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => BottomNavigate(i: 16,),
-                                ),
-                              );
-                            }else if(index==1){
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => BottomNavigate(i: 16,),
-                                ),
-                              );
-                            }
-                            else if(index==2){
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => BottomNavigate(i: 16,),
-                                ),
-                              );
-                            }
-
-                            else if(index==1){}else{print('invalid');}
-                          },
-                              child: CutleryWidget(cutleryimg: drinkWareImg[index],));
-
+                  order_Id_Ongoing_prod.isEmpty ?Container(
+                    color: Colors.transparent,
+                    height: 400,
+                    width: MediaQuery.of(context).size.width,
+                    // width: 150,
+                    child: ListView.builder(
+                        scrollDirection: Axis.vertical,
+                        physics: NeverScrollableScrollPhysics(),
+                        itemCount: 3,
+                        itemBuilder: (context, index) {
+                          return OngoingProductWidget(orderIdOngoing: order_Id_Ongoing_prod[index],);
                         }),
-                      ),
-                    ),
-                  ),
+                  ):Image.asset('images/imgorderhistory.png'),
 
-                  Container(
-                    child: Text("sign up"),
-                  ),
-                  Container(
-                    child: Text("abcd"),
-                  ),
+                  order_Id_past_prod.isNotEmpty ? Container(
+                    color: Colors.transparent,
+                    height: 400,
+                    width: MediaQuery.of(context).size.width,
+                    // width: 150,
+                    child: ListView.builder(
+                        scrollDirection: Axis.vertical,
+                        physics: NeverScrollableScrollPhysics(),
+                        itemCount: 3,
+                        itemBuilder: (context, index) {
+                          return PastProductWidget(orderId: order_Id_past_prod[index],);
+                        }),
+                  ) : Image.asset('images/imgorderhistory.png'),
+
 
 
                 ],
@@ -202,6 +176,7 @@ class _State extends State<OrderHistory>
           ],
             ),
           ),
+
         ],),
       ),
     ),

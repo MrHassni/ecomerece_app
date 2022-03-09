@@ -1,5 +1,7 @@
 
 import 'package:crockery_app/screens/cart_detail_screen.dart';
+import 'package:crockery_app/screens/order_accept_screen.dart';
+import 'package:crockery_app/screens/orders_page.dart';
 import 'package:crockery_app/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'helper/navigator.dart';
@@ -16,9 +18,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home: SplashScreen(),
+      // home: SplashScreen(),
       // home: CartDetail(),
       // home: BottomNavigate(),
+      home: OrderAccept(),
     );
   }
 }
