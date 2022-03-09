@@ -1,27 +1,41 @@
+import 'dart:developer';
+
 import 'package:crockery_app/constant/constant.dart';
-import 'package:crockery_app/screens/all_categoryies_screen.dart';
+import 'package:crockery_app/models/product_model.dart';
 import 'package:crockery_app/widgets/avilabeloffers.dart';
 import 'package:crockery_app/widgets/featureproduct.dart';
 import 'package:crockery_app/widgets/shopslistwidget.dart';
+import 'package:crockery_app/widgets/top_bar_with_buttons.dart';
 import 'package:flutter/material.dart';
 
+import '../models/user_model.dart';
 import '../widgets/bottom_navigation/bottom_sheet.dart';
 import '../widgets/slider.dart';
 
 class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
+
   @override
   State<Home> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-  bool showSearch = false;
+  late UserModel _userModel;
+  late ProductModel _productModel;
   final List _shopname = [
     'Gift shop',
     'Dining & kitchen',
     'Home Decor',
     'Lighting',
-
   ];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _userModel = UserModel.fromMap(userMap);
+    _productModel = ProductModel.fromMap(productMap);
+  }
 
   final List _shopimg = [
     'images/giftimg.png',
@@ -34,8 +48,27 @@ class _HomeState extends State<Home> {
     Colors.yellow[50],
     Colors.blue[50],
     Colors.green[50]
-
   ];
+
+  Map<String, dynamic> productMap = {
+    'productName': 'Mobile Phone',
+    'productID': '123abc',
+    'userImage': [
+      'https://topleagueboost.com/boostpanel/assets/img/avatars/0.png',
+      'https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&w=1000&q=80',
+      'https://www.w3schools.com/w3css/img_lights.jpg'
+    ],
+  };
+
+  Map<String, String> userMap = {
+    'userName': 'Hassan',
+    'userEmail': 'hassan@gmail.com',
+    'userID': 'abc123',
+    'userImage':
+        'https://topleagueboost.com/boostpanel/assets/img/avatars/0.png',
+    'userContact': '03000000000'
+  };
+
   // final List _featureimg = [
   //   'images/opaldinner.png',
   //   'images/kitchencattle.png',
@@ -47,6 +80,12 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // floatingActionButton:
+      // FloatingActionButton(onPressed: (){
+      //   log(_userModel.userID.toString());
+      //   log(_productModel.productID.toString());
+      //   log(_productModel.productImages![1].toString());
+      // }),
       // appBar: AppBar(
       //   title: Text("Home Page"),
       // ),
@@ -54,206 +93,102 @@ class _HomeState extends State<Home> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Container(
-                child: Padding(
-                  padding: EdgeInsets.all(15),
-                  child: Row(
+              TopBarWithButtons(
+                  pageDescription: 'What do you want to buy?',
+                  pageName: 'Hi, ' + _userModel.userName!),
+              const SizedBox(
+                height: 25,
+              ),
+              const HorizontalSlider(),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 10.0, vertical: 15),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text(
-                        '03*********',
+                        'Shops',
+                        textAlign: TextAlign.left,
                         style: TextStyle(
                             color: Constants.kBlackColor,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 17,
+                            fontFamily: 'Nuntio-Bold.ttf'),
                       ),
-                    Spacer(),
                       InkWell(
                         onTap: () {
-                          setState(() {
-                            if (showSearch == true) {
-                              showSearch = false;
-                            } else {
-                              showSearch = true;
-                            }
-                            // showSearch ==true;
-                          });
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => BottomNavigate(i: 4),
+                            ),
+                          );
                         },
-                        child: const Icon(
-                          Icons.search,
-                          color: Constants.kBlackColor,
-                        ),
-                      ),
-                      const Icon(
-                        Icons.doorbell_outlined,
-                        color: Constants.kDarkOrangeColor,
-                      ),
-                      const Icon(
-                        Icons.shopping_cart,
-                        color: Constants.kDarkOrangeColor,
-                      ),
-                      //  IconTheme(
-                      //   data: new IconThemeData(
-                      //       color: Colors.red),
-                      //   child: new Icon(Icons.add),
-                      // ),
-                      //for search
-                    ],
-                  ),
-                ),
-              ),
-
-              //for search
-              showSearch
-                  ? Container(
-                      height: 40,
-                      width: 350,
-                      child: TextFormField(
-                        onChanged: (_) {
-                          // initiateSearch();
-                        },
-                        // controller: searchEditingController,
-                        decoration: InputDecoration(
-                            focusColor:Constants.kDarkOrangeColor,
-                            prefixIcon: const Icon(
-                              Icons.search,
-                              color: Constants.kDarkOrangeColor,
-                            ),
-                            // border: OutlineInputBorder(
-                            //   // width: 0.0 produces a thin "hairline" border
-                            //
-                            //   borderRadius: BorderRadius.all(Radius.circular(90.0)),
-                            //   borderSide: BorderSide(color: Color(0xFFAB4D24), width: 2.0),
-                            //   // borderSide: BorderSide.none,
-                            //   //borderSide: const BorderSide(),
-                            // ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                  color: Constants.kDarkOrangeColor, width: 2.0),
-                              borderRadius: BorderRadius.circular(25.0),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                  color: Constants.kDarkOrangeColor, width: 2.0),
-                              borderRadius: BorderRadius.circular(25.0),
-                            ),
-                            hintStyle: const TextStyle(
-                                color: Constants.kGreyColor, fontFamily: "WorkSansLight"),
-                            filled: true,
-                            fillColor: Constants.kWhite54Color,
-                            hintText: 'Search by name...'),
-                      ),
-                    )
-                  : Container(
-                      height: 40,
-                      width: 350,
-                      child: const Text(
-                        'What do you want to buy?',
-                        style: TextStyle(color: Constants.kDarkGreyColor, fontSize: 12),
-                      ),
-                    ),
-              const HorizontalSlider(),
-              //shop.....
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      'Shops',
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                          color: Constants.kBlackColor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          fontFamily: 'Nuntio-Bold.ttf'),
-                    ),
-                    InkWell(
-                      onTap: () {
-                         Navigator.push(context, MaterialPageRoute(
-                             builder: (context) => BottomNavigate(i: 4),),
-                        );
-                      },
-                      child: RichText(
-                        text: const TextSpan(
-                          children: [
-                            TextSpan(
-                                text: ' View all ',
-                                // recognizer: TapGestureRecognizer()..onTap = () => {
-                                //   Navigator.push(context, MaterialPageRoute(
-                                //       builder: (context) => DealsScreen()),
-                                //   )
-                                // },
-                                style: TextStyle(
-                                    color: Constants.kDarkOrangeColor, fontSize: 15)),
-                            WidgetSpan(
-                              child: Icon(
-                                Icons.arrow_forward_outlined,
+                        child: const Text(' View all ',
+                            style: TextStyle(
                                 color: Constants.kDarkOrangeColor,
-                                size: 20,
-                              ),
-                            ),
-                          ],
-                        ),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 13.5,
+                                fontFamily: 'Nuntio-Bold.ttf')),
                       ),
-                    ),
-                  ],
-                ),
+                    ]),
               ),
-              Container(
-                color: Constants.kWhiteAccent,
-                height: 110,
-                width: MediaQuery.of(context).size.width,
+              SizedBox(
+                height: 125,
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: 4,
                     itemBuilder: (context, index) {
                       return InkWell(
-                        onTap: (){
+                        onTap: () {
                           //here home page four card navigate
-                          if(index==0){
+                          if (index == 0) {
                             // Navigator.pushReplacement(
                             //     NavigationService.navigatorKey.currentContext!,
                             //     MaterialPageRoute(builder: (context) => BottomNavigate(i:4)));
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => BottomNavigate(i: 5,),
+                                builder: (context) => BottomNavigate(
+                                  i: 5,
+                                ),
                               ),
                             );
-                          }else if(index==1){
+                          } else if (index == 1) {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => BottomNavigate(i: 6,),
+                                builder: (context) => BottomNavigate(
+                                  i: 6,
+                                ),
                               ),
                             );
-                          }
-                          else if(index==2){
+                          } else if (index == 2) {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => BottomNavigate(i: 7,),
+                                builder: (context) => BottomNavigate(
+                                  i: 7,
+                                ),
                               ),
                             );
-                          }
-                          else if(index==3){
+                          } else if (index == 3) {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => BottomNavigate(i: 8,),
+                                builder: (context) => BottomNavigate(
+                                  i: 8,
+                                ),
                               ),
                             );
                           }
                           // else if(index==1){}
-                          else{print('invalid');}
-
-                          // Navigator.pushReplacement(
-                          //     NavigationService.navigatorKey.currentContext!,
-                          //     MaterialPageRoute(builder: (context) => GroceryScreen()));
-
+                          else {
+                            print('invalid');
+                          }
                         },
                         child: ShopListWidget(
+                          index: index,
                           image: _shopimg[index],
                           title: _shopname[index],
                           colour: _color[index],
@@ -261,10 +196,13 @@ class _HomeState extends State<Home> {
                       );
                     }),
               ),
-              //featureproduct....
+              Container(
+                height: 10,
+                color: Colors.grey.shade300,
+              ),
               Padding(
-                padding:
-                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 10.0, vertical: 15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -274,7 +212,7 @@ class _HomeState extends State<Home> {
                       style: TextStyle(
                           color: Constants.kBlackColor,
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: 17,
                           fontFamily: 'Nuntio-Bold.ttf'),
                     ),
                     InkWell(
@@ -283,28 +221,12 @@ class _HomeState extends State<Home> {
                         //     builder: (context) => DealsScreen()),
                         // );
                       },
-                      child: RichText(
-                        text: const TextSpan(
-                          children: [
-                            TextSpan(
-                                text: ' View all ',
-                                // recognizer: TapGestureRecognizer()..onTap = () => {
-                                //   Navigator.push(context, MaterialPageRoute(
-                                //       builder: (context) => DealsScreen()),
-                                //   )
-                                // },
-                                style: TextStyle(
-                                    color: Constants.kDarkOrangeColor, fontSize: 15)),
-                            WidgetSpan(
-                              child: Icon(
-                                Icons.arrow_forward_outlined,
-                                color: Constants.kDarkOrangeColor,
-                                size: 20,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      child: const Text(' View all ',
+                          style: TextStyle(
+                              color: Constants.kDarkOrangeColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13.5,
+                              fontFamily: 'Nuntio-Bold.ttf')),
                     ),
                   ],
                 ),
@@ -313,26 +235,29 @@ class _HomeState extends State<Home> {
                 decoration: const BoxDecoration(
                   // border: Border(top: BorderSide(color: Colors.grey, width: 5)),
                   borderRadius: BorderRadius.only(
-                    // topLeft: Radius.circular(50.0),
-                    // topRight: Radius.circular(50.0),
-                  ),
+                      // topLeft: Radius.circular(50.0),
+                      // topRight: Radius.circular(50.0),
+                      ),
                 ),
 
-                height: 230,
+                height: 225,
                 width: MediaQuery.of(context).size.width,
                 // width: 150,
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: 5,
                     itemBuilder: (context, index) {
-                      return FeaturedProducts(
-                      );
+                      return  FeaturedProducts(index: index,);
                     }),
               ),
-            // Avilable offers..
+              Container(
+                height: 10,
+                color: Colors.grey.shade300,
+              ),
+              // Avilable offers..
               Padding(
                 padding:
-                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
+                    const EdgeInsets.symmetric(horizontal: 10.0, vertical: 15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -342,7 +267,7 @@ class _HomeState extends State<Home> {
                       style: TextStyle(
                           color: Constants.kBlackColor,
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: 17,
                           fontFamily: 'Nuntio-Bold.ttf'),
                     ),
                     InkWell(
@@ -351,28 +276,12 @@ class _HomeState extends State<Home> {
                         //     builder: (context) => DealsScreen()),
                         // );
                       },
-                      child: RichText(
-                        text: const TextSpan(
-                          children: [
-                            TextSpan(
-                                text: ' View all ',
-                                // recognizer: TapGestureRecognizer()..onTap = () => {
-                                //   Navigator.push(context, MaterialPageRoute(
-                                //       builder: (context) => DealsScreen()),
-                                //   )
-                                // },
-                                style: TextStyle(
-                                    color:Constants.kDarkOrangeColor, fontSize: 15)),
-                            WidgetSpan(
-                              child: Icon(
-                                Icons.arrow_forward_outlined,
-                                color: Constants.kDarkOrangeColor,
-                                size: 20,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      child: const Text(' View all ',
+                          style: TextStyle(
+                              color: Constants.kDarkOrangeColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13.5,
+                              fontFamily: 'Nuntio-Bold.ttf')),
                     ),
                   ],
                 ),
@@ -380,17 +289,14 @@ class _HomeState extends State<Home> {
               Container(
                 color: Colors.transparent,
                 height: 350,
-                width: MediaQuery.of(context).size.width,
                 // width: 150,
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: 5,
                     itemBuilder: (context, index) {
-                      return AvilabelOffers(
-                      );
+                      return AvailabelOffers(index: index,);
                     }),
               ),
-
             ],
           ),
         ),

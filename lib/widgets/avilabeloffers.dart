@@ -5,58 +5,41 @@ import '../constant/constant.dart';
 import '../helper/navigator.dart';
 import 'buttons/cartbutton.dart';
 
-class AvilabelOffers extends StatefulWidget {
+class AvailabelOffers extends StatefulWidget {
+  final int index;
+  const AvailabelOffers({Key? key,required this.index}) : super(key: key);
+
 
   @override
-  State<AvilabelOffers> createState() => _AvilabelOffersState();
+  State<AvailabelOffers> createState() => _AvailabelOffersState();
 }
 
-class _AvilabelOffersState extends State<AvilabelOffers> {
+class _AvailabelOffersState extends State<AvailabelOffers> {
   // final String pic;
   Color _favIconColor = Colors.white;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(left: 20.0,bottom: 20),
+    return SizedBox(
       width: MediaQuery.of(context).size.width * 0.75,
       child: Card(
-        // margin: EdgeInsets.only(left: 20.0,bottom_navigation: 20),
-        // color: Colors.red,
+        margin: EdgeInsets.only(
+            bottom: 15, right: widget.index == 4 ? 10 : 5, left: widget.index == 0 ? 10 : 5),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30.0),
+          borderRadius: BorderRadius.circular(15.0),
         ),
-        elevation: 7.5,
+        elevation: 5,
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children:<Widget>[
               Stack(
                 children: <Widget>[
                   ClipRRect(
-
                     child: Image.asset('images/avilabelofferimg.png',
-                      // height: 150.0,
-                      // width: 100.0,
                     ),
                   ),
-
-                  // Container(
-                  //     decoration: const BoxDecoration(
-                  //       color: Colors.red,
-                  //         borderRadius: BorderRadius.only(
-                  //             topRight: Radius.circular(35),
-                  //             topLeft: Radius.circular(35)
-                  //         )
-                  //     ),
-                  //     child: Image.asset('images/img.png',)),
                   Container(
                     margin: const EdgeInsets.only(top: 10,left: 230),
-                    // child: Row(
-                    //   mainAxisSize: MainAxisSize.max,
-                    //   children: [
-                    //
-                    //     SizedBox(width: MediaQuery.of( NavigationService.navigatorKey.currentContext!,).size.width*0.2),
-                        // const Icon(Icons.favorite,color: Colors.white),
                         child:InkWell(
                           child: Icon(Icons.favorite_border,color: _favIconColor,),
 

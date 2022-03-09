@@ -28,7 +28,7 @@ class _HorizontalSliderState extends State<HorizontalSlider> {
     return CarouselSlider(
       options: CarouselOptions(
         viewportFraction: 1.0,
-        height: 90,
+        height: 100,
         scrollDirection: Axis.horizontal,
         autoPlay: true,
       ),
@@ -55,7 +55,7 @@ final List<Widget> imageSliders = images
             end: Alignment.topCenter,
           ),
         ),
-        child: Image.asset(item, fit: BoxFit.fitWidth, width: MediaQuery.of(NavigationService.navigatorKey.currentContext!).size.width,),
+        child: Image.asset(item, fit: BoxFit.fitWidth, width: MediaQuery.of(NavigationService.navigatorKey.currentContext!).size.width,height: 100,),
       ),
     ),
     // Positioned(

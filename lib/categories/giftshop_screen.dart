@@ -330,7 +330,7 @@ class _State extends State< GiftShopScreen> {
                     scrollDirection: Axis.horizontal,
                     itemCount: 5,
                     itemBuilder: (context, index) {
-                      return AvilabelOffers(
+                      return AvailabelOffers(index: index,
                       );
                     }),
               ),
