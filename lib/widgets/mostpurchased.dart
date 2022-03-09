@@ -21,7 +21,7 @@ class _MostPurchasedState extends State<MostPurchased> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 8,left: 5),
+      // margin: const EdgeInsets.only(bottom: 8,left: 10,right: 10),
       width: MediaQuery.of(context).size.width * 0.4,
       child: Card(
         // margin: const EdgeInsets.only(left: 15.0,bottom_navigation: 20),

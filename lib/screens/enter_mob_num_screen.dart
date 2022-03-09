@@ -33,8 +33,8 @@ class _MobileNumberState extends State<MobileNumber> {
                width: 150,
                child: Image.asset('images/mobile_img.png'),
            ),
-           SizedBox(height: 40,),
-           Align(alignment: Alignment.centerLeft,
+           const SizedBox(height: 40,),
+           const Align(alignment: Alignment.centerLeft,
                child: Text('Phone Number')),
            SizedBox(height: 10,),
            Container(
@@ -45,9 +45,10 @@ class _MobileNumberState extends State<MobileNumber> {
                // ),
                child: TextField(
                  controller: PhoneNumController,
-                 decoration: const InputDecoration(
+                 decoration:  const InputDecoration(
                    border: OutlineInputBorder(
                      borderSide: BorderSide(color:Constants.kDarkOrangeColor,),
+
                    ),
                    enabledBorder: OutlineInputBorder(
                      borderSide: BorderSide(color:Constants.kDarkOrangeColor,),

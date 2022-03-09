@@ -27,6 +27,7 @@ class _HomeState extends State<Home> {
     'Dining & kitchen',
     'Home Decor',
     'Lighting',
+
   ];
 
   @override
@@ -48,6 +49,7 @@ class _HomeState extends State<Home> {
     Colors.yellow[50],
     Colors.blue[50],
     Colors.green[50]
+
   ];
 
   Map<String, dynamic> productMap = {

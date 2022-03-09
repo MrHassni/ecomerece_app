@@ -16,7 +16,7 @@ class AvailabelOffers extends StatefulWidget {
 
 class _AvailabelOffersState extends State<AvailabelOffers> {
   // final String pic;
-  Color _favIconColor = Colors.white;
+  bool _fav = false ;
 
   @override
   Widget build(BuildContext context) {
@@ -40,20 +40,27 @@ class _AvailabelOffersState extends State<AvailabelOffers> {
                   ),
                   Container(
                     margin: const EdgeInsets.only(top: 10,left: 230),
+                    margin: const EdgeInsets.only(top: 10,left: 250),
+                    // child: Row(
+                    //   mainAxisSize: MainAxisSize.max,
+                    //   children: [
+                    //
+                    //     SizedBox(width: MediaQuery.of( NavigationService.navigatorKey.currentContext!,).size.width*0.2),
+                        // const Icon(Icons.favorite,color: Colors.white),
                         child:InkWell(
-                          child: Icon(Icons.favorite_border,color: _favIconColor,),
+                          child: Icon(_fav ? Icons.favorite : Icons.favorite_border ,color: _fav ? Colors.red : Colors.white,),
 
                           onTap: () {
                             print('favorite icon clicked...');
 
-                            if(_favIconColor == Constants.kWhiteAccent){
+                            if(_fav == true){
                               setState(() {
-                                _favIconColor = Constants.kRedColor;
+                                _fav = false;
                               });
 
                             }else{
                               setState(() {
-                                _favIconColor = Constants.kWhiteAccent;
+                                _fav = true;
                               });
 
                             }
@@ -161,12 +168,13 @@ class _AvailabelOffersState extends State<AvailabelOffers> {
               ),
               Container(height: 2,width: MediaQuery.of(context).size.width * 0.75,color: Colors.grey[200],),
 
-             Padding(
-               padding: EdgeInsets.only(right: 10,top: 10),
-               child: Align(alignment: Alignment.centerRight,
-                   child: SizedBox(height: 35,
-                       child: CartButton(onPressed: () {  }, text: 'Add to cart',))),
-             ),
+             Align(alignment: Alignment.centerRight,
+                 child: Container(
+                     padding: EdgeInsets.only(right: 10,top: 10),
+                 height: 40,
+                       child: CartButton(onPressed: () {  }, text: 'Add to cart',)),
+                 ),
+
 
 
 

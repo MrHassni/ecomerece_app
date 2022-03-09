@@ -15,12 +15,7 @@ class VoucherScreen extends StatefulWidget {
 }
 
 class _State extends State<VoucherScreen> with TickerProviderStateMixin {
-  final List cartDetailImg = [
-    'images/teaset.png',
-    'images/fruit_frok.png',
-    'images/teaset.png',
-    'images/fruit_frok.png',
-  ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +44,7 @@ class _State extends State<VoucherScreen> with TickerProviderStateMixin {
                               color: Constants.kDarkOrangeColor,
                             )),
                         const Text(
-                          'Cart Detail',
+                          'Voucher',
                           style: TextStyle(
                               color: Constants.kBlackColor,
                               fontSize: 18,
@@ -64,7 +59,7 @@ class _State extends State<VoucherScreen> with TickerProviderStateMixin {
                   height: 40,
                   width: 350,
                   child: Text(
-                    'See Cart Details',
+                    'Apply your voucher',
                     style: TextStyle(color: Constants.kGreyColor, fontSize: 12),
                   ),
                 ),
@@ -86,7 +81,7 @@ class _State extends State<VoucherScreen> with TickerProviderStateMixin {
 
                           decoration: const InputDecoration(
                               hintText: 'Enter your Voucher Code',
-                              contentPadding: EdgeInsets.all(15),
+                              contentPadding: EdgeInsets.all(8),
                               border: InputBorder.none),
                           onChanged: (value) {
                             // Do something
@@ -124,7 +119,7 @@ class _State extends State<VoucherScreen> with TickerProviderStateMixin {
                   // width: double.infinity,
                   width: 350,
                   child: FlatButton(
-                    child: Text('Continue',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
+                    child: const Text('Continue',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
                     onPressed: () {
                       Navigator.push(
                         context,

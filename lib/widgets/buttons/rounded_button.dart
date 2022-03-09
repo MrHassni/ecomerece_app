@@ -28,38 +28,26 @@ class RoundedButton extends StatelessWidget {
     // );
     shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(30.0)),
+    height: 40,
+    minWidth: 200,
+    color: Constants.kDarkOrangeColor,
     padding: EdgeInsets.all(0.0),
-    child: Ink(
-      decoration: BoxDecoration(
-        color: Constants.kDarkOrangeColor,
-          // gradient: const LinearGradient(
-          //   colors: [Color(0xffAB4D24), Color(0xffAB4D24)],
-          //   begin: Alignment.centerLeft,
-          //   end: Alignment.centerRight,
-          // ),
-          borderRadius: BorderRadius.circular(30.0)
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children:[
+        SizedBox(width: 10,),
+        Text(
+        text,
+        textAlign: TextAlign.center,
+        style: const TextStyle(
+            color: Constants.kWhiteAccent,
+          fontSize: 15,
+        ),
       ),
-      child: Container(
-        constraints: BoxConstraints(maxWidth: 200.0, minHeight: 50.0),
-        alignment: Alignment.center,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children:[
-            SizedBox(width: 10,),
-            Text(
-            text,
-            textAlign: TextAlign.center,
-            style: const TextStyle(
-                color: Constants.kWhiteAccent,
-              fontSize: 15,
-            ),
-          ),
 
-            // Container(margin: EdgeInsets.only(left: 60),),
-            Padding(padding: EdgeInsets.only(right: 10),
-                child: Icon(Icons.arrow_forward_outlined,color:Constants.kWhiteAccent,)),
-        ]),
-      ),
-    ),
+        // Container(margin: EdgeInsets.only(left: 60),),
+        Padding(padding: EdgeInsets.only(right: 10),
+            child: Icon(Icons.arrow_forward_outlined,color:Constants.kWhiteAccent,)),
+    ]),
   );
 }

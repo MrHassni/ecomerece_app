@@ -22,9 +22,9 @@ margin: EdgeInsets.zero,
       // margin: EdgeInsets.only(left: 20.0,bottom_navigation: 20),
       // color: Colors.purple,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20.0),
+        borderRadius: BorderRadius.circular(10.0),
       ),
-      elevation: 7.5,
+      elevation: 7,
       child: Column(
         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children:<Widget>[
@@ -35,12 +35,12 @@ margin: EdgeInsets.zero,
 
             Container(
               // color: Colors.red,
-              height: 35,
+              height: 25,
               width: MediaQuery.of(context).size.width,
               // color: Colors.red,
               child:Center(
                 child: Text(widget.allCateName,
-                  style: TextStyle(fontSize: 16,fontFamily: 'Nuntio-Light.ttf'),
+                  style: const TextStyle(fontSize: 16,fontFamily: 'Nuntio-Light.ttf'),
                   // style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),

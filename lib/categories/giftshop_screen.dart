@@ -243,9 +243,9 @@ class _State extends State< GiftShopScreen> {
               Padding(
                 padding: EdgeInsets.only(left: 15,right: 15),
                 child: Container(
-                  height: 800,
+                  height: 600,
                   child: GridView.count(
-                    // childAspectRatio: 1.0,
+                    childAspectRatio: 7/5.2,
                     crossAxisSpacing: 10.0,
                     // crossAxisSpacing: 20,
                     mainAxisSpacing: 10,
@@ -386,7 +386,7 @@ class _State extends State< GiftShopScreen> {
               Container(
                 height: MediaQuery.of(context).size.height,
                 child: GridView.count(
-                  childAspectRatio: 3/5,
+                  childAspectRatio: 3/4.4,
                   crossAxisSpacing: 2.0,
                   // crossAxisSpacing: 20,
                   mainAxisSpacing: 5,

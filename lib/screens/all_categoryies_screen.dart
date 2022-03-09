@@ -224,7 +224,7 @@ class _State extends State< AllCategoriesScreen> {
                 Container(
                   height: MediaQuery.of(context).size.height,
                   child: GridView.count(
-                    childAspectRatio: 6/5,
+                    childAspectRatio: 7/5.2,
                     crossAxisSpacing: 10.0,
                     // crossAxisSpacing: 20,
                     mainAxisSpacing: 15,
