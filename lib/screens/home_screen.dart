@@ -379,7 +379,7 @@ class _HomeState extends State<Home> {
               ),
               Container(
                 color: Colors.transparent,
-                height: 350,
+                height: 330,
                 width: MediaQuery.of(context).size.width,
                 // width: 150,
                 child: ListView.builder(

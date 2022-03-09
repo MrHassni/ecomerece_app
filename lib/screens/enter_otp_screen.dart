@@ -66,7 +66,7 @@ class _OptNumberState extends State<OptNumber> {
                 Center(
                   child: Container(
                      decoration: BoxDecoration(border: Border.all(color: Constants.kDarkOrangeColor,width: 1),
-                         // borderRadius: BorderRadius.circular(10)
+                         borderRadius: BorderRadius.circular(5),
                      ),
 
                     child: OTPTextField(

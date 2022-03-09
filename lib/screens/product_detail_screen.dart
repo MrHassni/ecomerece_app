@@ -123,9 +123,8 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                         );
                       }),
                 ),
-                Container(
-                  height: 2,
-                  width: MediaQuery.of(context).size.width,
+                Divider(
+                  height: 3,
                   color: Constants.kGreyColor,
                 ),
                 Padding(
@@ -189,11 +188,9 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                             color: Constants.kDarkGreyColor),
                       ),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(top: 5),
-                      height: 2,
-                      width: MediaQuery.of(context).size.width,
-                      color: Constants.kDarkGreyColor,
+                    Divider(
+                      height: 3,
+                      color: Constants.kGreyColor,
                     ),
                     const Align(
                       alignment: Alignment.centerLeft,
@@ -260,7 +257,7 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(5),
+                      padding: EdgeInsets.only(top: 10,bottom: 10),
                       child: Row(
                         children: <Widget>[
                           Image.asset(
@@ -279,14 +276,12 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                         ],
                       ),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(top: 5),
-                      height: 2,
-                      width: MediaQuery.of(context).size.width,
+                    Divider(
+                      height: 3,
                       color: Constants.kGreyColor,
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 20, left: 35),
+                      margin: EdgeInsets.only(top: 20, left: 35,bottom: 10),
                       height: 86,
                       width: 386,
                       decoration: const BoxDecoration(
@@ -337,11 +332,9 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                         ],
                       ),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(top: 20),
-                      height: 2,
-                      width: MediaQuery.of(context).size.width,
-                      color: Constants.kDarkGreyColor,
+                    Divider(
+                      height: 3,
+                      color: Constants.kGreyColor,
                     ),
                     const Padding(
                       padding: EdgeInsets.only(top: 20, bottom: 20),
@@ -369,10 +362,8 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                             return CheckItemsWidget();
                           }),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(top: 5, bottom: 20),
-                      height: 2,
-                      width: MediaQuery.of(context).size.width,
+                    Divider(
+                      height: 3,
                       color: Constants.kGreyColor,
                     ),
                     Row(
