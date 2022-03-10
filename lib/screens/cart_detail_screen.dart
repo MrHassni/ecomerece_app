@@ -126,7 +126,7 @@ class _State extends State<CartDetail> with TickerProviderStateMixin {
 
                         Column(
                           children: const [
-                            Text('Subtotal',style: TextStyle(color: Constants.kDarkGreyColor),),
+                            Text('Subtotal',style: TextStyle(color: Constants.kLightGreyColor),),
                             SizedBox(height: 10,),
                             Text('Total',style: TextStyle(color: Constants.kBlackColor,fontWeight: FontWeight.bold),),
                           ],
@@ -134,7 +134,7 @@ class _State extends State<CartDetail> with TickerProviderStateMixin {
                         // Spacer(),
                         Column(
                           children: const [
-                            Text('200',style: TextStyle(color: Constants.kDarkGreyColor),),
+                            Text('200',style: TextStyle(color: Constants.kLightGreyColor),),
                             SizedBox(height: 10,),
                             Text('Rs 240',style: TextStyle(color: Constants.kBlackColor,fontWeight: FontWeight.bold),),
                           ],

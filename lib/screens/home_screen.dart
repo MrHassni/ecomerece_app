@@ -148,7 +148,7 @@ class _HomeState extends State<Home> {
                       width: 350,
                       child: const Text(
                         'What do you want to buy?',
-                        style: TextStyle(color: Constants.kDarkGreyColor, fontSize: 12),
+                        style: TextStyle(color: Constants.kLightGreyColor, fontSize: 12),
                       ),
                     ),
               const HorizontalSlider(),

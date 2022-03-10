@@ -186,7 +186,7 @@ class _State extends State<ChangeAddressAndPayment>
                         fontFamily: 'Nuntio-Bold.ttf',
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color: Constants.kDarkGreyColor),
+                        color: Constants.kLightGreyColor),
                     ),
                   ),
                 ),
@@ -216,8 +216,8 @@ class _State extends State<ChangeAddressAndPayment>
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Center(
-                              child: const CircleAvatar(
+                            const Center(
+                              child: CircleAvatar(
                                 radius: 25,
                                 backgroundColor: Colors.green,
                                 child: Icon(
@@ -288,7 +288,7 @@ class _State extends State<ChangeAddressAndPayment>
 
 
                       Divider(height: 20,
-                          color: Constants.kDarkGreyColor,),
+                          color: Constants.kLightGreyColor,),
                       RadioListTile(
                         value: 2,
                         groupValue: selectedRadio,
@@ -311,7 +311,7 @@ class _State extends State<ChangeAddressAndPayment>
                         selected: false,
                       ),
                       Divider(height: 20,
-                        color: Constants.kDarkGreyColor,),
+                        color: Constants.kLightGreyColor,),
                       RadioListTile(
                         value: 3,
                         groupValue: selectedRadio,
@@ -474,7 +474,7 @@ class _State extends State<ChangeAddressAndPayment>
                 ),
 
                 const Divider(height: 20,
-                    color: Constants.kDarkGreyColor,),
+                    color: Constants.kLightGreyColor,),
 
                 const Padding(
                   padding: EdgeInsets.only(left: 20),
@@ -528,7 +528,7 @@ class _State extends State<ChangeAddressAndPayment>
                 ),
 
                 const Divider(height: 20,
-                  color: Constants.kDarkGreyColor,),
+                  color: Constants.kLightGreyColor,),
                 Padding(
                   padding: EdgeInsets.only(top: 20,left: 15,right: 15,bottom: 20),
                   child: SizedBox(height: 150,
@@ -539,9 +539,9 @@ class _State extends State<ChangeAddressAndPayment>
 
                         Column(
                           children: const [
-                            Text('Subtotal',style: TextStyle(color: Constants.kDarkGreyColor),),
+                            Text('Subtotal',style: TextStyle(color: Constants.kLightGreyColor),),
                             SizedBox(height: 20,),
-                            Text('Delivery',style: TextStyle(color: Constants.kDarkGreyColor),),
+                            Text('Delivery',style: TextStyle(color: Constants.kLightGreyColor),),
                             SizedBox(height: 40,),
                             Text('Total',style: TextStyle(color: Constants.kBlackColor,fontWeight: FontWeight.bold),),
                           ],
@@ -550,9 +550,9 @@ class _State extends State<ChangeAddressAndPayment>
                         // Spacer(),
                         Column(
                           children: const [
-                            Text('200',style: TextStyle(color: Constants.kDarkGreyColor),),
+                            Text('200',style: TextStyle(color: Constants.kLightGreyColor),),
                             SizedBox(height: 20,),
-                            Text('45',style: TextStyle(color: Constants.kDarkGreyColor),),
+                            Text('45',style: TextStyle(color: Constants.kLightGreyColor),),
                             SizedBox(height: 40,),
                             Text('Rs 240',style: TextStyle(color: Constants.kBlackColor,fontWeight: FontWeight.bold),),
                           ],

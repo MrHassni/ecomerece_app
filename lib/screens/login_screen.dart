@@ -140,7 +140,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Container(
                       decoration: BoxDecoration(
                         border: Border.all(
-                            color: Constants.kDarkGreyColor, width: 1),
+                            color: Constants.kLightGreyColor, width: 1),
                         borderRadius: BorderRadius.circular(30.0),
                       ),
                       child: TextButton(
