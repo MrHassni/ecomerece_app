@@ -65,7 +65,8 @@ class _OptNumberState extends State<OptNumber> {
                 SizedBox(height: 20,),
                 Center(
                   child: Container(
-                     decoration: BoxDecoration(border: Border.all(color: Constants.kDarkOrangeColor,width: 1),
+                     decoration: BoxDecoration(
+                       border: Border.all(color: Constants.kDarkOrangeColor,width: 1),
                          borderRadius: BorderRadius.circular(5),
                      ),
 

@@ -7,7 +7,7 @@ class Constants {
   static const kWhiteAccent = Color(0xFFFFFFFF);
   static const kGreyColor = Color(0xFF9E9E9E);
   static const kBlackColor = Color(0xFF000000);
-  static const kDarkGreyColor = Color(0xFF9E9E9E);
+  static const kLightGreyColor = Color(0xFF9E9E9E);
   static const kGraniteGreyColor =Color(0xFF676767);
   static const kGrey55Color = Color(0xFF8C8C8C);
   static const kOrangeColor = Color(0xFFF37A20);
@@ -53,16 +53,20 @@ class Constants {
 }
 const kMessageContainerDecoration = BoxDecoration(
   border: Border(
-    top: BorderSide(color: Colors.deepPurpleAccent, width: 2.0),
+    top: BorderSide(color: Constants.kLightGreyColor, width: 2.0),
+    bottom: BorderSide(color: Constants.kLightGreyColor, width: 2.0),
+
   ),
+
 );
 const kMessageTextFieldDecoration = InputDecoration(
   contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-  hintText: 'Type your message here...',
+  // hintText: 'Type your message here...',
   border: InputBorder.none,
 );
-const kSendButtonTextStyle = TextStyle(
-  color: Colors.deepPurpleAccent,
-  fontWeight: FontWeight.bold,
-  fontSize: 18.0,
-);
+
+// const kSendButtonTextStyle = TextStyle(
+//   color: Colors.deepPurpleAccent,
+//   fontWeight: FontWeight.bold,
+//   fontSize: 18.0,
+// );

@@ -69,10 +69,12 @@ class _State extends State<SearchScreen> with TickerProviderStateMixin {
                     ),
                       child: TextField(
                         textAlign: TextAlign.center,
+
                         // textAlignVertical: TextAlignVertical.center,
 
                         decoration: const InputDecoration(
                             hintText: 'Search Product',
+                            prefixIcon: Icon(Icons.search),
                             contentPadding: EdgeInsets.all(8),
                             border: InputBorder.none),
                         onChanged: (value) {
@@ -103,7 +105,7 @@ class _State extends State<SearchScreen> with TickerProviderStateMixin {
                   ],
                 ),
                 const Divider(height: 20,
-                color: Constants.kDarkGreyColor,),
+                color: Constants.kLightGreyColor,),
 
 
                 Padding(
@@ -112,7 +114,7 @@ class _State extends State<SearchScreen> with TickerProviderStateMixin {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: const [
                       Text('Search History',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
-                      Icon(Icons.delete,color: Constants.kDarkGreyColor,),
+                      Icon(Icons.delete,color: Constants.kLightGreyColor,),
                     ],
                   ),
                 ),

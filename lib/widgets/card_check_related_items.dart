@@ -12,29 +12,31 @@ class CheckItemsWidget extends StatefulWidget {
 class _State extends State<CheckItemsWidget> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 130,
+    return SizedBox(
+      // margin: EdgeInsets.zero,
+      height: 115,
       child: Card(
+
+        margin: EdgeInsets.zero,
         elevation: 1,
         child: ListTile(
           //leading: Icon(Icons.music_note),
+          contentPadding: EdgeInsets.all(8),
           title: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
+            // mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Padding(
-                padding: EdgeInsets.only(bottom: 10, ),
-                child: Image.asset(
-                  'images/itemcup.png',
-                  height: 115,
-                  width: 121,
-                ),
+              Image.asset(
+                'images/itemcup.png',
+                height: 120,
+                width: 90,
               ),
 
 
               Padding(
                 padding: EdgeInsets.only(left: 10),
                 child: Column(
-                  // mainAxisAlignment: MainAxisAlignment.start,
+                
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
@@ -46,15 +48,17 @@ class _State extends State<CheckItemsWidget> {
                         style: TextStyle(
                             color: Constants.kBlackColor,
                             fontWeight: FontWeight.bold,
-                            fontSize: 15),
+                            fontSize: 12),
                       ),
                     ),
                     const Align(
-                        alignment: Alignment.centerLeft, child: Text('RS 340')),
+                        alignment: Alignment.centerLeft, child: Text('RS 340',style: TextStyle(fontSize: 10),),),
                     const Text(
                       'RS 244',
-                      style: TextStyle(color: Constants.kDarkOrangeColor),
+                      style: TextStyle(color: Constants.kDarkOrangeColor,fontSize: 10),
                     ),
+                    SizedBox(height: 15,),
+
                     Container(
                       height: 25,
                       child: ElevatedButton(
@@ -84,7 +88,7 @@ class _State extends State<CheckItemsWidget> {
               ),
               Spacer(),
 
-              Text('200ml'),
+              Text('200ml',style: TextStyle(fontSize: 12),),
             ],
           ),
         ),

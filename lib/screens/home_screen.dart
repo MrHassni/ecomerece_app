@@ -51,26 +51,6 @@ class _HomeState extends State<Home> {
     Colors.green[50]
 
   ];
-
-  Map<String, dynamic> productMap = {
-    'productName': 'Mobile Phone',
-    'productID': '123abc',
-    'userImage': [
-      'https://topleagueboost.com/boostpanel/assets/img/avatars/0.png',
-      'https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&w=1000&q=80',
-      'https://www.w3schools.com/w3css/img_lights.jpg'
-    ],
-  };
-
-  Map<String, String> userMap = {
-    'userName': 'Hassan',
-    'userEmail': 'hassan@gmail.com',
-    'userID': 'abc123',
-    'userImage':
-        'https://topleagueboost.com/boostpanel/assets/img/avatars/0.png',
-    'userContact': '03000000000'
-  };
-
   // final List _featureimg = [
   //   'images/opaldinner.png',
   //   'images/kitchencattle.png',
@@ -82,12 +62,6 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // floatingActionButton:
-      // FloatingActionButton(onPressed: (){
-      //   log(_userModel.userID.toString());
-      //   log(_productModel.productID.toString());
-      //   log(_productModel.productImages![1].toString());
-      // }),
       // appBar: AppBar(
       //   title: Text("Home Page"),
       // ),
@@ -102,6 +76,7 @@ class _HomeState extends State<Home> {
                 height: 25,
               ),
               const HorizontalSlider(),
+              //shop.....
               Padding(
                 padding: const EdgeInsets.symmetric(
                     horizontal: 10.0, vertical: 15),
@@ -298,6 +273,7 @@ class _HomeState extends State<Home> {
                       return AvailabelOffers(index: index, lengthOfList: 5,);
                     }),
               ),
+
             ],
           ),
         ),
