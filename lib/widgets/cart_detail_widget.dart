@@ -14,22 +14,20 @@ class _State extends State<CartDetailsWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 79,
       child: Card(
         elevation: 1,
-        child: ListTile(
+        child: ListTile(contentPadding: const EdgeInsets.all(5),
           //leading: Icon(Icons.music_note),
           title: Row(
             children: [
-              Padding(
-                padding: EdgeInsets.only(bottom: 10,right: 10, ),
-                child: Image.asset(
-                  widget.cartDetial_Img,
-                  height: 79,
-                  width: 63,
-                ),
+              Image.asset(
+                widget.cartDetial_Img,
+                height: 60,
+                width: 60,
               ),
-
+              const SizedBox(
+                width: 10,
+              ),
               Column(
                 // mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,14 +40,14 @@ class _State extends State<CartDetailsWidget> {
                       style: TextStyle(
                           color: Constants.kBlackColor,
                           fontWeight: FontWeight.bold,
-                          fontSize: 15),
+                          fontSize: 14),
                     ),
                   ),
                   const Align(
-                      alignment: Alignment.centerLeft, child: Text('3x cup', style: TextStyle(color: Constants.kGreyColor),)),
+                      alignment: Alignment.centerLeft, child: Text('3x cup', style: TextStyle(color: Constants.kGreyColor,fontSize: 12),)),
                   const Text(
                     'Rs 500',
-                    style: TextStyle(color: Constants.kGreyColor),
+                    style: TextStyle(color: Constants.kGreyColor,fontSize: 12),
                   ),
                 ],
               ),

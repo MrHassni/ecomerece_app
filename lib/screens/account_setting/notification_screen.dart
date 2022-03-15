@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../constant/constant.dart';
+import '../../widgets/top_bars/top_bar_with_one_button.dart';
+import '../../widgets/top_bars/top_bar_without_button.dart';
 
 class NotificationScreen extends StatefulWidget {
   @override
@@ -50,63 +52,33 @@ class _State extends State<NotificationScreen> with TickerProviderStateMixin {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.all(15),
-            child: Column(mainAxisAlignment: MainAxisAlignment.start,
-                // crossAxisAlignment: CrossAxisAlignment.start,
+          child: Column(
+            children: [
+              const TopBarWithOneButton(pageName: 'Notification',pageDescription: 'Notifications'),
+              Padding(
+                padding: EdgeInsets.all(5),
+                child: Column(mainAxisAlignment: MainAxisAlignment.start,
+                    // crossAxisAlignment: CrossAxisAlignment.start,
 
-                children: [
-                  Container(
-                    child: Padding(
-                      padding: EdgeInsets.all(10),
-                      child: Row(
-                        children: [
-                          InkWell(
-                              onTap: () {
-                                //   Navigator.push(context, MaterialPageRoute(
-                                //       builder: (context) => Home()),
-                                //   );
-                              },
-                              child: const Icon(
-                                Icons.arrow_back_ios,
-                                color: Constants.kDarkOrangeColor,
-                              )),
-                          const Text(
-                            'Order History',
-                            style: TextStyle(
-                                color: Constants.kBlackColor,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ],
+                    children: [
+                      Container(
+                        color: Colors.transparent,
+                        width: MediaQuery.of(context).size.width,
+                        // width: 150,
+                        child: ListView.builder(
+                          shrinkWrap: true,
+                            scrollDirection: Axis.vertical,
+                            physics: const NeverScrollableScrollPhysics(),
+                            itemCount: 3,
+                            itemBuilder: (context, index) {
+                              return NotificationWidget(
+                                orderId: order_Id_Ongoing_prod[index],
+                              );
+                            }),
                       ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 40,
-                    width: 350,
-                    child: Text(
-                      'Notification',
-                      style:
-                          TextStyle(color: Constants.kGreyColor, fontSize: 12),
-                    ),
-                  ),
-                  Container(
-                    color: Colors.transparent,
-                    height: 400,
-                    width: MediaQuery.of(context).size.width,
-                    // width: 150,
-                    child: ListView.builder(
-                        scrollDirection: Axis.vertical,
-                        physics: NeverScrollableScrollPhysics(),
-                        itemCount: 3,
-                        itemBuilder: (context, index) {
-                          return NotificationWidget(
-                            orderId: order_Id_Ongoing_prod[index],
-                          );
-                        }),
-                  ),
-                ]),
+                    ]),
+              ),
+            ],
           ),
         ),
       ),

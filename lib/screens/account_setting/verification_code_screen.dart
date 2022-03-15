@@ -6,6 +6,7 @@ import 'package:otp_text_field/style.dart';
 
 import 'package:crockery_app/widgets/buttons/rounded_button.dart';
 import '../../constant/constant.dart';
+import '../../widgets/top_bars/top_bar_without_button.dart';
 
 
 // void main() => runApp(MyApp());
@@ -51,84 +52,66 @@ class _VerificationCodeState extends State<VerificationCode> {
       //   },
       // ),
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.all(30),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  child: Row(
-                    children: [
-                      InkWell(
-                          onTap: () {
-                            //   Navigator.push(context, MaterialPageRoute(
-                            //       builder: (context) => Home()),
-                            //   );
-                          },
-                          child: const Icon(
-                            Icons.arrow_back_ios,
-                            color: Constants.kDarkOrangeColor,
-                          )),
-                      const Text(
-                        'Verification Code',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 20,),
+        child: Column(
+          children: [
+            const TopBarWithoutButton(pageName: 'Verification Code'),
+            Padding(
+              padding: EdgeInsets.all(25),
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SizedBox(height: 20,),
 
-                SizedBox(height: 100,
-                  width: 150,
-                  child: Image.asset('images/mobile_img.png'),
-                ),
-                const Align(alignment: Alignment.centerLeft,
-                    child: Text('Verification Code')),
-                SizedBox(height: 20,),
-                Center(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Constants.kDarkOrangeColor,width: 1),
-                      borderRadius: BorderRadius.circular(5),
+                    SizedBox(height: 100,
+                      width: 150,
+                      child: Image.asset('images/mobile_img.png'),
                     ),
-
-                    child: OTPTextField(
-                        otpFieldStyle: OtpFieldStyle(
-                            enabledBorderColor: Colors.transparent,
-                            focusBorderColor:  Colors.transparent,
-                            borderColor: Colors.transparent
+                    const Align(alignment: Alignment.centerLeft,
+                        child: Text('Verification Code')),
+                    SizedBox(height: 20,),
+                    Center(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Constants.kDarkOrangeColor,width: 1),
+                          borderRadius: BorderRadius.circular(5),
                         ),
 
-                        controller: otpController,
-                        length: 6,
-                        width: MediaQuery.of(context).size.width *0.8,
-                        textFieldAlignment: MainAxisAlignment.spaceAround,
-                        // fieldStyle: FieldStyle.box,
-                        // outlineBorderRadius: 15,
+                        child: OTPTextField(
+                            otpFieldStyle: OtpFieldStyle(
+                                enabledBorderColor: Colors.transparent,
+                                focusBorderColor:  Colors.transparent,
+                                borderColor: Colors.transparent
+                            ),
 
-                        style: TextStyle(fontSize: 17),
-                        onChanged: (pin) {
-                          print("Changed: " + pin);
-                        },
-                        onCompleted: (pin) {
-                          print("Completed: " + pin);
-                        }),
-                  ),
+                            controller: otpController,
+                            length: 6,
+                            width: MediaQuery.of(context).size.width *0.8,
+                            textFieldAlignment: MainAxisAlignment.spaceAround,
+                            // fieldStyle: FieldStyle.box,
+                            // outlineBorderRadius: 15,
+
+                            style: TextStyle(fontSize: 17),
+                            onChanged: (pin) {
+                              print("Changed: " + pin);
+                            },
+                            onCompleted: (pin) {
+                              print("Completed: " + pin);
+                            }),
+                      ),
+                    ),
+                    const SizedBox(height: 15,),
+                    const Align(alignment: Alignment.centerRight,
+                        child: Text('Resend OTP',style: TextStyle(color: Constants.kDarkOrangeColor),)),
+                    SizedBox(height: 40,),
+                    RoundedButton(text: 'Next', onPressed: (){
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>  PasswordScreen()));
+                    }),
+                  ],
                 ),
-                const SizedBox(height: 15,),
-                const Align(alignment: Alignment.centerRight,
-                    child: Text('Resend OTP',style: TextStyle(color: Constants.kDarkOrangeColor),)),
-                SizedBox(height: 40,),
-                RoundedButton(text: 'Next', onPressed: (){
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>  PasswordScreen()));
-                }),
-              ],
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );

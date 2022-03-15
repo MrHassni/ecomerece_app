@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../constant/constant.dart';
 import '../widgets/bottom_navigation/bottom_navigation_bar.dart';
 import '../widgets/shopwidgets.dart';
+import '../widgets/top_bars/top_bar_with_buttons.dart';
 
 
 class WishListScreen  extends StatefulWidget {
@@ -24,59 +25,18 @@ class _State extends State< WishListScreen> {
     'images/study.png',
     'images/emollient.png',
     'images/gupshuptable.png',
-
   ];
   @override
   Widget build(BuildContext context) {
-    // print(_allShopImg.length.toString());
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.all(15),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Container(
-                  child: Padding(
-                    padding: EdgeInsets.all(15),
-                    child: Row(
-                      children: [
-                        InkWell(
-                            onTap: () {
-                              //   Navigator.push(context, MaterialPageRoute(
-                              //       builder: (context) => Home()),
-                              //   );
-                            },
-                            child: const Icon(
-                              Icons.arrow_back_ios,
-                              color: Constants.kDarkOrangeColor,
-                            )),
-                        const Text(
-                          'Wish list',
-                          style: TextStyle(
-                              color: Constants.kBlackColor,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        Spacer(),
-                        Icon(Icons.search,color: Constants.kLightGreyColor),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 40,
-                  width: 350,
-                  child: Text(
-                    'Your Wish List',
-                    style: TextStyle(color: Constants.kGreyColor, fontSize: 12),
-                  ),
-                ),
-                const MostPurchased(),
-
-              ],
-            ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: const [
+              TopBarWithButtons(pageName: 'Wish List', pageDescription: 'Your Wish List'),
+              MostPurchased(),
+            ],
           ),
         ),
       ),

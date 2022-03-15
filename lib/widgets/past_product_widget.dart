@@ -16,17 +16,17 @@ class _State extends State<PastProductWidget> {
     return  Card(
       elevation: 2,
       child: Container(
-        height: 90,
-        width: 300,
+        width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           // border: Border.all(
           //     width: 1, color: Constants.kDarkOrangeColor, style: BorderStyle.solid)
         ),
         child: Padding(
-          padding: EdgeInsets.all( 10),
+          padding: const EdgeInsets.all( 10),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               const Center(
                 child: CircleAvatar(
@@ -39,29 +39,28 @@ class _State extends State<PastProductWidget> {
                   ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.all(10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children:  [
-                    Text(
-                      'Order #${widget.orderId}',
-                      style: const TextStyle(
-                          fontFamily: 'Nuntio-Bold.ttf',
-                          fontWeight: FontWeight.bold,
-                          color: Constants.kBlackColor),
+              const SizedBox(width: 15,),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children:  [
+                  Text(
+                    'Order #${widget.orderId}',
+                    style: const TextStyle(
+                        fontFamily: 'Nuntio-Bold.ttf',
+                        fontWeight: FontWeight.bold,
+                        color: Constants.kBlackColor,
+                    fontSize: 13
                     ),
-                    const Text('Delivered',
-                      style: TextStyle(
-                          fontFamily: 'Nuntio-Light.ttf',
-                          color: Constants.kOrangeColor),),
-                    const Text('March,6,2022',style: TextStyle(
+                  ),
+                  const Text('Delivered',
+                    style: TextStyle(
                         fontFamily: 'Nuntio-Light.ttf',
-                        color: Constants.kGraniteGreyColor),),
-                  ],
-                ),
-              ),
-              Spacer(),
+                        color: Constants.kOrangeColor, fontSize: 12),),
+                  const Text('March,6,2022',style: TextStyle(
+                      fontFamily: 'Nuntio-Light.ttf',
+                      color: Constants.kGraniteGreyColor, fontSize: 12),),
+                ],),
+              const Spacer(),
               const Padding(
                 padding: EdgeInsets.only(right: 10,top: 10),
                 child: Text('Rs 745',style: TextStyle(
@@ -70,8 +69,7 @@ class _State extends State<PastProductWidget> {
                     fontSize: 15,
                     color: Constants.kOrangeColor),),
               ),
-            ],
-          ),
+            ],),
         ),
       ),
     );

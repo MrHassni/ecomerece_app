@@ -2,13 +2,12 @@ import 'package:crockery_app/widgets/avilabeloffers.dart';
 import 'package:crockery_app/widgets/mostpurchased.dart';
 import 'package:crockery_app/widgets/shopslistwidget.dart';
 import 'package:crockery_app/widgets/slider.dart';
-import 'package:crockery_app/widgets/top_bar_without_buttons.dart';
 import 'package:flutter/material.dart';
 import '../constant/constant.dart';
 import '../screens/home_screen.dart';
 import '../widgets/featureproduct.dart';
 import '../widgets/shopwidgets.dart';
-import '../widgets/top_bar_with_buttons.dart';
+import '../widgets/top_bars/top_bar_with_buttons.dart';
 
 class GiftShopScreen extends StatefulWidget {
   const GiftShopScreen({Key? key}) : super(key: key);

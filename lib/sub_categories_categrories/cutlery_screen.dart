@@ -236,28 +236,7 @@ class _State extends State<CutleryScreen> with TickerProviderStateMixin {
                       child: TabBarView(
                           controller: _tabController,
                           children: <Widget>[
-                            Padding(
-                              padding: EdgeInsets.only(left: 10,right: 10),
-                              child: Container(
-                                height: MediaQuery.of(context).size.height,
-                                child: GridView.count(
-                                  childAspectRatio: 5/8,
-                                  crossAxisSpacing: 10.0,
-                                  // crossAxisSpacing: 20,
-                                  mainAxisSpacing: 20,
-                                  physics:  const NeverScrollableScrollPhysics(),
-                                  // padding: EdgeInsets.all(10.0),
-                                  // scrollDirection: Axis.vertical,
-                                  // padding: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
-                                  crossAxisCount: 3,
-                                  children: List.generate(7,(index){
-
-                                    return  CutleryWidget(cutleryimg: cutleryImg[index],);
-
-                                  }),
-                                ),
-                              ),
-                            ),
+                            CutleryWidget(cutleryimg: cutleryImg,),
 
                             Container(
                               child: Text("sign up"),

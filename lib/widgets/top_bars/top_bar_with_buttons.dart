@@ -2,7 +2,7 @@ import 'package:crockery_app/screens/cart_detail_screen.dart';
 import 'package:crockery_app/screens/search_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../constant/constant.dart';
+import '../../constant/constant.dart';
 
 
 class TopBarWithButtons extends StatelessWidget {
@@ -14,7 +14,7 @@ class TopBarWithButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 6,
-      margin: EdgeInsets.zero,
+      margin: const EdgeInsets.only(bottom: 10),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),
         child: Column(

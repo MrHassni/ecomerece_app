@@ -5,7 +5,7 @@ import 'package:crockery_app/models/product_model.dart';
 import 'package:crockery_app/widgets/avilabeloffers.dart';
 import 'package:crockery_app/widgets/featureproduct.dart';
 import 'package:crockery_app/widgets/shopslistwidget.dart';
-import 'package:crockery_app/widgets/top_bar_with_buttons.dart';
+import 'package:crockery_app/widgets/top_bars/top_bar_with_buttons.dart';
 import 'package:flutter/material.dart';
 
 import '../models/user_model.dart';
@@ -84,7 +84,7 @@ class _HomeState extends State<Home> {
                   pageDescription: 'What do you want to buy?',
                   pageName: 'Hi, ' + _userModel.userName!),
               const SizedBox(
-                height: 25,
+                height: 15,
               ),
               const HorizontalSlider(),
               //shop.....
