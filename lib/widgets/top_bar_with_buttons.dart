@@ -1,3 +1,5 @@
+import 'package:crockery_app/screens/cart_detail_screen.dart';
+import 'package:crockery_app/screens/search_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../constant/constant.dart';
@@ -30,7 +32,9 @@ class TopBarWithButtons extends StatelessWidget {
                 ),
                 const Spacer(),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const SearchScreen()));
+                  },
                   child: const Icon(
                     Icons.search,
                     color: Constants.kGrey55Color,
@@ -42,9 +46,14 @@ class TopBarWithButtons extends StatelessWidget {
                   color: Constants.kDarkOrangeColor,
                 ),
                 const SizedBox(width: 7,),
-                const Icon(
-                  Icons.shopping_cart_outlined,
-                  color: Constants.kDarkOrangeColor,
+                InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const CartDetail()));
+                  },
+                  child: const Icon(
+                    Icons.shopping_cart_outlined,
+                    color: Constants.kDarkOrangeColor,
+                  ),
                 ),
               ],
             ),
@@ -54,7 +63,7 @@ class TopBarWithButtons extends StatelessWidget {
              Text(
               pageDescription,
               textAlign: TextAlign.left,
-              style: const TextStyle(color: Constants.kDarkGreyColor, fontSize: 12),
+              style: const TextStyle(color: Constants.kGrey55Color, fontSize: 12),
             ),
           ],),
       ),

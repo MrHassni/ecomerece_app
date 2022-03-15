@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:crockery_app/widgets/buttons/rounded_button.dart';
 import '../constant/constant.dart';
-import '../widgets/bottom_navigation/bottom_sheet.dart';
+import '../widgets/bottom_navigation/bottom_navigation_bar.dart';
 
 class VoucherScreen extends StatefulWidget {
   const VoucherScreen({Key? key}) : super(key: key);

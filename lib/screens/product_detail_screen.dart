@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../constant/constant.dart';
 
 import '../helper/radio_btn_model_size.dart';
-import '../widgets/bottom_navigation/bottom_sheet.dart';
+import '../widgets/bottom_navigation/bottom_navigation_bar.dart';
 import '../widgets/product_list_image_with_color_widget.dart';
 
 class ProductDetail extends StatefulWidget {

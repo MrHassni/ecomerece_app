@@ -3,7 +3,7 @@ import 'package:crockery_app/widgets/mostpurchased.dart';
 import 'package:flutter/material.dart';
 
 import '../../constant/constant.dart';
-import '../../widgets/bottom_navigation/bottom_sheet.dart';
+import '../../widgets/bottom_navigation/bottom_navigation_bar.dart';
 import '../../widgets/shopwidgets.dart';
 
 class SettingScreen extends StatefulWidget {
@@ -297,7 +297,7 @@ class _State extends State<SettingScreen> {
                   color: Constants.kLightGreyColor,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 20,right: 10,top: 60),
+                  padding: EdgeInsets.only(left: 20,right: 10),
                   child: Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children:  [

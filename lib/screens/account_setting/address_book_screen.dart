@@ -2,7 +2,7 @@ import 'package:crockery_app/widgets/mostpurchased.dart';
 import 'package:flutter/material.dart';
 
 import '../../constant/constant.dart';
-import '../../widgets/bottom_navigation/bottom_sheet.dart';
+import '../../widgets/bottom_navigation/bottom_navigation_bar.dart';
 import '../../widgets/shopwidgets.dart';
 
 class AddressBookScreen extends StatefulWidget {

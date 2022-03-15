@@ -78,24 +78,9 @@ class _State extends State<GiftShopScreen> {
                 ),
               ),
               //All Products call here....
-              Padding(
-                padding: const EdgeInsets.only(left: 10, right: 10),
-                child: GridView.count(
-                  shrinkWrap: true,
-                  childAspectRatio: 8.5 / 7,
-                  crossAxisSpacing: 10.0,
-                  physics: const NeverScrollableScrollPhysics(),
-                  crossAxisCount: 2,
-                  children: List.generate(8, (index) {
-                    return InkWell(
-                      onTap: () {},
-                      child: ShopWidget(
-                        allCateImg: allCatagoriesImg[index],
-                        allCateName: allCategoriesName[index],
-                      ),
-                    );
-                  }),
-                ),
+              const Padding(
+                padding: EdgeInsets.only(left: 10, right: 10),
+                child: ShopWidget(),
               ),
               const HorizontalSlider(),
 
@@ -126,21 +111,7 @@ class _State extends State<GiftShopScreen> {
                   ],
                 ),
               ),
-              Container(
-                color: Colors.transparent,
-                height: 265,
-                width: MediaQuery.of(context).size.width,
-                // width: 150,
-                child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 5,
-                    itemBuilder: (context, index) {
-                      return AvailabelOffers(
-                        index: index,
-                        lengthOfList: 5,
-                      );
-                    }),
-              ),
+              const AvailabelOffers(),
               //Most Purchased....
               Padding(
                 padding:
@@ -172,21 +143,7 @@ class _State extends State<GiftShopScreen> {
 
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 5,),
-                child: GridView.count(
-                  shrinkWrap: true,
-                  childAspectRatio: 4/4.5,
-                  physics: const NeverScrollableScrollPhysics(),
-                  scrollDirection: Axis.vertical,
-                  crossAxisCount: 2,
-                  children: List.generate(3, (index) {
-                    return InkWell(
-                      onTap: () {},
-                      child: MostPurchased(
-                        mostPurchasedImg: mostPurchased[index],
-                      ),
-                    );
-                  }),
-                ),
+                child: MostPurchased(),
               ),
             ],
           ),

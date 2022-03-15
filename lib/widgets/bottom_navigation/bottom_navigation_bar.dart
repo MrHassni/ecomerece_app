@@ -38,7 +38,7 @@ class BottomNavigate  extends StatefulWidget {
 
 class _State extends State< BottomNavigate> {
   final List <Widget> _pages =[
-    Home(),
+    const Home(),
     WishListScreen(),
     OrderHistory(),
     SettingScreen(),
@@ -60,7 +60,7 @@ class _State extends State< BottomNavigate> {
     ChangeAddressAndPayment(),
     OrderHistory(),
     ProfileEditScreen(),
-    AddressBookScreen(),
+    const AddressBookScreen(),
     OrderHistory(),
     NotificationScreen(),
 
@@ -73,7 +73,7 @@ class _State extends State< BottomNavigate> {
     // PharmaScreen(),
 
   ];
-  int _selectedIndex = 0;
+    final int _selectedIndex = 0;
   void _navigateBottomBar(int index){
     setState(() {
       widget.i = index;
@@ -85,8 +85,8 @@ class _State extends State< BottomNavigate> {
       body:_pages[widget.i],
 
       bottomNavigationBar: BottomNavigationBar(
-      selectedItemColor: Color(0xFFAB4D24),
-        currentIndex: _selectedIndex,
+      selectedItemColor:  const Color(0xFFAB4D24),
+        currentIndex:widget.i > 3 ? _selectedIndex : widget.i,
         onTap: _navigateBottomBar,
         type: BottomNavigationBarType.fixed,
 

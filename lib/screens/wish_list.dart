@@ -3,7 +3,7 @@ import 'package:crockery_app/widgets/mostpurchased.dart';
 import 'package:flutter/material.dart';
 
 import '../constant/constant.dart';
-import '../widgets/bottom_navigation/bottom_sheet.dart';
+import '../widgets/bottom_navigation/bottom_navigation_bar.dart';
 import '../widgets/shopwidgets.dart';
 
 
@@ -73,31 +73,7 @@ class _State extends State< WishListScreen> {
                     style: TextStyle(color: Constants.kGreyColor, fontSize: 12),
                   ),
                 ),
-                Container(
-                  height: MediaQuery.of(context).size.height,
-                  child: GridView.count(
-                    childAspectRatio: 3/4.4,
-                    crossAxisSpacing: 2.0,
-                    // crossAxisSpacing: 20,
-                    mainAxisSpacing: 5,
-                    physics:  NeverScrollableScrollPhysics(),
-                    // scrollDirection: Axis.horizontal,
-                    // padding: EdgeInsets.all(10.0),
-                    scrollDirection: Axis.vertical,
-                    // padding: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
-                    crossAxisCount: 3,
-                    children: List.generate(6,(index){
-
-                      return  InkWell(
-                        onTap: () {
-                          // MaterialPageRoute(builder: (context) => GroceryScreen());
-                        },
-                        child: MostPurchased(mostPurchasedImg: mostPurchased[index],
-                      ),
-                      );
-                    }),
-                  ),
-                ),
+                const MostPurchased(),
 
               ],
             ),

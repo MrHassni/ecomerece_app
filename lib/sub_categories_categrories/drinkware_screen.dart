@@ -3,7 +3,7 @@ import 'package:crockery_app/widgets/cutleryitemwidget.dart';
 import 'package:crockery_app/widgets/slider.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/bottom_navigation/bottom_sheet.dart';
+import '../widgets/bottom_navigation/bottom_navigation_bar.dart';
 
 
 

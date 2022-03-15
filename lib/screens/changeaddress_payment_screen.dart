@@ -2,7 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constant/constant.dart';
-import '../widgets/bottom_navigation/bottom_sheet.dart';
+import '../widgets/bottom_navigation/bottom_navigation_bar.dart';
 
 class ChangeAddressAndPayment extends StatefulWidget {
   @override

@@ -9,7 +9,7 @@ import 'package:crockery_app/widgets/top_bar_with_buttons.dart';
 import 'package:flutter/material.dart';
 
 import '../models/user_model.dart';
-import '../widgets/bottom_navigation/bottom_sheet.dart';
+import '../widgets/bottom_navigation/bottom_navigation_bar.dart';
 import '../widgets/slider.dart';
 
 class Home extends StatefulWidget {
@@ -38,6 +38,25 @@ class _HomeState extends State<Home> {
     _productModel = ProductModel.fromMap(productMap);
   }
 
+  Map<String, dynamic> productMap = {
+    'productName': 'Mobile Phone',
+    'productID': '123abc',
+    'userImage': [
+      'https://topleagueboost.com/boostpanel/assets/img/avatars/0.png',
+      'https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&w=1000&q=80',
+      'https://www.w3schools.com/w3css/img_lights.jpg'
+    ],
+  };
+
+  Map<String, String> userMap = {
+    'userName': 'Hassan',
+    'userEmail': 'hassan@gmail.com',
+    'userID': 'abc123',
+    'userImage':
+    'https://topleagueboost.com/boostpanel/assets/img/avatars/0.png',
+    'userContact': '03000000000'
+  };
+
   final List _shopimg = [
     'images/giftimg.png',
     'images/diningimg.png',
@@ -51,14 +70,6 @@ class _HomeState extends State<Home> {
     Colors.green[50]
 
   ];
-  // final List _featureimg = [
-  //   'images/opaldinner.png',
-  //   'images/kitchencattle.png',
-  //   'images/schoolbottle.png',
-  //   'images/opaldinner.png',
-  //   'images/kitchencattle.png',
-  //   'images/schoolbottle.png'
-  // ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -208,25 +219,7 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
-              Container(
-                decoration: const BoxDecoration(
-                  // border: Border(top: BorderSide(color: Colors.grey, width: 5)),
-                  borderRadius: BorderRadius.only(
-                      // topLeft: Radius.circular(50.0),
-                      // topRight: Radius.circular(50.0),
-                      ),
-                ),
-
-                height: 225,
-                width: MediaQuery.of(context).size.width,
-                // width: 150,
-                child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 5,
-                    itemBuilder: (context, index) {
-                      return  FeaturedProducts(index: index,);
-                    }),
-              ),
+              const FeaturedProducts(),
               Container(
                 height: 10,
                 color: Colors.grey.shade300,
@@ -263,17 +256,7 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
-              Container(
-                color: Colors.transparent,
-                height: 265,
-                child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 5,
-                    itemBuilder: (context, index) {
-                      return AvailabelOffers(index: index, lengthOfList: 5,);
-                    }),
-              ),
-
+              const AvailabelOffers(),
             ],
           ),
         ),

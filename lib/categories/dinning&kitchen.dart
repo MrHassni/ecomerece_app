@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../constant/constant.dart';
 import '../screens/home_screen.dart';
-import '../widgets/bottom_navigation/bottom_sheet.dart';
+import '../widgets/bottom_navigation/bottom_navigation_bar.dart';
 import '../widgets/shopwidgets.dart';
 
 class DinningKitchenScreen extends StatefulWidget {
@@ -191,56 +191,9 @@ class _State extends State<DinningKitchenScreen> {
               ),
 
               //All Products call here....
-              Padding(
-                padding: const EdgeInsets.only(left: 10, right: 10),
-                child: GridView.count(
-                  shrinkWrap: true,
-                  childAspectRatio: 8.5 / 7,
-                  crossAxisSpacing: 10.0,
-                  physics: const NeverScrollableScrollPhysics(),
-                  crossAxisCount: 2,
-                  children: List.generate(3, (index) {
-                    return InkWell(
-                      onTap: () {
-                        if (index == 0) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => BottomNavigate(
-                                i: 9,
-                              ),
-                            ),
-                          );
-                        } else if (index == 1) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => BottomNavigate(
-                                i: 10,
-                              ),
-                            ),
-                          );
-                        } else if (index == 2) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => BottomNavigate(
-                                i: 11,
-                              ),
-                            ),
-                          );
-                        } else if (index == 1) {
-                        } else {
-                          print('invalid');
-                        }
-                      },
-                      child: ShopWidget(
-                        allCateImg: allCatagoriesImg[index],
-                        allCateName: allCategoriesName[index],
-                      ),
-                    );
-                  }),
-                ),
+              const Padding(
+                padding: EdgeInsets.only(left: 10, right: 10),
+                child: ShopWidget(),
               ),
               // SizedBox(height: 10,),
               const HorizontalSlider(),
@@ -274,25 +227,10 @@ class _State extends State<DinningKitchenScreen> {
                   ],
                 ),
               ),
-              GridView.count(
-                childAspectRatio: 4 / 4.5,
-                crossAxisSpacing: 2.0,
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                // scrollDirection: Axis.horizontal,
-                // padding: EdgeInsets.all(10.0),
-                scrollDirection: Axis.vertical,
-                // padding: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
-                crossAxisCount: 2,
-                children: List.generate(6, (index) {
-                  return InkWell(
-                    onTap: () {},
-                    child: MostPurchased(
-                      mostPurchasedImg: mostPurchased[index],
-                    ),
-                  );
-                }),
-              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 5.0),
+                child: MostPurchased(),
+              )
             ],
           ),
         ),

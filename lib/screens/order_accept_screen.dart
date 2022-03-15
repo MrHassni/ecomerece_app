@@ -2,7 +2,7 @@ import 'package:crockery_app/widgets/ongoing_product_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constant/constant.dart';
-import '../widgets/bottom_navigation/bottom_sheet.dart';
+import '../widgets/bottom_navigation/bottom_navigation_bar.dart';
 import '../widgets/cutleryitemwidget.dart';
 import '../widgets/past_product_widget.dart';
 

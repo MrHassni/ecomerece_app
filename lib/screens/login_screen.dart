@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../constant/constant.dart';
 
-import '../widgets/bottom_navigation/bottom_sheet.dart';
+import '../widgets/bottom_navigation/bottom_navigation_bar.dart';
 import '../widgets/buttons/long_rounded_button.dart';
 
 class LoginScreen extends StatefulWidget {

@@ -3,7 +3,7 @@ import 'package:crockery_app/widgets/shopwidgets.dart';
 import 'package:flutter/material.dart';
 
 import '../constant/constant.dart';
-import '../widgets/bottom_navigation/bottom_sheet.dart';
+import '../widgets/bottom_navigation/bottom_navigation_bar.dart';
 import 'home_screen.dart';
 
 
@@ -221,66 +221,7 @@ class _State extends State< AllCategoriesScreen> {
                 ),
 
        // All Categories  here....
-                GridView.count(
-                  crossAxisSpacing: 10.0,
-                  childAspectRatio: 8.5 / 7,
-                  crossAxisCount: 2,shrinkWrap: true,
-                  children: List.generate(5,(index){
-
-                    return  InkWell(
-                      onTap: () {
-                        if(index==0){
-                          // Navigator.pushReplacement(
-                          //     NavigationService.navigatorKey.currentContext!,
-                          //     MaterialPageRoute(builder: (context) => BottomNavigate(i:4)));
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => BottomNavigate(i: 5,),
-                            ),
-                          );
-                        }else if(index==1){
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => BottomNavigate(i: 6,),
-                            ),
-                          );
-                        }
-                        else if(index==2){
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => BottomNavigate(i: 7,),
-                            ),
-                          );
-                        }
-                        else if(index==3){
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => BottomNavigate(i: 8,),
-                            ),
-                          );
-                        }
-                        else if(index==1){}else{print('invalid');}
-
-                        // Navigator.pushReplacement(
-                        //     NavigationService.navigatorKey.currentContext!,
-                        //     MaterialPageRoute(builder: (context) => GroceryScreen()));
-
-                      },
-
-                      child: ShopWidget(allCateImg: allCatagoriesImg[index], allCateName: allCategoriesName[index],
-
-
-                      ),
-                    );
-
-                  }),
-                ),
-
-
+                const ShopWidget(),
 
               ],),
           ),

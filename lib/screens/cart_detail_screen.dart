@@ -2,7 +2,7 @@ import 'package:crockery_app/widgets/cart_detail_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constant/constant.dart';
-import '../widgets/bottom_navigation/bottom_sheet.dart';
+import '../widgets/bottom_navigation/bottom_navigation_bar.dart';
 
 class CartDetail extends StatefulWidget {
   const CartDetail({Key? key}) : super(key: key);

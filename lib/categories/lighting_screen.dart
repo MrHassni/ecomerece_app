@@ -84,26 +84,9 @@ class _State extends State< LightingScreen> {
               ),
 
               //All Products call here....
-              Padding(
-                padding: const EdgeInsets.only(left: 10,right: 10),
-                child: GridView.count(
-                  shrinkWrap: true,
-                  childAspectRatio: 8.5 / 7,
-                  crossAxisSpacing: 10.0,
-                  physics:  const NeverScrollableScrollPhysics(),
-                  crossAxisCount: 2,
-                  children: List.generate(4,(index){
-
-                    return  InkWell(
-                      onTap: () {
-                      },
-                      child: ShopWidget( allCateImg: allCatagoriesImg[index], allCateName: allCategoriesName[index],
-
-                      ),
-                    );
-
-                  }),
-                ),
+              const Padding(
+                padding: EdgeInsets.only(left: 10,right: 10),
+                child: ShopWidget(),
               ),
               // SizedBox(height: 10,),
               const HorizontalSlider(),
@@ -142,26 +125,7 @@ class _State extends State< LightingScreen> {
                 ),
               ),
 
-              GridView.count(
-                childAspectRatio: 4/4.5,
-                shrinkWrap: true,
-                crossAxisSpacing: 2.0,
-                mainAxisSpacing: 5,
-                physics:  const NeverScrollableScrollPhysics(),
-                scrollDirection: Axis.vertical,
-                crossAxisCount: 2,
-                children: List.generate(5,(index){
-
-                  return  InkWell(
-                    onTap: () {
-                    },
-                    child:MostPurchased(mostPurchasedImg: mostPurchased[index],
-
-                    ),
-                  );
-
-                }),
-              ),
+              MostPurchased()
 
             ],),
         ),
