@@ -3,11 +3,13 @@ import 'package:crockery_app/categories/book_screen.dart';
 import 'package:crockery_app/categories/dinning&kitchen.dart';
 import 'package:crockery_app/categories/giftshop_screen.dart';
 import 'package:crockery_app/categories/lighting_screen.dart';
-import 'package:crockery_app/screens/account_page.dart';
+import 'package:crockery_app/screens/account_setting/address_book_screen.dart';
+import 'package:crockery_app/screens/account_setting/notification_screen.dart';
+import 'package:crockery_app/screens/account_setting/profile_screen.dart';
+import 'package:crockery_app/screens/account_setting/setting_screen.dart';
 import 'package:crockery_app/screens/cart_detail_screen.dart';
 import 'package:crockery_app/screens/changeaddress_payment_screen.dart';
 import 'package:crockery_app/screens/order_history.dart';
-import 'package:crockery_app/screens/orders_page.dart';
 import 'package:crockery_app/screens/voucher_screen.dart';
 import 'package:crockery_app/screens/wish_list.dart';
 import 'package:crockery_app/screens/all_categoryies_screen.dart';
@@ -38,8 +40,8 @@ class _State extends State< BottomNavigate> {
   final List <Widget> _pages =[
     Home(),
     WishListScreen(),
-    OrdersScreen(),
-    AccountScreen(),
+    OrderHistory(),
+    SettingScreen(),
     AllCategoriesScreen(),
     GiftShopScreen(),
     DinningKitchenScreen(),
@@ -57,6 +59,10 @@ class _State extends State< BottomNavigate> {
     VoucherScreen(),
     ChangeAddressAndPayment(),
     OrderHistory(),
+    ProfileEditScreen(),
+    AddressBookScreen(),
+    OrderHistory(),
+    NotificationScreen(),
 
     // DealsScreen(),
     // AccountScreen(),
@@ -88,7 +94,7 @@ class _State extends State< BottomNavigate> {
           BottomNavigationBarItem(icon: Icon(Icons.home,),label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.favorite_border),label: 'Wishlist'),
           BottomNavigationBarItem(icon: Icon(Icons.card_giftcard),label: 'Orders'),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart),label: 'Account'),
+          BottomNavigationBarItem(icon: Icon(Icons.settings),label: 'Setting'),
         ],
       ),
     );

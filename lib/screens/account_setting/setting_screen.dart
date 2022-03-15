@@ -1,3 +1,4 @@
+import 'package:crockery_app/screens/account_setting/profile_screen.dart';
 import 'package:crockery_app/widgets/mostpurchased.dart';
 import 'package:flutter/material.dart';
 
@@ -72,23 +73,33 @@ class _State extends State<SettingScreen> {
                 Container(
                     padding: EdgeInsets.all(10),
                     height: 40,
-                    child: Row(
-                      children: const [
-                        Icon(Icons.edit,color: Constants.kLightGreyColor,),
-                        Padding(
-                          padding: EdgeInsets.only(left: 20),
-                          child: Text(
-                            'Edit Profil',
-                            style: TextStyle(
-                                color: Constants.kGraniteGreyColor,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Nuntio-Bold.ttf',
-                                fontSize: 15),
+                    child: InkWell(
+                      onTap: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BottomNavigate(i: 21,),
                           ),
-                        ),
-                        Spacer(),
-                        Icon(Icons.arrow_forward_ios,color: Constants.kLightGreyColor,),
-                      ],
+                        );
+                      },
+                      child: Row(
+                        children: const [
+                          Icon(Icons.edit,color: Constants.kLightGreyColor,),
+                          Padding(
+                            padding: EdgeInsets.only(left: 20),
+                            child: Text(
+                              'Edit Profil',
+                              style: TextStyle(
+                                  color: Constants.kGraniteGreyColor,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Nuntio-Bold.ttf',
+                                  fontSize: 15),
+                            ),
+                          ),
+                          Spacer(),
+                          Icon(Icons.arrow_forward_ios,color: Constants.kLightGreyColor,),
+                        ],
+                      ),
                     )),
                 //My Address add...
                 const Divider(
@@ -98,23 +109,33 @@ class _State extends State<SettingScreen> {
                 Container(
                     padding: EdgeInsets.all(10),
                     height: 40,
-                    child: Row(
-                      children: const [
-                        Icon(Icons.location_on_outlined,color: Constants.kLightGreyColor,),
-                        Padding(
-                          padding: EdgeInsets.only(left: 20),
-                          child: Text(
-                            'My Address',
-                            style: TextStyle(
-                                color: Constants.kGraniteGreyColor,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Nuntio-Bold.ttf',
-                                fontSize: 15),
+                    child: InkWell(
+                      onTap: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BottomNavigate(i: 22,),
                           ),
-                        ),
-                        Spacer(),
-                        Icon(Icons.arrow_forward_ios,color: Constants.kLightGreyColor,),
-                      ],
+                        );
+                      },
+                      child: Row(
+                        children: const [
+                          Icon(Icons.location_on_outlined,color: Constants.kLightGreyColor,),
+                          Padding(
+                            padding: EdgeInsets.only(left: 20),
+                            child: Text(
+                              'My Address',
+                              style: TextStyle(
+                                  color: Constants.kGraniteGreyColor,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Nuntio-Bold.ttf',
+                                  fontSize: 15),
+                            ),
+                          ),
+                          Spacer(),
+                          Icon(Icons.arrow_forward_ios,color: Constants.kLightGreyColor,),
+                        ],
+                      ),
                     )),
                 //My order add..
                 const Divider(
@@ -124,23 +145,33 @@ class _State extends State<SettingScreen> {
                 Container(
                     padding: EdgeInsets.all(10),
                     height: 40,
-                    child: Row(
-                      children: const [
-                        Icon(Icons.shop,color: Constants.kLightGreyColor,),
-                        Padding(
-                          padding: EdgeInsets.only(left: 20),
-                          child: Text(
-                            'My Order',
-                            style: TextStyle(
-                                color: Constants.kGraniteGreyColor,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Nuntio-Bold.ttf',
-                                fontSize: 15),
+                    child: InkWell(
+                      onTap: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BottomNavigate(i: 23,),
                           ),
-                        ),
-                        Spacer(),
-                        Icon(Icons.arrow_forward_ios,color: Constants.kLightGreyColor,),
-                      ],
+                        );
+                      },
+                      child: Row(
+                        children: const [
+                          Icon(Icons.shop,color: Constants.kLightGreyColor,),
+                          Padding(
+                            padding: EdgeInsets.only(left: 20),
+                            child: Text(
+                              'My Order',
+                              style: TextStyle(
+                                  color: Constants.kGraniteGreyColor,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Nuntio-Bold.ttf',
+                                  fontSize: 15),
+                            ),
+                          ),
+                          Spacer(),
+                          Icon(Icons.arrow_forward_ios,color: Constants.kLightGreyColor,),
+                        ],
+                      ),
                     )),
                 //Notification....
                 const Divider(
@@ -150,23 +181,33 @@ class _State extends State<SettingScreen> {
                 Container(
                     padding: EdgeInsets.all(10),
                     height: 40,
-                    child: Row(
-                      children: const [
-                        Icon(Icons.doorbell,color: Constants.kLightGreyColor,),
-                        Padding(
-                          padding: EdgeInsets.only(left: 20),
-                          child: Text(
-                            'Notification',
-                            style: TextStyle(
-                                color: Constants.kGraniteGreyColor,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Nuntio-Bold.ttf',
-                                fontSize: 15),
+                    child: InkWell(
+                      onTap: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BottomNavigate(i: 24,),
                           ),
-                        ),
-                        Spacer(),
-                        Icon(Icons.arrow_forward_ios,color: Constants.kLightGreyColor,),
-                      ],
+                        );
+                      },
+                      child: Row(
+                        children: const [
+                          Icon(Icons.doorbell,color: Constants.kLightGreyColor,),
+                          Padding(
+                            padding: EdgeInsets.only(left: 20),
+                            child: Text(
+                              'Notification',
+                              style: TextStyle(
+                                  color: Constants.kGraniteGreyColor,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Nuntio-Bold.ttf',
+                                  fontSize: 15),
+                            ),
+                          ),
+                          Spacer(),
+                          Icon(Icons.arrow_forward_ios,color: Constants.kLightGreyColor,),
+                        ],
+                      ),
                     )),
                 // setting add
                 const Divider(
