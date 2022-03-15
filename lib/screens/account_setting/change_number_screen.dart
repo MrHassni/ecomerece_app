@@ -1,20 +1,20 @@
+import 'package:crockery_app/constant/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../constant/constant.dart';
 import '../../widgets/buttons/long_rounded_button.dart';
 
-class ChangeEmailScreen extends StatefulWidget {
+class ChangeNumberScreen extends StatefulWidget {
   @override
-  State<ChangeEmailScreen> createState() => _ChangeEmailScreenState();
+  State<ChangeNumberScreen> createState() => _ChangeNumberScreenState();
 }
 
-class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
-  TextEditingController OldEmailNumController = TextEditingController();
-  TextEditingController NewEmailNumController = TextEditingController();
+class _ChangeNumberScreenState extends State<ChangeNumberScreen> {
+  TextEditingController OldPhoneNumController = TextEditingController();
+  TextEditingController NewPhoneNumController = TextEditingController();
 
-  String OldEmailNum = '';
-  String NewEmailNum = '';
+  String OldPhoneNum = '';
+  String NewPhoneNum = '';
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
                             color: Constants.kDarkOrangeColor,
                           )),
                       const Text(
-                        'Change Email',
+                        'Change Number',
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 18,
@@ -51,30 +51,30 @@ class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
                   ),
                 ),
                 SizedBox(height: 20,),
-                // SizedBox(
-                //     height: 50,
-                //     width: 250,
-                //     child: Text(
-                //       'For the Security & Safety Please choose password',
-                //       textAlign: TextAlign.center,
-                //       style: TextStyle(
-                //           fontSize: 16,
-                //           color: Colors.grey,
-                //           fontFamily: 'Nuntio-Light.ttf'),
-                //     )),
+                const SizedBox(
+                    height: 50,
+                    width: 250,
+                    child: Text(
+                      'For the Security & Safety Please choose password',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey,
+                          fontFamily: 'Nuntio-Light.ttf'),
+                    )),
                 SizedBox(
                   height: 150,
                   width: 150,
                   child: Image.asset('images/mobile_img.png'),
                 ),
-                Align(alignment: Alignment.centerLeft, child: Text('Old Email Number')),
-                SizedBox(
+                const Align(alignment: Alignment.centerLeft, child: Text('Old Phone Number')),
+                const SizedBox(
                   height: 10,
                 ),
                 Container(
                   // margin: EdgeInsets.all(20),
                     child: TextField(
-                      controller: OldEmailNumController,
+                      controller: OldPhoneNumController,
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -91,15 +91,15 @@ class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
                             color: Constants.kDarkOrangeColor,
                           ),
                         ),
-                        labelText: 'Old Email Number',
+                        labelText: 'Old Phone Number',
                         prefixIcon: Icon(
-                          Icons.email,
+                          Icons.mobile_friendly,
                           color: Constants.kDarkOrangeColor,
                         ),
                       ),
                       onChanged: (text) {
                         setState(() {
-                          OldEmailNum = text;
+                          OldPhoneNum = text;
                           //you can access nameController in its scope to get
                           // the value of text entered as shown below
                           //fullName = nameController.text;
@@ -109,24 +109,24 @@ class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
 
                 Container(
                   // margin: EdgeInsets.all(20),
-                  child: Text(OldEmailNum),
+                  child: Text(OldPhoneNum),
                 ),
 
                 // Confirm password...
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                Align(
+                const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('New Email Number')),
-                SizedBox(
+                    child: Text('New Phone Number')),
+                const SizedBox(
                   height: 10,
                 ),
                 Container(
                   // margin: EdgeInsets.all(20),
 
                     child: TextField(
-                      controller: NewEmailNumController,
+                      controller: NewPhoneNumController,
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -143,15 +143,15 @@ class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
                             color: Constants.kDarkOrangeColor,
                           ),
                         ),
-                        labelText: 'New Email Number',
+                        labelText: 'New Phone Number',
                         prefixIcon: Icon(
-                          Icons.email,
+                          Icons.mobile_friendly,
                           color: Constants.kDarkOrangeColor,
                         ),
                       ),
                       onChanged: (text) {
                         setState(() {
-                          NewEmailNum = text;
+                          NewPhoneNum = text;
                           //you can access nameController in its scope to get
                           // the value of text entered as shown below
                           //fullName = nameController.text;
@@ -160,7 +160,7 @@ class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
                     )),
                 Container(
                   margin: EdgeInsets.all(10),
-                  child: Text(NewEmailNum),
+                  child: Text(NewPhoneNum),
                 ),
                 LongRoundButton(
                     text: 'Continue',

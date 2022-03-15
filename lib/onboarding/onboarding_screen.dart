@@ -50,8 +50,9 @@ class _OnbordingState extends State<Onbording> {
                     return Padding(
                       padding: const EdgeInsets.all(0),
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          const Text('Crockery Bazar',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,fontFamily:'Nuntio-Bold.ttf'),),
+                          const Text('Crockery Bazar',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25,fontFamily:'Nuntio-Bold.ttf'),),
                           Image.asset(
                             contents[i].image,
                             height: MediaQuery.of(context).size.height*0.4,
