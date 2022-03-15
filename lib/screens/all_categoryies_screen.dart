@@ -221,72 +221,64 @@ class _State extends State< AllCategoriesScreen> {
                 ),
 
        // All Categories  here....
-                Container(
-                  height: MediaQuery.of(context).size.height,
-                  child: GridView.count(
-                    childAspectRatio: 7/5.2,
-                    crossAxisSpacing: 10.0,
-                    // crossAxisSpacing: 20,
-                    mainAxisSpacing: 15,
-                    // padding: EdgeInsets.all(10.0),
-                    // scrollDirection: Axis.vertical,
-                    // padding: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
-                    crossAxisCount: 2,
-                    children: List.generate(5,(index){
+                GridView.count(
+                  crossAxisSpacing: 10.0,
+                  childAspectRatio: 8.5 / 7,
+                  crossAxisCount: 2,shrinkWrap: true,
+                  children: List.generate(5,(index){
 
-                      return  InkWell(
-                        onTap: () {
-                          if(index==0){
-                            // Navigator.pushReplacement(
-                            //     NavigationService.navigatorKey.currentContext!,
-                            //     MaterialPageRoute(builder: (context) => BottomNavigate(i:4)));
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => BottomNavigate(i: 5,),
-                              ),
-                            );
-                          }else if(index==1){
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => BottomNavigate(i: 6,),
-                              ),
-                            );
-                          }
-                          else if(index==2){
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => BottomNavigate(i: 7,),
-                              ),
-                            );
-                          }
-                          else if(index==3){
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => BottomNavigate(i: 8,),
-                              ),
-                            );
-                          }
-                          else if(index==1){}else{print('invalid');}
-
+                    return  InkWell(
+                      onTap: () {
+                        if(index==0){
                           // Navigator.pushReplacement(
                           //     NavigationService.navigatorKey.currentContext!,
-                          //     MaterialPageRoute(builder: (context) => GroceryScreen()));
+                          //     MaterialPageRoute(builder: (context) => BottomNavigate(i:4)));
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => BottomNavigate(i: 5,),
+                            ),
+                          );
+                        }else if(index==1){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => BottomNavigate(i: 6,),
+                            ),
+                          );
+                        }
+                        else if(index==2){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => BottomNavigate(i: 7,),
+                            ),
+                          );
+                        }
+                        else if(index==3){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => BottomNavigate(i: 8,),
+                            ),
+                          );
+                        }
+                        else if(index==1){}else{print('invalid');}
 
-                        },
+                        // Navigator.pushReplacement(
+                        //     NavigationService.navigatorKey.currentContext!,
+                        //     MaterialPageRoute(builder: (context) => GroceryScreen()));
 
-                        child: ShopWidget(allCateImg: allCatagoriesImg[index], allCateName: allCategoriesName[index],
+                      },
+
+                      child: ShopWidget(allCateImg: allCatagoriesImg[index], allCateName: allCategoriesName[index],
 
 
-                        ),
-                      );
+                      ),
+                    );
 
-                    }),
-                  ),
-    ),
+                  }),
+                ),
 
 
 

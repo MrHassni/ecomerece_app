@@ -7,17 +7,15 @@ import '../screens/home_screen.dart';
 import '../widgets/bottom_navigation/bottom_sheet.dart';
 import '../widgets/shopwidgets.dart';
 
-
-class DinningKitchenScreen  extends StatefulWidget {
+class DinningKitchenScreen extends StatefulWidget {
   const DinningKitchenScreen({Key? key}) : super(key: key);
-
 
   @override
   _State createState() => _State();
 }
 
-class _State extends State< DinningKitchenScreen> {
-  final List allCatagoriesImg =[
+class _State extends State<DinningKitchenScreen> {
+  final List allCatagoriesImg = [
     'images/crockeryimg.png',
     'images/tableimg.png',
     'images/trolleyimg.png',
@@ -31,7 +29,7 @@ class _State extends State< DinningKitchenScreen> {
     'images/diningkitchen.png',
     'images/book.png',
   ];
-  final List allCategoriesName =[
+  final List allCategoriesName = [
     'Crockery Shop',
     'Tables Shop',
     'Trolleys & Carts',
@@ -45,17 +43,17 @@ class _State extends State< DinningKitchenScreen> {
     'Home Decor',
     'Lighting',
   ];
-  final List mostPurchased =[
+  final List mostPurchased = [
     'images/study.png',
     'images/emollient.png',
     'images/gupshuptable.png',
     'images/study.png',
     'images/emollient.png',
     'images/gupshuptable.png',
-
   ];
 
   bool showSearch = false;
+
   @override
   Widget build(BuildContext context) {
     // print(_allShopImg.length.toString());
@@ -63,24 +61,29 @@ class _State extends State< DinningKitchenScreen> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-            children:  [
+            children: [
               Padding(
                 padding: EdgeInsets.all(15),
                 child: Row(
                   children: [
                     InkWell(
-                        onTap: (){
-                          Navigator.push(context, MaterialPageRoute(
-                              builder: (context) => Home()),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Home()),
                           );
                         },
-                        child: Icon(Icons.arrow_back_ios, color:Constants.kDarkOrangeColor,)),
+                        child: Icon(
+                          Icons.arrow_back_ios,
+                          color: Constants.kDarkOrangeColor,
+                        )),
                     const Text(
                       'Dinning & Kitchen',
                       style: TextStyle(
-                          color: Constants.kBlackColor,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,),
+                        color: Constants.kBlackColor,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     // const SizedBox(
                     //   width: 170,
@@ -97,10 +100,8 @@ class _State extends State< DinningKitchenScreen> {
                           // showSearch ==true;
                         });
                       },
-                      child: const Icon(
-                        Icons.search,
-                        color: Constants.kGreyColor
-                      ),
+                      child:
+                          const Icon(Icons.search, color: Constants.kGreyColor),
                     ),
                     const Icon(
                       Icons.doorbell_outlined,
@@ -123,63 +124,67 @@ class _State extends State< DinningKitchenScreen> {
               //for search
               showSearch
                   ? SizedBox(
-                height: 40,
-                width: 350,
-                child: TextFormField(
-                  onChanged: (_) {
-                    // initiateSearch();
-                  },
-                  // controller: searchEditingController,
-                  decoration: InputDecoration(
-                      focusColor: Constants.kDarkOrangeColor,
-                      prefixIcon: const Icon(
-                        Icons.search,
-                        color: Constants.kDarkOrangeColor,
+                      height: 40,
+                      width: 350,
+                      child: TextFormField(
+                        onChanged: (_) {
+                          // initiateSearch();
+                        },
+                        // controller: searchEditingController,
+                        decoration: InputDecoration(
+                            focusColor: Constants.kDarkOrangeColor,
+                            prefixIcon: const Icon(
+                              Icons.search,
+                              color: Constants.kDarkOrangeColor,
+                            ),
+                            // border: OutlineInputBorder(
+                            //   // width: 0.0 produces a thin "hairline" border
+                            //
+                            //   borderRadius: BorderRadius.all(Radius.circular(90.0)),
+                            //   borderSide: BorderSide(color: Color(0xFFAB4D24), width: 2.0),
+                            //   // borderSide: BorderSide.none,
+                            //   //borderSide: const BorderSide(),
+                            // ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: Constants.kDarkOrangeColor,
+                                  width: 2.0),
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: Constants.kDarkOrangeColor,
+                                  width: 2.0),
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                            hintStyle: const TextStyle(
+                                color: Constants.kGreyColor,
+                                fontFamily: "WorkSansLight"),
+                            filled: true,
+                            fillColor: Constants.kWhite54Color,
+                            hintText: 'Search by name...'),
                       ),
-                      // border: OutlineInputBorder(
-                      //   // width: 0.0 produces a thin "hairline" border
-                      //
-                      //   borderRadius: BorderRadius.all(Radius.circular(90.0)),
-                      //   borderSide: BorderSide(color: Color(0xFFAB4D24), width: 2.0),
-                      //   // borderSide: BorderSide.none,
-                      //   //borderSide: const BorderSide(),
-                      // ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                            color: Constants.kDarkOrangeColor, width: 2.0),
-                        borderRadius: BorderRadius.circular(25.0),
+                    )
+                  : const SizedBox(
+                      height: 40,
+                      width: 350,
+                      child: Text(
+                        'Dinning & Kitchen products Detail',
+                        style: TextStyle(
+                            color: Constants.kGreyColor, fontSize: 12),
                       ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                            color: Constants.kDarkOrangeColor, width: 2.0),
-                        borderRadius: BorderRadius.circular(25.0),
-                      ),
-                      hintStyle: const TextStyle(
-                          color: Constants.kGreyColor, fontFamily: "WorkSansLight"),
-                      filled: true,
-                      fillColor: Constants.kWhite54Color,
-                      hintText: 'Search by name...'),
-                ),
-              )
-                  :  const SizedBox(
-                height: 40,
-                width: 350,
-                child: Text(
-                  'Dinning & Kitchen products Detail',
-                  style: TextStyle(color: Constants.kGreyColor, fontSize: 12),
-                ),
-              ),
-              const Align(alignment: Alignment.centerLeft,
+                    ),
+              const Align(
+                alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding:
-                  EdgeInsets.symmetric(horizontal: 15.0, vertical: 15),
+                  padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 15),
                   child: Text(
                     'Shops Categories',
                     // textAlign: TextAlign.left,
                     style: TextStyle(
                         color: Constants.kBlackColor,
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: 17,
                         fontFamily: 'Nuntio-Bold.ttf'),
                   ),
                 ),
@@ -187,73 +192,63 @@ class _State extends State< DinningKitchenScreen> {
 
               //All Products call here....
               Padding(
-                padding: EdgeInsets.only(left: 15,right: 15),
-                child: Container(
-                  height: 420,
-                  child: GridView.count(
-                    // childAspectRatio: 1.0,
-                    crossAxisSpacing: 10.0,
-                    // crossAxisSpacing: 20,
-                    mainAxisSpacing: 10,
-                    physics:  NeverScrollableScrollPhysics(),
-                    // padding: EdgeInsets.all(10.0),
-                    // scrollDirection: Axis.vertical,
-                    // padding: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
-                    crossAxisCount: 2,
-                    children: List.generate(3,(index){
-
-                      return  InkWell(
-                        onTap: () {
-                          //here home page four card navigate
-                          if(index==0){
-                            // Navigator.pushReplacement(
-                            //     NavigationService.navigatorKey.currentContext!,
-                            //     MaterialPageRoute(builder: (context) => BottomNavigate(i:4)));
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => BottomNavigate(i: 9,),
+                padding: const EdgeInsets.only(left: 10, right: 10),
+                child: GridView.count(
+                  shrinkWrap: true,
+                  childAspectRatio: 8.5 / 7,
+                  crossAxisSpacing: 10.0,
+                  physics: const NeverScrollableScrollPhysics(),
+                  crossAxisCount: 2,
+                  children: List.generate(3, (index) {
+                    return InkWell(
+                      onTap: () {
+                        if (index == 0) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => BottomNavigate(
+                                i: 9,
                               ),
-                            );
-                          }else if(index==1){
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => BottomNavigate(i: 10,),
+                            ),
+                          );
+                        } else if (index == 1) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => BottomNavigate(
+                                i: 10,
                               ),
-                            );
-                          }
-                          else if(index==2){
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => BottomNavigate(i: 11,),
+                            ),
+                          );
+                        } else if (index == 2) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => BottomNavigate(
+                                i: 11,
                               ),
-                            );
-                          }
-
-                          else if(index==1){}else{print('invalid');}
-
-                        },
-                        // child: Padding(
-                        // padding: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
-                        child: ShopWidget( allCateImg: allCatagoriesImg[index], allCateName: allCategoriesName[index],
-
-                        ),
-                      );
-
-                    }),
-                  ),
+                            ),
+                          );
+                        } else if (index == 1) {
+                        } else {
+                          print('invalid');
+                        }
+                      },
+                      child: ShopWidget(
+                        allCateImg: allCatagoriesImg[index],
+                        allCateName: allCategoriesName[index],
+                      ),
+                    );
+                  }),
                 ),
               ),
               // SizedBox(height: 10,),
               const HorizontalSlider(),
 
-
               //Most Purchased....
               Padding(
                 padding:
-                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
+                    const EdgeInsets.symmetric(horizontal: 10.0, vertical: 15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -263,94 +258,45 @@ class _State extends State< DinningKitchenScreen> {
                       style: TextStyle(
                           color: Constants.kBlackColor,
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: 17,
                           fontFamily: 'Nuntio-Bold.ttf'),
                     ),
                     InkWell(
                       onTap: () {
-                        // Navigator.push(context, MaterialPageRoute(
-                        //     builder: (context) => DealsScreen()),
-                        // );
                       },
-                      child: RichText(
-                        text: const TextSpan(
-                          children: [
-                            TextSpan(
-                                text: ' View all ',
-                                // recognizer: TapGestureRecognizer()..onTap = () => {
-                                //   Navigator.push(context, MaterialPageRoute(
-                                //       builder: (context) => DealsScreen()),
-                                //   )
-                                // },
-                                style: TextStyle(
-                                    color:Constants.kDarkOrangeColor, fontSize: 15)),
-                            WidgetSpan(
-                              child: Icon(
-                                Icons.arrow_forward_outlined,
-                                color: Constants.kDarkOrangeColor,
-                                size: 20,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      child: const Text(' View all ',
+                          style: TextStyle(
+                              color: Constants.kDarkOrangeColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13.5,
+                              fontFamily: 'Nuntio-Bold.ttf')),
                     ),
                   ],
                 ),
               ),
-              //
-              // Container(
-              //   decoration: const BoxDecoration(
-              //     // border: Border(top: BorderSide(color: Colors.grey, width: 5)),
-              //     borderRadius: BorderRadius.only(
-              //       // topLeft: Radius.circular(50.0),
-              //       // topRight: Radius.circular(50.0),
-              //     ),
-              //   ),
-              //
-              //   height: 230,
-              //   width: MediaQuery.of(context).size.width,
-              //   // width: 150,
-              //   child: ListView.builder(
-              //       scrollDirection: Axis.horizontal,
-              //       itemCount: 3,
-              //       itemBuilder: (context, index) {
-              //         return MostPurchased(mostPurchasedImg: mostPurchased[index],
-              //         );
-              //       }),
-              // ),
-              Container(
-                height: MediaQuery.of(context).size.height,
-                child: GridView.count(
-                  childAspectRatio: 4/7,
-                  crossAxisSpacing: 2.0,
-                  // crossAxisSpacing: 20,
-                  mainAxisSpacing: 5,
-                  physics:  NeverScrollableScrollPhysics(),
-                  // scrollDirection: Axis.horizontal,
-                  // padding: EdgeInsets.all(10.0),
-                  scrollDirection: Axis.vertical,
-                  // padding: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
-                  crossAxisCount: 3,
-                  children: List.generate(6,(index){
-
-                    return  InkWell(
-                      onTap: () {
-                        // MaterialPageRoute(builder: (context) => GroceryScreen());
-                      },
-                      // child: Padding(
-                      // padding: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
-                      child:MostPurchased(mostPurchasedImg: mostPurchased[index],
-
-                      ),
-                    );
-
-                  }),
-                ),
+              GridView.count(
+                childAspectRatio: 4 / 4.5,
+                crossAxisSpacing: 2.0,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                // scrollDirection: Axis.horizontal,
+                // padding: EdgeInsets.all(10.0),
+                scrollDirection: Axis.vertical,
+                // padding: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
+                crossAxisCount: 2,
+                children: List.generate(6, (index) {
+                  return InkWell(
+                    onTap: () {},
+                    child: MostPurchased(
+                      mostPurchasedImg: mostPurchased[index],
+                    ),
+                  );
+                }),
               ),
-
-            ],),
+            ],
+          ),
         ),
-      ),);
+      ),
+    );
   }
 }

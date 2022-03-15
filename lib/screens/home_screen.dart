@@ -290,13 +290,12 @@ class _HomeState extends State<Home> {
               ),
               Container(
                 color: Colors.transparent,
-                height: 350,
-                // width: 150,
+                height: 265,
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: 5,
                     itemBuilder: (context, index) {
-                      return AvailabelOffers(index: index,);
+                      return AvailabelOffers(index: index, lengthOfList: 5,);
                     }),
               ),
             ],
