@@ -2,7 +2,7 @@ import 'package:crockery_app/widgets/card_check_related_items.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constant/constant.dart';
-
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import '../helper/radio_btn_model_size.dart';
 import '../widgets/bottom_navigation/bottom_navigation_bar.dart';
 import '../widgets/product_list_image_with_color_widget.dart';
@@ -266,30 +266,49 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                       ),
 
 
-                      Row(
-                        children: const <Widget>[
-                          Icon(
-                            Icons.star,
-                            color: Constants.kOrangeColor,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Constants.kOrangeColor,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Constants.kOrangeColor,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Constants.kOrangeColor,
-                          ),
-                          Icon(
-                            Icons.star_outline,
-                            color: Constants.kOrangeColor,
-                          ),
-                        ],
+                      // Row(
+                      //   children: const <Widget>[
+                      //     Icon(
+                      //       Icons.star,
+                      //       color: Constants.kOrangeColor,
+                      //     ),
+                      //     Icon(
+                      //       Icons.star,
+                      //       color: Constants.kOrangeColor,
+                      //     ),
+                      //     Icon(
+                      //       Icons.star,
+                      //       color: Constants.kOrangeColor,
+                      //     ),
+                      //     Icon(
+                      //       Icons.star,
+                      //       color: Constants.kOrangeColor,
+                      //     ),
+                      //     Icon(
+                      //       Icons.star_outline,
+                      //       color: Constants.kOrangeColor,
+                      //     ),
+                      //   ],
+                      // ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: RatingBar.builder(
+                        initialRating: 4,
+                        minRating: 1,
+                        itemSize: 25,
+                        direction: Axis.horizontal,
+                        allowHalfRating: true,
+                        itemCount: 5,
+                        itemPadding: const EdgeInsets.symmetric(horizontal: 0.0),
+                        itemBuilder: (context, _) => const Icon(
+                          Icons.star,
+                          color: Constants.kOrangeColor,
+                        ),
+                        onRatingUpdate: (rating) {
+                          print(rating);
+                        },
                       ),
+                    ),
                       const Padding(padding: EdgeInsets.only(top: 15,bottom: 15),
                         child: Text(
                           'an ornamental trophy in the form of a cup, usually made of gold or silver and having a stem and two handles, '
@@ -336,25 +355,24 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                             ],
                           ),
                           Spacer(),
-                          const Icon(
-                            Icons.star,
-                            color: Constants.kOrangeColor,
-                          ),
-                          const Icon(
-                            Icons.star,
-                            color: Constants.kOrangeColor,
-                          ),
-                          const Icon(
-                            Icons.star,
-                            color: Constants.kOrangeColor,
-                          ),
-                          const Icon(
-                            Icons.star,
-                            color: Constants.kOrangeColor,
-                          ),
-                          const Icon(
-                            Icons.star_outline,
-                            color: Constants.kOrangeColor,
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: RatingBar.builder(
+                              initialRating: 4,
+                              minRating: 1,
+                              itemSize: 25,
+                              direction: Axis.horizontal,
+                              allowHalfRating: true,
+                              itemCount: 5,
+                              itemPadding: const EdgeInsets.symmetric(horizontal: 0.0),
+                              itemBuilder: (context, _) => const Icon(
+                                Icons.star,
+                                color: Constants.kOrangeColor,
+                              ),
+                              onRatingUpdate: (rating) {
+                                print(rating);
+                              },
+                            ),
                           ),
                         ],
                       ),

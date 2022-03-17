@@ -229,12 +229,13 @@ class _State extends State<DrinkWare> with TickerProviderStateMixin {
                                       // Navigator.pushReplacement(
                                       //     NavigationService.navigatorKey.currentContext!,
                                       //     MaterialPageRoute(builder: (context) => BottomNavigate(i:4)));
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => BottomNavigate(i: 16,),
-                                        ),
-                                      );
+                                      // Navigator.push(
+                                      //   context,
+                                      //   MaterialPageRoute(
+                                      //     builder: (context) => BottomNavigate(i: 16,),
+                                      //   ),
+                                      // );
+
                                     }else if(index==1){
                                       Navigator.push(
                                         context,

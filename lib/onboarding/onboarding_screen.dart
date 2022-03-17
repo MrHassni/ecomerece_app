@@ -117,7 +117,7 @@ class _OnbordingState extends State<Onbording> {
                   ),
                 ),
               ),
-              InkWell(
+             currentIndex == 2 ? Container() : InkWell(
                 onTap: (){
                   Navigator.pushReplacement(
                     context,

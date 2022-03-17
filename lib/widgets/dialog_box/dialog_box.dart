@@ -20,33 +20,44 @@ class DialogUtils {
           return AlertDialog(
             title: Text(title),
             actions: <Widget>[
+
+              TextButton(
+                  style: ButtonStyle(
+                    // backgroundColor: MaterialStateProperty.all(Colors.red),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                            side: BorderSide(color: Constants.kDarkOrangeColor),
+                          )
+                      )
+                  ),
+
+                  child: Text(cancelBtnText,style: TextStyle(color: Constants.kGraniteGreyColor),),
+                  onPressed: () => Navigator.pop(context)),
               TextButton(
                 style: ButtonStyle(
-                    // backgroundColor: MaterialStateProperty.all(Colors.red),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
-                            side: BorderSide(color: Colors.red)
-                        )
-                    )
+                backgroundColor: MaterialStateProperty.all(Constants.kDarkOrangeColor),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(18.0),
+                side: BorderSide(color: Constants.kDarkOrangeColor),
+                )
+                )
                 ),
-                child: Text(okBtnText),
+                child: Text(okBtnText,style: TextStyle(color: Constants.kWhiteAccent),),
                 onPressed: okBtnFunction(),
               ),
-              TextButton(
-          style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(Constants.kDarkOrangeColor),
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-          RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(18.0),
-          side: BorderSide(color: Colors.red)
-          )
-          )
-          ),
-                  child: Text(cancelBtnText,style: TextStyle(color: Constants.kWhiteAccent),),
-                  onPressed: () => Navigator.pop(context))
             ],
           );
         });
   }
 }
+
+//dialog box can use where we want to save or cancel anything its alert
+// call like this...
+
+// DialogUtils.showCustomDialog(context,
+// title: "Are You sure about Delete a product?",
+// okBtnText: "Confirm",
+// cancelBtnText: "Cancel",
+// okBtnFunction: () { } /* call method in which you have write your logic and save process  */);

@@ -27,16 +27,16 @@ class _MobileNumberState extends State<MobileNumber> {
      padding: EdgeInsets.all(40),
      child: SingleChildScrollView(
        child: Column(
-         // mainAxisAlignment: MainAxisAlignment.center,
+         mainAxisAlignment: MainAxisAlignment.center,
          children: [
-           SizedBox(height: 150,
-               width: 150,
+           SizedBox(height: 250,
+               width: 250,
                child: Image.asset('images/mobile_img.png'),
            ),
-           const SizedBox(height: 40,),
-           const Align(alignment: Alignment.centerLeft,
-               child: Text('Phone Number')),
-           SizedBox(height: 10,),
+           // const SizedBox(height: 40,),
+           // const Align(alignment: Alignment.centerLeft,
+           //     child: Text('Phone Number')),
+           // SizedBox(height: 10,),
            Container(
                // margin: EdgeInsets.all(20),
                // decoration: BoxDecoration(
@@ -56,6 +56,7 @@ class _MobileNumberState extends State<MobileNumber> {
                    focusedBorder: OutlineInputBorder(
                        borderSide: BorderSide(color: Constants.kDarkOrangeColor,),),
                    labelText: 'Mobile Number',
+                   labelStyle: TextStyle(color: Constants.kDarkOrangeColor,),
                    prefixIcon: Icon(Icons.mobile_friendly,color: Constants.kDarkOrangeColor,),
                  ),
                  onChanged: (text) {
@@ -67,10 +68,8 @@ class _MobileNumberState extends State<MobileNumber> {
                    });
                  },
                )),
-           Container(
-             margin: EdgeInsets.all(20),
-             child: Text(Mobile_Number),
-           ),
+           SizedBox(height: 40,),
+
            RoundedButton(text: 'Next', onPressed: (){
              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>  OptNumber()));
            }),

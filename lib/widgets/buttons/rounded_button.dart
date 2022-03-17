@@ -28,8 +28,8 @@ class RoundedButton extends StatelessWidget {
     // );
     shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(30.0)),
-    height: 40,
-    minWidth: 200,
+    height: 60,
+    minWidth: 220,
     color: Constants.kDarkOrangeColor,
     padding: EdgeInsets.all(0.0),
     child: Row(
@@ -41,7 +41,7 @@ class RoundedButton extends StatelessWidget {
         textAlign: TextAlign.center,
         style: const TextStyle(
             color: Constants.kWhiteAccent,
-          fontSize: 15,
+          fontSize: 18,
         ),
       ),
 
