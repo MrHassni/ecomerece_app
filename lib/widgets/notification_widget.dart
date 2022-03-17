@@ -51,7 +51,7 @@ class _State extends State<NotificationWidget> {
                           fontWeight: FontWeight.bold,
                           color: Constants.kBlackColor),
                     ),
-                     SizedBox(height: 30,
+                     const SizedBox(height: 30,
                        width: 200,
                        child: Text('Your order is confirmed.Please check everything is okay',
                         style: TextStyle(

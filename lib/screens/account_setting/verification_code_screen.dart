@@ -34,8 +34,38 @@ class VerificationCode extends StatefulWidget {
 
 class _VerificationCodeState extends State<VerificationCode> {
   OtpFieldController otpController = OtpFieldController();
+//dailog box .....
+  Future<void> _showMyDialog() async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Image.asset('images/verifyimg.png',height: 100,width: MediaQuery.of(context).size.height*0.4,),
+          content:
+
+              Text('Your Email is Added'),
 
 
+          actions: <Widget>[
+            TextButton(
+              child: Text('okay'),
+              onPressed: () {
+                print('Done');
+                Navigator.of(context).pop();
+              },
+            // ),
+            // TextButton(
+            //   child: Text('Cancel'),
+            //   onPressed: () {
+            //     Navigator.of(context).pop();
+            //   },
+            ),
+          ],
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -124,7 +154,8 @@ class _VerificationCodeState extends State<VerificationCode> {
                     child: Text('Resend OTP',style: TextStyle(color: Constants.kDarkOrangeColor),)),
                 SizedBox(height: 40,),
                 RoundedButton(text: 'Next', onPressed: (){
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>  PasswordScreen()));
+                  // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>  PasswordScreen()));
+                  _showMyDialog();
                 }),
               ],
             ),
