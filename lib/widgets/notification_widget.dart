@@ -1,5 +1,4 @@
 import 'package:crockery_app/constant/constant.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class NotificationWidget extends StatefulWidget {
@@ -47,21 +46,7 @@ class _State extends State<NotificationWidget> {
                           fontFamily: 'Nuntio-Light.ttf',
                           color: Constants.kGraniteGreyColor),),
                    ),
-                  // const Text('March,6,2022',style: TextStyle(
-                  //     fontFamily: 'Nuntio-Light.ttf',
-                  //     color: Constants.kGraniteGreyColor),),
-                ],
-              // const Center(
-              //   child: CircleAvatar(
-              //     radius: 20,
-              //     backgroundColor: Constants.kDarkOrangeColor,
-              //     child: Icon(
-              //       Icons.shop,
-              //       color: Constants.kWhiteAccent,
-              //       size: 20,
-              //     ),
-              //   ),
-              // ),
+                ],),
               Padding(
                 padding: EdgeInsets.all(10),
                 child: Column(

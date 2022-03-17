@@ -142,7 +142,7 @@ class _VerificationCodeState extends State<VerificationCode> {
             ),
           ),
         ),
-      ),
-    );
+      ]),
+    ));
   }
 }

@@ -39,9 +39,9 @@ class _ProductListImageAndColorState extends State<ProductListImageAndColor> {
               // color: Colors.red,
               height: 19,
               width: 60,
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                color: Constants.kGreyColor,
+              decoration:  BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                color: Colors.grey.shade300,
               ),
               // width: MediaQuery.of(context).size.width,
               // color: Colors.red,

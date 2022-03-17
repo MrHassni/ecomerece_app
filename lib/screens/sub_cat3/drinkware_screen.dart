@@ -4,8 +4,6 @@ import 'package:crockery_app/widgets/slider.dart';
 import 'package:crockery_app/widgets/top_bars/top_bar_with_buttons.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/bottom_navigation/bottom_navigation_bar.dart';
-
 
 
 class DrinkWare  extends StatefulWidget {

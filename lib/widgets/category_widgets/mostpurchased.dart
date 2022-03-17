@@ -26,7 +26,7 @@ class _MostPurchasedState extends State<MostPurchased> {
   Widget build(BuildContext context) {
     return GridView.count(
         shrinkWrap: true,
-        childAspectRatio: 4/4.75,
+        childAspectRatio: 4/4.5,
         physics: const NeverScrollableScrollPhysics(),
     scrollDirection: Axis.vertical,
     crossAxisCount: 2,

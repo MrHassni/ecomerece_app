@@ -1,16 +1,18 @@
-import 'dart:developer';
 
 import 'package:crockery_app/constant/constant.dart';
 import 'package:crockery_app/models/product_model.dart';
+import 'package:crockery_app/providers/navgation_provider.dart';
+import 'package:crockery_app/screens/product_detail_screen.dart';
 import 'package:crockery_app/widgets/avilabeloffers.dart';
 import 'package:crockery_app/widgets/featureproduct.dart';
 import 'package:crockery_app/widgets/category_widgets/shopslistwidget.dart';
-import 'package:crockery_app/widgets/top_bar_with_buttons.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../models/user_model.dart';
 import '../widgets/bottom_navigation/bottom_navigation_bar.dart';
 import '../widgets/slider.dart';
+import '../widgets/top_bars/top_bar_with_buttons.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -82,7 +84,7 @@ class _HomeState extends State<Home> {
             children: [
               TopBarWithButtons(
                   pageDescription: 'What do you want to buy?',
-                  pageName: 'Hi, ' + _userModel.userName!),
+                  pageName: _userModel.userName == null || _userModel.userName == '' ? 'Welcome To Crockery Bazaar' : 'Hi, ' + _userModel.userName!),
               const SizedBox(
                 height: 15,
               ),
@@ -131,6 +133,7 @@ class _HomeState extends State<Home> {
                         onTap: () {
                           //here home page four card navigate
                           if (index == 0) {
+                            Provider.of<NavigationProvider>(context,listen: false).setTitleAndDisForSubOne('Gift Shop', 'Gift Shop Product Details');
                             // Navigator.pushReplacement(
                             //     NavigationService.navigatorKey.currentContext!,
                             //     MaterialPageRoute(builder: (context) => BottomNavigate(i:4)));
@@ -143,29 +146,32 @@ class _HomeState extends State<Home> {
                               ),
                             );
                           } else if (index == 1) {
+                            Provider.of<NavigationProvider>(context,listen: false).setTitleAndDisForSubOne('Dinning & Kitchen', 'Gift Shop Product Details');
                             Navigator.push(
                               context,
                               MaterialPageRoute(
                                 builder: (context) => BottomNavigate(
-                                  i: 6,
+                                  i: 5,
                                 ),
                               ),
                             );
                           } else if (index == 2) {
+                            Provider.of<NavigationProvider>(context,listen: false).setTitleAndDisForSubOne('Home Decor', 'Gift Shop Product Details');
                             Navigator.push(
                               context,
                               MaterialPageRoute(
                                 builder: (context) => BottomNavigate(
-                                  i: 7,
+                                  i: 5,
                                 ),
                               ),
                             );
                           } else if (index == 3) {
+                            Provider.of<NavigationProvider>(context,listen: false).setTitleAndDisForSubOne('Lighting', 'Gift Shop Product Details');
                             Navigator.push(
                               context,
                               MaterialPageRoute(
                                 builder: (context) => BottomNavigate(
-                                  i: 8,
+                                  i: 5,
                                 ),
                               ),
                             );
@@ -205,9 +211,7 @@ class _HomeState extends State<Home> {
                     ),
                     InkWell(
                       onTap: () {
-                        // Navigator.push(context, MaterialPageRoute(
-                        //     builder: (context) => DealsScreen()),
-                        // );
+
                       },
                       child: const Text(' View all ',
                           style: TextStyle(
@@ -257,6 +261,66 @@ class _HomeState extends State<Home> {
                 ),
               ),
               const AvailabelOffers(),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 10.0, vertical: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Most Popular',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          color: Constants.kBlackColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                          fontFamily: 'Nuntio-Bold.ttf'),
+                    ),
+                    InkWell(
+                      onTap: () {
+
+                      },
+                      child: const Text(' View all ',
+                          style: TextStyle(
+                              color: Constants.kDarkOrangeColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13.5,
+                              fontFamily: 'Nuntio-Bold.ttf')),
+                    ),
+                  ],
+                ),
+              ),
+              const FeaturedProducts(),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 10.0, vertical: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Trending',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          color: Constants.kBlackColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                          fontFamily: 'Nuntio-Bold.ttf'),
+                    ),
+                    InkWell(
+                      onTap: () {
+
+                      },
+                      child: const Text(' View all ',
+                          style: TextStyle(
+                              color: Constants.kDarkOrangeColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13.5,
+                              fontFamily: 'Nuntio-Bold.ttf')),
+                    ),
+                  ],
+                ),
+              ),
+              const FeaturedProducts(),
             ],
           ),
         ),

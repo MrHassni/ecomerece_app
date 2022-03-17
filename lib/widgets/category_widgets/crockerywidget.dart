@@ -23,7 +23,7 @@ class _CrockeryWidgetState extends State<CrockeryWidget> {
       // margin: EdgeInsets.only(left: 20.0,bottom_navigation: 20),
       // color: Colors.purple,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15.0),
+        borderRadius: BorderRadius.circular(10.0),
       ),
       elevation: 7.5,
       child: Column(
@@ -34,7 +34,7 @@ class _CrockeryWidgetState extends State<CrockeryWidget> {
               // width: 100.0,
             ),
 
-            Container(
+            SizedBox(
               // color: Colors.red,
               height: 25,
               width: MediaQuery.of(context).size.width,
@@ -42,7 +42,7 @@ class _CrockeryWidgetState extends State<CrockeryWidget> {
               child:const Center(
                 child: Padding(
                   padding: EdgeInsets.only(left: 15,right: 15,),
-                  child: Text('cake enter long text where did moon sun of',
+                  child: Text('Cake Enter Long text where did moon sun of',
                     // widget.allCateName,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(fontSize: 12),

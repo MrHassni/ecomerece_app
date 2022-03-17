@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../helper/navigator.dart';
+import '../../providers/navgation_provider.dart';
 import '../bottom_navigation/bottom_navigation_bar.dart';
 
 class ShopWidget extends StatefulWidget {
@@ -51,36 +53,25 @@ class _ShopWidgetState extends State<ShopWidget> {
     children: List.generate(8, (index) {
       return InkWell(
         onTap: (){if (index == 0) {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => BottomNavigate(
-                i: 9,
-              ),
-            ),
-          );
+          Provider.of<NavigationProvider>(context,listen: false).setTitleAndDisForSubTwo('Gift Shop', 'Gift Shop Product Details');
         } else if (index == 1) {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => BottomNavigate(
-                i: 10,
-              ),
-            ),
-          );
+
+          Provider.of<NavigationProvider>(context,listen: false).setTitleAndDisForSubTwo('D & K', 'Gift Shop Product Details');
         } else if (index == 2) {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => BottomNavigate(
-                i: 11,
-              ),
-            ),
-          );
-        } else if (index == 1) {
+
+          Provider.of<NavigationProvider>(context,listen: false).setTitleAndDisForSubTwo('Home Decor', 'Gift Shop Product Details');
         } else {
-          print('invalid');
-        }},
+          Provider.of<NavigationProvider>(context,listen: false).setTitleAndDisForSubTwo('Others', 'Gift Shop Product Details');
+        }
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => BottomNavigate(
+              i: 9,
+            ),
+          ),
+        );
+        },
         child: Card(
           margin: const EdgeInsets.only( bottom:  10),
           shape: RoundedRectangleBorder(

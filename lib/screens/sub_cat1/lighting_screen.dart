@@ -5,10 +5,10 @@ import 'package:crockery_app/widgets/category_widgets/shopslistwidget.dart';
 import 'package:crockery_app/widgets/slider.dart';
 import 'package:crockery_app/widgets/top_bars/top_bar_with_buttons.dart';
 import 'package:flutter/material.dart';
-import 'constant.dart';
-import '../screens/home_screen.dart';
-import '../widgets/featureproduct.dart';
-import '../widgets/category_widgets/shopwidgets.dart';
+import '../../constant/constant.dart';
+import '../home_screen.dart';
+import '../../widgets/featureproduct.dart';
+import '../../widgets/category_widgets/shopwidgets.dart';
 
 
 class LightingScreen  extends StatefulWidget {

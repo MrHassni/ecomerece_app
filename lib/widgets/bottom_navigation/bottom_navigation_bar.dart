@@ -2,7 +2,7 @@
 import 'package:crockery_app/screens/sub_cat1/book_screen.dart';
 import 'package:crockery_app/screens/sub_cat1/dinning&kitchen.dart';
 import 'package:crockery_app/screens/sub_cat1/giftshop_screen.dart';
-import 'package:crockery_app/constant/lighting_screen.dart';
+import 'package:crockery_app/screens/sub_cat1/lighting_screen.dart';
 import 'package:crockery_app/screens/account_setting/address_book_screen.dart';
 import 'package:crockery_app/screens/account_setting/notification_screen.dart';
 import 'package:crockery_app/screens/account_setting/profile_screen.dart';
@@ -19,13 +19,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../screens/home_screen.dart';
-import '../../sub_cat2/crockery_screen.dart';
-import '../../sub_cat2/tabel_shop_screen.dart';
-import '../../sub_cat2/trolley_cart_shop_screen.dart';
-import '../../sub_cat3/buffet_set_screen.dart';
-import '../../sub_cat3/cutlery_screen.dart';
-import '../../sub_cat3/dinner_set_screen.dart';
-import '../../sub_cat3/drinkware_screen.dart';
+import '../../screens/sub_cat2/crockery_screen.dart';
+import '../../screens/sub_cat2/tabel_shop_screen.dart';
+import '../../screens/sub_cat2/trolley_cart_shop_screen.dart';
+import '../../screens/sub_cat3/buffet_set_screen.dart';
+import '../../screens/sub_cat3/cutlery_screen.dart';
+import '../../screens/sub_cat3/dinner_set_screen.dart';
+import '../../screens/sub_cat3/drinkware_screen.dart';
 
 
 
@@ -41,24 +41,24 @@ class BottomNavigate  extends StatefulWidget {
 class _State extends State< BottomNavigate> {
   final List <Widget> _pages =[
     const Home(),
-    WishListScreen(),
+    const WishListScreen(),
     OrderHistory(),
-    SettingScreen(),
-    AllCategoriesScreen(),
-    GiftShopScreen(),
-    DinningKitchenScreen(),
-    BookScreen(),
-    LightingScreen(),
-    CrockeryScreen(),
-    Table_shop_Screen(),
-    Trolley_Cart__screen(),
-    CutleryScreen(),
-    BuffetSetScreen(),
-    DinnerSetScreen(),
-    DrinkWare(),
-    ProductDetail(),
-    CartDetail(),
-    VoucherScreen(),
+    const SettingScreen(),
+    const AllCategoriesScreen(),
+     const GiftShopScreen(),
+    const DinningKitchenScreen(),
+    const BookScreen(),
+    const LightingScreen(),
+    const CrockeryScreen(),
+    const Table_shop_Screen(),
+    const Trolley_Cart__screen(),
+    const CutleryScreen(),
+    const BuffetSetScreen(),
+    const DinnerSetScreen(),
+    const DrinkWare(),
+    const ProductDetail(),
+    const CartDetail(),
+    const VoucherScreen(),
     ChangeAddressAndPayment(),
     OrderHistory(),
     ProfileEditScreen(),

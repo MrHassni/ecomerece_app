@@ -1,16 +1,15 @@
+import 'package:crockery_app/providers/navgation_provider.dart';
 import 'package:crockery_app/widgets/avilabeloffers.dart';
 import 'package:crockery_app/widgets/category_widgets/mostpurchased.dart';
-import 'package:crockery_app/widgets/category_widgets/shopslistwidget.dart';
 import 'package:crockery_app/widgets/slider.dart';
-import 'package:crockery_app/widgets/top_bar_without_buttons.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../constant/constant.dart';
-import '../home_screen.dart';
-import '../../widgets/featureproduct.dart';
 import '../../widgets/category_widgets/shopwidgets.dart';
-import '../../widgets/top_bar_with_buttons.dart';
+import '../../widgets/top_bars/top_bar_with_buttons.dart';
 
 class GiftShopScreen extends StatefulWidget {
+
   const GiftShopScreen({Key? key}) : super(key: key);
 
   @override
@@ -55,100 +54,103 @@ class _State extends State<GiftShopScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // print(_allShopImg.length.toString());
-    return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const TopBarWithButtons(pageName: 'Gift Shop',pageDescription: 'Gift Shop products Detail'),
-              const Align(
-                alignment: Alignment.centerLeft,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 15),
-                  child: Text(
-                    'Shops Categories',
-                    // textAlign: TextAlign.left,
-                    style: TextStyle(
-                        color: Constants.kBlackColor,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
-                        fontFamily: 'Nuntio-Bold.ttf'),
+    return Consumer<NavigationProvider>(
+      builder: (BuildContext context, navigationProvider, Widget? child) {
+      return Scaffold(
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                 TopBarWithButtons(pageName: navigationProvider.title1!,pageDescription: navigationProvider.description1!),
+                // const TopBarWithButtons(pageName: 'Gift Shop',pageDescription: 'Gift Shop products Detail'),
+                const Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 15),
+                    child: Text(
+                      'Shops Categories',
+                      // textAlign: TextAlign.left,
+                      style: TextStyle(
+                          color: Constants.kBlackColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                          fontFamily: 'Nuntio-Bold.ttf'),
+                    ),
                   ),
                 ),
-              ),
-              //All Products call here....
-              const Padding(
-                padding: EdgeInsets.only(left: 10, right: 10),
-                child: ShopWidget(),
-              ),
-              const HorizontalSlider(),
-
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10.0, vertical: 15),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      'Trending Gifts',
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                          color: Constants.kBlackColor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 17,
-                          fontFamily: 'Nuntio-Bold.ttf'),
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: const Text(' View all ',
-                          style: TextStyle(
-                              color: Constants.kDarkOrangeColor,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 13.5,
-                              fontFamily: 'Nuntio-Bold.ttf')),
-                    ),
-                  ],
+                //All Products call here....
+                const Padding(
+                  padding: EdgeInsets.only(left: 10, right: 10),
+                  child: ShopWidget(),
                 ),
-              ),
-              const AvailabelOffers(),
-              //Most Purchased....
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10.0, vertical: 15),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      'Most Purchased',
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                          color: Constants.kBlackColor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 17,
-                          fontFamily: 'Nuntio-Bold.ttf'),
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: const Text(' View all ',
-                          style: TextStyle(
-                              color: Constants.kDarkOrangeColor,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 13.5,
-                              fontFamily: 'Nuntio-Bold.ttf')),
-                    ),
-                  ],
-                ),
-              ),
+                const HorizontalSlider(),
 
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 5,),
-                child: MostPurchased(),
-              ),
-            ],
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10.0, vertical: 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'Trending Gifts',
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                            color: Constants.kBlackColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 17,
+                            fontFamily: 'Nuntio-Bold.ttf'),
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: const Text(' View all ',
+                            style: TextStyle(
+                                color: Constants.kDarkOrangeColor,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 13.5,
+                                fontFamily: 'Nuntio-Bold.ttf')),
+                      ),
+                    ],
+                  ),
+                ),
+                const AvailabelOffers(),
+                //Most Purchased....
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10.0, vertical: 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'Most Purchased',
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                            color: Constants.kBlackColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 17,
+                            fontFamily: 'Nuntio-Bold.ttf'),
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: const Text(' View all ',
+                            style: TextStyle(
+                                color: Constants.kDarkOrangeColor,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 13.5,
+                                fontFamily: 'Nuntio-Bold.ttf')),
+                      ),
+                    ],
+                  ),
+                ),
+
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 5,),
+                  child: const MostPurchased(),
+                ),
+              ],
+            ),
           ),
         ),
-      ),
+      );}
     );
   }
 }
