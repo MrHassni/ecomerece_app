@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../helper/navigator.dart';
-import 'bottom_navigation/bottom_navigation_bar.dart';
+import '../../helper/navigator.dart';
+import '../bottom_navigation/bottom_navigation_bar.dart';
 
 class ShopWidget extends StatefulWidget {
   const ShopWidget({Key? key}) : super(key: key);

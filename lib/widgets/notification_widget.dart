@@ -51,6 +51,41 @@ class _State extends State<NotificationWidget> {
                   //     fontFamily: 'Nuntio-Light.ttf',
                   //     color: Constants.kGraniteGreyColor),),
                 ],
+              // const Center(
+              //   child: CircleAvatar(
+              //     radius: 20,
+              //     backgroundColor: Constants.kDarkOrangeColor,
+              //     child: Icon(
+              //       Icons.shop,
+              //       color: Constants.kWhiteAccent,
+              //       size: 20,
+              //     ),
+              //   ),
+              // ),
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children:  [
+                    Text(
+                      'Order #${widget.orderId}',
+                      style: const TextStyle(
+                          fontFamily: 'Nuntio-Bold.ttf',
+                          fontWeight: FontWeight.bold,
+                          color: Constants.kBlackColor),
+                    ),
+                     const SizedBox(height: 30,
+                       width: 200,
+                       child: Text('Your order is confirmed.Please check everything is okay',
+                        style: TextStyle(
+                            fontFamily: 'Nuntio-Light.ttf',
+                            color: Constants.kGraniteGreyColor),),
+                     ),
+                    // const Text('March,6,2022',style: TextStyle(
+                    //     fontFamily: 'Nuntio-Light.ttf',
+                    //     color: Constants.kGraniteGreyColor),),
+                  ],
+                ),
               ),
               const Spacer(),
               const Padding(

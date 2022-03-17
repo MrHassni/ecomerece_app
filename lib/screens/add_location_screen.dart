@@ -1,10 +1,10 @@
-import 'package:crockery_app/widgets/mostpurchased.dart';
-import 'package:crockery_app/widgets/top_bars/top_bar_without_button.dart';
+
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../constant/constant.dart';
-import '../widgets/bottom_navigation/bottom_navigation_bar.dart';
-import '../widgets/shopwidgets.dart';
+import 'package:location/location.dart';
+
 
 class AddLocationScreen extends StatefulWidget {
   const AddLocationScreen({Key? key}) : super(key: key);
@@ -14,16 +14,22 @@ class AddLocationScreen extends StatefulWidget {
 }
 
 class _State extends State<AddLocationScreen> {
-  // final List mostPurchased =[
-  //   'images/study.png',
-  //   'images/emollient.png',
-  //   'images/gupshuptable.png',
-  //   'images/study.png',
-  //   'images/emollient.png',
-  //   'images/gupshuptable.png',
-  //
-  // ];
 
+  LatLng _initialcameraposition = LatLng(20.5937, 78.9629);
+  GoogleMapController? _controller;
+  Location _location = Location();
+
+  void _onMapCreated(GoogleMapController _cntlr)
+  {
+    _controller = _cntlr;
+    _location.onLocationChanged.listen((l) {
+      _controller?.animateCamera(
+        CameraUpdate.newCameraPosition(
+          CameraPosition(target: LatLng(l.latitude!,l.longitude!),zoom: 15),
+        ),
+      );
+    });
+  }
   @override
   Widget build(BuildContext context) {
     // print(_allShopImg.length.toString());
@@ -33,19 +39,81 @@ class _State extends State<AddLocationScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              TopBarWithoutButton(pageName: 'Add Location'),
+              Container(
+                height: 80,
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    top: 0,
+                    left: 15,
+                  ),
+                  child: Row(
+                    children: [
+                      InkWell(
+                          onTap: () {
+                            //   Navigator.push(context, MaterialPageRoute(
+                            //       builder: (context) => Home()),
+                            //   );
+                          },
+                          child: const Icon(
+                            Icons.arrow_back_ios,
+                            color: Constants.kDarkOrangeColor,
+                          )),
+                      const Text(
+                        'Add Location',
+                        style: TextStyle(
+                            color: Constants.kBlackColor,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
               Container(
                 height: 300,
                 width: MediaQuery.of(context).size.width,
-                color: Constants.kRedColor,
+                // color: Constants.kRedColor,
+                child: Stack(
+                  children: [
+
+                    GoogleMap(
+                      padding: EdgeInsets.only(bottom: 100, left: 15),
+                      initialCameraPosition: CameraPosition(target: _initialcameraposition),
+                      mapType: MapType.normal,
+                      onMapCreated: _onMapCreated,
+                      // myLocationEnabled: true,
+                      myLocationButtonEnabled: false,
+                      myLocationEnabled: true,
+                    ),
+
+                    // Positioned(
+                    //   bottom: 48.0,
+                    //   left: 10.0,
+                    //   right: 10.0,
+                    //   child: FlatButton(onPressed: (){
+                    //     setState(() {
+                    //       _onMapCreated(_controller!);
+                    //     });
+                    //
+                    //   },
+                    //     color: Colors.blue[800],
+                    //     child: Text("Back to location",
+                    //       style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0,color: Colors.white),),
+                    //   ),
+                    // ),
+
+                  ],
+                ),
               ),
+
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
                     margin: const EdgeInsets.only(
                         right: 10, left: 15, bottom: 10, top: 20),
                     height: 30,
-                    width: 300,
+                    width: MediaQuery.of(context).size.width*0.65,
                     decoration: BoxDecoration(
                       color: Constants.kLightGreyColor,
                       borderRadius: BorderRadius.circular(5),
@@ -68,22 +136,24 @@ class _State extends State<AddLocationScreen> {
                       },
                     ),
                   ),
-                  const Text(
-                    'Cancel',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                      color: Constants.kDarkOrangeColor,
+                   SizedBox(width: MediaQuery.of(context).size.width*0.25,
+                     child: Text(
+                      'Cancel',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        color: Constants.kDarkOrangeColor,
 
-                    ),
+                      ),
                   ),
+                   ),
 
                 ],
               ),
               Padding(
-                padding: EdgeInsets.only(top: 30,left: 20,right: 120,bottom: 30),
+                padding: const EdgeInsets.only(top: 20,bottom: 30),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

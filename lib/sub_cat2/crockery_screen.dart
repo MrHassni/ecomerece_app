@@ -1,5 +1,5 @@
 
-import 'package:crockery_app/widgets/crockerywidget.dart';
+import 'package:crockery_app/widgets/category_widgets/crockerywidget.dart';
 import 'package:flutter/material.dart';
 import '../constant/constant.dart';
 import '../widgets/bottom_navigation/bottom_navigation_bar.dart';

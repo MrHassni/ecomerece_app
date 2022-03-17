@@ -1,5 +1,5 @@
 
-import 'package:crockery_app/widgets/cutleryitemwidget.dart';
+import 'package:crockery_app/widgets/category_widgets/cutleryitemwidget.dart';
 
 import 'package:crockery_app/widgets/slider.dart';
 import 'package:flutter/material.dart';

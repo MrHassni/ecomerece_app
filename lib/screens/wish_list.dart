@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../constant/constant.dart';
 import '../widgets/bottom_navigation/bottom_navigation_bar.dart';
-import '../widgets/shopwidgets.dart';
-import '../widgets/top_bars/top_bar_with_buttons.dart';
+import '../widgets/category_widgets/shopwidgets.dart';
 
 
 class WishListScreen  extends StatefulWidget {
@@ -25,9 +24,11 @@ class _State extends State< WishListScreen> {
     'images/study.png',
     'images/emollient.png',
     'images/gupshuptable.png',
+
   ];
   @override
   Widget build(BuildContext context) {
+    // print(_allShopImg.length.toString());
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(

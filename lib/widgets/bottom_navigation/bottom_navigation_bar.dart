@@ -1,8 +1,8 @@
 
-import 'package:crockery_app/categories/book_screen.dart';
-import 'package:crockery_app/categories/dinning&kitchen.dart';
-import 'package:crockery_app/categories/giftshop_screen.dart';
-import 'package:crockery_app/categories/lighting_screen.dart';
+import 'package:crockery_app/screens/sub_cat1/book_screen.dart';
+import 'package:crockery_app/screens/sub_cat1/dinning&kitchen.dart';
+import 'package:crockery_app/screens/sub_cat1/giftshop_screen.dart';
+import 'package:crockery_app/constant/lighting_screen.dart';
 import 'package:crockery_app/screens/account_setting/address_book_screen.dart';
 import 'package:crockery_app/screens/account_setting/notification_screen.dart';
 import 'package:crockery_app/screens/account_setting/profile_screen.dart';
@@ -12,19 +12,21 @@ import 'package:crockery_app/screens/changeaddress_payment_screen.dart';
 import 'package:crockery_app/screens/order_history.dart';
 import 'package:crockery_app/screens/voucher_screen.dart';
 import 'package:crockery_app/screens/wish_list.dart';
-import 'package:crockery_app/screens/all_categoryies_screen.dart';
+import 'package:crockery_app/screens/all_category/all_categoryies_screen.dart';
 import 'package:crockery_app/screens/product_detail_screen.dart';
-import 'package:crockery_app/sub_categories/crockery_screen.dart';
-import 'package:crockery_app/sub_categories/tabel_shop_screen.dart';
-import 'package:crockery_app/sub_categories/trolley_cart_shop_screen.dart';
-import 'package:crockery_app/sub_categories_categrories/buffet_set_screen.dart';
-import 'package:crockery_app/sub_categories_categrories/cutlery_screen.dart';
-import 'package:crockery_app/sub_categories_categrories/dinner_set_screen.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../screens/home_screen.dart';
-import '../../sub_categories_categrories/drinkware_screen.dart';
+import '../../sub_cat2/crockery_screen.dart';
+import '../../sub_cat2/tabel_shop_screen.dart';
+import '../../sub_cat2/trolley_cart_shop_screen.dart';
+import '../../sub_cat3/buffet_set_screen.dart';
+import '../../sub_cat3/cutlery_screen.dart';
+import '../../sub_cat3/dinner_set_screen.dart';
+import '../../sub_cat3/drinkware_screen.dart';
+
 
 
 

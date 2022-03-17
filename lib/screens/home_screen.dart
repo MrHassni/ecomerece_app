@@ -4,8 +4,8 @@ import 'package:crockery_app/constant/constant.dart';
 import 'package:crockery_app/models/product_model.dart';
 import 'package:crockery_app/widgets/avilabeloffers.dart';
 import 'package:crockery_app/widgets/featureproduct.dart';
-import 'package:crockery_app/widgets/shopslistwidget.dart';
-import 'package:crockery_app/widgets/top_bars/top_bar_with_buttons.dart';
+import 'package:crockery_app/widgets/category_widgets/shopslistwidget.dart';
+import 'package:crockery_app/widgets/top_bar_with_buttons.dart';
 import 'package:flutter/material.dart';
 
 import '../models/user_model.dart';

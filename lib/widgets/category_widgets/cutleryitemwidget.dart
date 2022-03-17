@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constant/constant.dart';
 import '../helper/navigator.dart';
-import 'bottom_navigation/bottom_navigation_bar.dart';
 import 'buttons/cartbutton.dart';
 
 class CutleryWidget extends StatefulWidget {
