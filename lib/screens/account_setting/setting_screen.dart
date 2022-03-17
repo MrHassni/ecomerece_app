@@ -1,10 +1,10 @@
 import 'package:crockery_app/screens/account_setting/profile_screen.dart';
-import 'package:crockery_app/widgets/mostpurchased.dart';
+import 'package:crockery_app/widgets/category_widgets/mostpurchased.dart';
 import 'package:flutter/material.dart';
 
 import '../../constant/constant.dart';
 import '../../widgets/bottom_navigation/bottom_navigation_bar.dart';
-import '../../widgets/shopwidgets.dart';
+import '../../widgets/category_widgets/shopwidgets.dart';
 
 class SettingScreen extends StatefulWidget {
   const SettingScreen({Key? key}) : super(key: key);

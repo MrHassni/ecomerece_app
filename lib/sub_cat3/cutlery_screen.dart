@@ -1,39 +1,41 @@
-import 'package:crockery_app/constant/constant.dart';
-import 'package:crockery_app/widgets/cutleryitemwidget.dart';
+
+import 'package:crockery_app/widgets/category_widgets/cutleryitemwidget.dart';
+
 import 'package:crockery_app/widgets/slider.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/bottom_navigation/bottom_navigation_bar.dart';
+import '../constant/constant.dart';
 
 
 
-class DrinkWare  extends StatefulWidget {
-  const DrinkWare({Key? key}) : super(key: key);
+
+class CutleryScreen  extends StatefulWidget {
+  const CutleryScreen({Key? key}) : super(key: key);
 
 
   @override
   _State createState() => _State();
 }
 
-class _State extends State<DrinkWare> with TickerProviderStateMixin {
-  final List drinkWareImg =[
-    'images/bottle.png',
-    'images/bottleone.png',
-    'images/bottletwo.png',
-    'images/bottle.png',
-    'images/bottleone.png',
-    'images/bottletwo.png',
-    'images/bottle.png',
-    'images/bottleone.png',
-    'images/bottletwo.png',
+class _State extends State<CutleryScreen> with TickerProviderStateMixin {
+  final List cutleryImg =[
+    'images/humectants.png',
+    'images/emollients.png',
+    'images/emollentsone.png',
+    'images/emollientstwo.png',
+    'images/humectants.png',
+    'images/emollients.png',
+    'images/emollentsone.png',
+    'images/humectantsone.png',
+
   ];
-  TabController? _tabController ;
+   TabController? _tabController ;
 
   @override
   void initState() {
 // TODO: implement initState
     super.initState();
-    _tabController =  TabController(length: 3, vsync: this);
+    _tabController =  TabController(length: 6, vsync: this);
   }
 
   @override
@@ -63,9 +65,9 @@ class _State extends State<DrinkWare> with TickerProviderStateMixin {
                               //       builder: (context) => Home()),
                               //   );
                             },
-                            child: Icon(Icons.arrow_back_ios, color: Constants.kDarkOrangeColor,)),
+                            child: Icon(Icons.arrow_back_ios, color:  Constants.kDarkOrangeColor,)),
                         const Text(
-                          'Drinkware',
+                          'Cutlery',
                           style: TextStyle(
                               color: Constants.kBlackColor,
                               fontSize: 18,
@@ -97,7 +99,7 @@ class _State extends State<DrinkWare> with TickerProviderStateMixin {
                         ),
                         const Icon(
                           Icons.shopping_cart,
-                          color: Constants.kDarkOrangeColor,
+                          color:  Constants.kDarkOrangeColor,
                         ),
                         //  IconTheme(
                         //   data: new IconThemeData(
@@ -155,7 +157,7 @@ class _State extends State<DrinkWare> with TickerProviderStateMixin {
                   height: 40,
                   width: 350,
                   child: Text(
-                    'Drinkware Products Details',
+                    'Cultery Products Details',
                     style: TextStyle(color: Constants.kGreyColor, fontSize: 12),
                   ),
                 ),
@@ -165,125 +167,128 @@ class _State extends State<DrinkWare> with TickerProviderStateMixin {
                 Container(child:
                 Column(
                   children: <Widget>[
-                    Container(
-                      height: 60,
-                      margin: EdgeInsets.only(left: 20),
-                      child: TabBar(
-                        tabs: [
-                          Container(
-                            width: 70.0,
-                            child: const Text(
-                              'Glass Set',
-                              style: TextStyle(fontSize: 12),
-                            ),
+                  Container(
+                  height: 60,
+                  margin: EdgeInsets.only(left: 20),
+                  child: TabBar(
+                    tabs: [
+                      Container(
+                        width: 70.0,
+                        child: const FittedBox(
+                          child: Text(
+                            'Dinner Spoon',
+                            style: TextStyle(fontSize: 20),
                           ),
-                          Container(
-                            width: 75.0,
-                            child:const Text(
-                              'Jugs',
-                              style: TextStyle(fontSize: 12),
-                            ),
-                          ),
-
-                          Container(
-                            width: 75.0,
-                            child:const Text(
-                              'Other',
-                              style: TextStyle(fontSize: 12),
-                            ),
-                          ),
-                        ],
-                        unselectedLabelColor: Constants.kGreyColor,
-                        indicatorColor: Constants.kLightOrangeColor,
-                        labelColor: Constants.kBlackColor,
-                        indicatorSize: TabBarIndicatorSize.tab,
-                        indicatorWeight: 3.0,
-                        indicatorPadding: EdgeInsets.all(10),
-                        isScrollable: true,
-                        controller: _tabController,
+                        ),
                       ),
-                    ),
+                      Container(
+                        width: 75.0,
+                        child:const FittedBox(
+                        child: Text(
+                          'Soup Spoon',
+                          style: TextStyle(fontSize: 20),
+                        ),),
+                      ),
+                      Container(
+                        width: 75.0,
+                        child: const FittedBox(
+                          child: Text(
+                            'Ice Cream Spoon',
+                            style: TextStyle(fontSize: 20),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: 75.0,
+                        child: Text(
+                          'Knifes',
+                          style: TextStyle(fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        width: 75.0,
+                        child:const FittedBox(
+                        child: Text(
+                          'Cocktail Spoon',
+                          style: TextStyle(fontSize: 20),
+                        ),),
+                      ),
+                      Container(
+                        width: 75.0,
+                        child:const Text(
+                          'Other',
+                          style: TextStyle(fontSize: 15),
+                        ),
+                      ),
+                    ],
+                    unselectedLabelColor: Constants.kGreyColor,
+                    indicatorColor: Constants.kLightOrangeColor,
+                    labelColor: Constants.kBlackColor,
+                    indicatorSize: TabBarIndicatorSize.tab,
+                    indicatorWeight: 3.0,
+                    indicatorPadding: EdgeInsets.all(10),
+                    isScrollable: true,
+                    controller: _tabController,
+                  ),
+                ),
                     Container(
                       height: MediaQuery.of(context).size.height,
                       child: TabBarView(
-                        controller: _tabController,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(left: 10,right: 10),
-                            child: Container(
-                              height: MediaQuery.of(context).size.height,
-                              child: GridView.count(
-                                childAspectRatio: 5/8,
-                                crossAxisSpacing: 10.0,
-                                // crossAxisSpacing: 20,
-                                mainAxisSpacing: 20,
-                                physics:  NeverScrollableScrollPhysics(),
-                                // padding: EdgeInsets.all(10.0),
-                                // scrollDirection: Axis.vertical,
-                                // padding: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
-                                crossAxisCount: 3,
-                                children: List.generate(7,(index){
+                          controller: _tabController,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.only(left: 10,right: 10),
+                              child: Container(
+                                height: MediaQuery.of(context).size.height,
+                                child: GridView.count(
+                                  childAspectRatio: 5/8,
+                                  crossAxisSpacing: 10.0,
+                                  // crossAxisSpacing: 20,
+                                  mainAxisSpacing: 20,
+                                  physics:  const NeverScrollableScrollPhysics(),
+                                  // padding: EdgeInsets.all(10.0),
+                                  // scrollDirection: Axis.vertical,
+                                  // padding: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
+                                  crossAxisCount: 3,
+                                  children: List.generate(7,(index){
 
-                                  return  InkWell(onTap: (){
-                                    if(index==0){
-                                      // Navigator.pushReplacement(
-                                      //     NavigationService.navigatorKey.currentContext!,
-                                      //     MaterialPageRoute(builder: (context) => BottomNavigate(i:4)));
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => BottomNavigate(i: 16,),
-                                        ),
-                                      );
-                                    }else if(index==1){
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => BottomNavigate(i: 16,),
-                                        ),
-                                      );
-                                    }
-                                    else if(index==2){
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => BottomNavigate(i: 16,),
-                                        ),
-                                      );
-                                    }
+                                    return  CutleryWidget(cutleryimg: cutleryImg[index],);
 
-                                    else if(index==1){}else{print('invalid');}
-                                  },
-                                      child: CutleryWidget(cutleryimg: drinkWareImg[index],));
-
-                                }),
+                                  }),
+                                ),
                               ),
                             ),
-                          ),
 
-                          Container(
-                            child: Text("sign up"),
-                          ),
-                          Container(
-                            child: Text("abcd"),
-                          ),
-
-
-                        ],
+                            Container(
+                              child: Text("sign up"),
+                            ),
+                            Container(
+                              child: Text("abcd"),
+                            ),
+                            Container(
+                              child: Text("abcdefg"),
+                            ),
+                            Container(
+                              child: Text("abcdefghi"),
+                            ),
+                            Container(
+                              child: Text("abcdefghij"),
+                            ),
+                          ],
                       ),
                     ),
-
-                  ],
-                ),
-
-                ),
 
               ],
             ),
 
           ),
+
+              ],
+          ),
+
+          ),
         ),
-      ),
+    ),
     );
   }
 }

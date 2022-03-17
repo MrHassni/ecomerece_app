@@ -1,9 +1,10 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../constant/constant.dart';
-import '../helper/navigator.dart';
-import 'buttons/cartbutton.dart';
+import '../../constant/constant.dart';
+import '../../constant/constant.dart';
+import '../../helper/navigator.dart';
+import '../buttons/cartbutton.dart';
 
 class CutleryWidget extends StatefulWidget {
   CutleryWidget({required this.cutleryimg});

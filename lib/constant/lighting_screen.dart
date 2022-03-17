@@ -1,14 +1,14 @@
 
 import 'package:crockery_app/widgets/avilabeloffers.dart';
-import 'package:crockery_app/widgets/mostpurchased.dart';
-import 'package:crockery_app/widgets/shopslistwidget.dart';
+import 'package:crockery_app/widgets/category_widgets/mostpurchased.dart';
+import 'package:crockery_app/widgets/category_widgets/shopslistwidget.dart';
 import 'package:crockery_app/widgets/slider.dart';
 import 'package:crockery_app/widgets/top_bar_with_buttons.dart';
 import 'package:flutter/material.dart';
-import '../constant/constant.dart';
+import 'constant.dart';
 import '../screens/home_screen.dart';
 import '../widgets/featureproduct.dart';
-import '../widgets/shopwidgets.dart';
+import '../widgets/category_widgets/shopwidgets.dart';
 
 
 class LightingScreen  extends StatefulWidget {

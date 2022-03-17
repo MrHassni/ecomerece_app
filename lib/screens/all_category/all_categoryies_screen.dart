@@ -1,10 +1,10 @@
 
-import 'package:crockery_app/widgets/shopwidgets.dart';
+import 'package:crockery_app/widgets/category_widgets/shopwidgets.dart';
 import 'package:flutter/material.dart';
 
-import '../constant/constant.dart';
-import '../widgets/bottom_navigation/bottom_navigation_bar.dart';
-import 'home_screen.dart';
+import '../../constant/constant.dart';
+import '../../widgets/bottom_navigation/bottom_navigation_bar.dart';
+import '../home_screen.dart';
 
 
 class AllCategoriesScreen  extends StatefulWidget {

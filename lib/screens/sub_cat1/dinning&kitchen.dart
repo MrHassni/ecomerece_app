@@ -1,11 +1,11 @@
-import 'package:crockery_app/widgets/mostpurchased.dart';
+import 'package:crockery_app/widgets/category_widgets/mostpurchased.dart';
 import 'package:crockery_app/widgets/slider.dart';
 import 'package:flutter/material.dart';
 
-import '../constant/constant.dart';
-import '../screens/home_screen.dart';
-import '../widgets/bottom_navigation/bottom_navigation_bar.dart';
-import '../widgets/shopwidgets.dart';
+import '../../constant/constant.dart';
+import '../home_screen.dart';
+import '../../widgets/bottom_navigation/bottom_navigation_bar.dart';
+import '../../widgets/category_widgets/shopwidgets.dart';
 
 class DinningKitchenScreen extends StatefulWidget {
   const DinningKitchenScreen({Key? key}) : super(key: key);

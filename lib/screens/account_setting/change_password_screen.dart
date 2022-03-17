@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../constant/constant.dart';
 import '../../widgets/buttons/long_rounded_button.dart';
+import '../../widgets/dialog_box/dialog_box.dart';
 
 class ChangePasswordScreen extends StatefulWidget {
   @override
@@ -133,10 +134,10 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                             });
                           },
                         ),
-                        border: OutlineInputBorder(
+                        border: const OutlineInputBorder(
                           borderSide: BorderSide(  color: Constants.kDarkOrangeColor,),
                         ),
-                        enabledBorder: OutlineInputBorder(
+                        enabledBorder: const OutlineInputBorder(
                           borderSide: BorderSide(  color: Constants.kDarkOrangeColor,),
                         ) ,
                         focusedBorder: OutlineInputBorder(
@@ -162,7 +163,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
 
                 // Confirm password...
                 SizedBox(height: 10,),
-                Align(alignment: Alignment.centerLeft,
+                const Align(alignment: Alignment.centerLeft,
                     child: Text('Confirm Password')),
                 SizedBox(height: 10,),
                 Container(
@@ -182,16 +183,16 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                             });
                           },
                         ),
-                        border: OutlineInputBorder(
+                        border: const OutlineInputBorder(
                           borderSide: BorderSide(  color: Constants.kDarkOrangeColor,),
                         ),
-                        enabledBorder: OutlineInputBorder(
+                        enabledBorder: const OutlineInputBorder(
                           borderSide: BorderSide(  color: Constants.kDarkOrangeColor,),
                         ) ,
-                        focusedBorder: OutlineInputBorder(
+                        focusedBorder: const OutlineInputBorder(
                           borderSide: BorderSide(  color: Constants.kDarkOrangeColor,),),
                         labelText: 'Confirm Password',
-                        prefixIcon: Icon(Icons.lock,  color: Constants.kDarkOrangeColor,),
+                        prefixIcon: const Icon(Icons.lock,  color: Constants.kDarkOrangeColor,),
                       ),
                       onChanged: (text) {
                         setState(() {
@@ -207,6 +208,12 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                   child: Text(ConfirmPassword),
                 ),
                 LongRoundButton(text: 'Change Password', onPressed: (){
+                  DialogUtils.showCustomDialog(context,
+                      title: "Gallary",
+                      okBtnText: "Save",
+                      cancelBtnText: "Cancel",
+                      okBtnFunction: () { } /* call method in which you have write your logic and save process  */);
+                  // child: Container(),
                   // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>  LoginScreen()));
                 }),
               ],
