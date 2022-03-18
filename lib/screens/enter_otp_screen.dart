@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:crockery_app/screens/login_screen.dart';
 import 'package:crockery_app/screens/password_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:otp_text_field/otp_field.dart';
@@ -34,8 +37,6 @@ class OptNumber extends StatefulWidget {
 class _OptNumberState extends State<OptNumber> {
   OtpFieldController otpController = OtpFieldController();
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,56 +51,97 @@ class _OptNumberState extends State<OptNumber> {
       //   },
       // ),
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.all(40),
-          child: SingleChildScrollView(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(40),
             child: Column(
-              // mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SizedBox(height: 100,
-                  width: 150,
+                SizedBox(
+                  height: 250,
+                  width: 250,
                   child: Image.asset('images/mobile_img.png'),
                 ),
-                const Align(alignment: Alignment.centerLeft,
-                    child: Text('Enter Your OTP')),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
+                Text('Enter Your OTP'),
+                SizedBox(
+                  height: 20,
+                ),
                 Center(
                   child: Container(
-                     decoration: BoxDecoration(
-                       border: Border.all(color: Constants.kDarkOrangeColor,width: 1),
-                         borderRadius: BorderRadius.circular(5),
-                     ),
-
+                    padding: const EdgeInsets.only(top: 10.0, bottom: 8),
+                    decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      // boxShadow: [
+                      //   BoxShadow(
+                      //     color: Color(0xffeeeeee),
+                      //     blurRadius: 10,
+                      //     offset: Offset(0, 4),
+                      //   ),
+                      // ],
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(
+                          color: Constants.kDarkOrangeColor, width: 1.5),
+                    ),
                     child: OTPTextField(
-                      otpFieldStyle: OtpFieldStyle(
-                        enabledBorderColor: Colors.transparent,
-                        focusBorderColor:  Colors.transparent,
-                        borderColor: Colors.transparent
-                      ),
-
-                        controller: otpController,
+                      controller: otpController,
                         length: 6,
-                        width: MediaQuery.of(context).size.width *0.8,
+                        width: MediaQuery.of(context).size.width,
                         textFieldAlignment: MainAxisAlignment.spaceAround,
-                        // fieldStyle: FieldStyle.box,
-                        // outlineBorderRadius: 15,
-
-                        style: TextStyle(fontSize: 17),
+                        fieldWidth: 30,
+                        fieldStyle: FieldStyle.underline,
+                        otpFieldStyle: OtpFieldStyle(
+                          // backgroundColor: Colors.transparent,
+                          focusBorderColor: Constants.kDarkOrangeColor,
+                          disabledBorderColor: Constants.kGreyColor,
+                          enabledBorderColor: Constants.kDarkOrangeColor,
+                          //(here)
+                        ),
+                        outlineBorderRadius: 15,
+                        style: TextStyle(
+                          fontSize: 17,
+                          color: Colors.black,
+                        ),
                         onChanged: (pin) {
                           print("Changed: " + pin);
+                          log( pin.toString().length.toString());
+                          if(pin.toString().length == 6){
+                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>  LoginScreen()));
+
+                          }
                         },
                         onCompleted: (pin) {
                           print("Completed: " + pin);
+                          // log( pin.toString().length.toString());
+                          // if(pin.toString().length == 6){
+                          //   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>  LoginScreen()));
+                          //
+                          // }
                         }),
                   ),
                 ),
-                const SizedBox(height: 15,),
-                const Align(alignment: Alignment.centerRight,
-                    child: Text('Resend OTP',style: TextStyle(color: Constants.kDarkOrangeColor),)),
-                SizedBox(height: 40,),
-                RoundedButton(text: 'Next', onPressed: (){
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>  PasswordScreen()));
-                }),
+                const SizedBox(
+                  height: 15,
+                ),
+                const Align(
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      'Resend OTP',
+                      style: TextStyle(color: Constants.kDarkOrangeColor),
+                    )),
+                SizedBox(
+                  height: 40,
+                ),
+                RoundedButton(
+                    text: 'Next',
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => LoginScreen()));
+                    }),
               ],
             ),
           ),

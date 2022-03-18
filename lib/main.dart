@@ -1,4 +1,7 @@
 import 'package:crockery_app/screens/account_setting/change_password_screen.dart';
+import 'package:crockery_app/screens/enter_mob_num_screen.dart';
+import 'package:crockery_app/screens/enter_otp_screen.dart';
+import 'package:crockery_app/screens/login_screen.dart';
 import 'package:crockery_app/screens/product_detail_screen.dart';
 import 'package:crockery_app/screens/splash_screen.dart';
 import 'package:crockery_app/sub_cat3/drinkware_screen.dart';
@@ -25,7 +28,7 @@ class MyApp extends StatelessWidget {
       // home: BottomNavigate(),
 
       // home: DrinkWare(),
-      // home: ProductDetail(),
+      // home: MobileNumber(),
 
     );
   }
