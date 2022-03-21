@@ -54,95 +54,97 @@ class _OptNumberState extends State<OptNumber> {
         child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.all(40),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                SizedBox(
-                  height: 250,
-                  width: 250,
-                  child: Image.asset('images/mobile_img.png'),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Text('Enter Your OTP'),
-                SizedBox(
-                  height: 20,
-                ),
-                Center(
-                  child: Container(
-                    padding: const EdgeInsets.only(top: 10.0, bottom: 8),
-                    decoration: BoxDecoration(
-                      color: Colors.transparent,
-                      // boxShadow: [
-                      //   BoxShadow(
-                      //     color: Color(0xffeeeeee),
-                      //     blurRadius: 10,
-                      //     offset: Offset(0, 4),
-                      //   ),
-                      // ],
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                          color: Constants.kDarkOrangeColor, width: 1.5),
-                    ),
-                    child: OTPTextField(
-                      controller: otpController,
-                        length: 6,
-                        width: MediaQuery.of(context).size.width,
-                        textFieldAlignment: MainAxisAlignment.spaceAround,
-                        fieldWidth: 30,
-                        fieldStyle: FieldStyle.underline,
-                        otpFieldStyle: OtpFieldStyle(
-                          // backgroundColor: Colors.transparent,
-                          focusBorderColor: Constants.kDarkOrangeColor,
-                          disabledBorderColor: Constants.kGreyColor,
-                          enabledBorderColor: Constants.kDarkOrangeColor,
-                          //(here)
-                        ),
-                        outlineBorderRadius: 15,
-                        style: TextStyle(
-                          fontSize: 17,
-                          color: Colors.black,
-                        ),
-                        onChanged: (pin) {
-                          print("Changed: " + pin);
-                          log( pin.toString().length.toString());
-                          if(pin.toString().length == 6){
-                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>  LoginScreen()));
-
-                          }
-                        },
-                        onCompleted: (pin) {
-                          print("Completed: " + pin);
-                          // log( pin.toString().length.toString());
-                          // if(pin.toString().length == 6){
-                          //   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>  LoginScreen()));
-                          //
-                          // }
-                        }),
+            child: SizedBox(height: MediaQuery.of(context).size.height,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 250,
+                    width: 250,
+                    child: Image.asset('images/mobile_img.png'),
                   ),
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                const Align(
-                    alignment: Alignment.centerRight,
-                    child: Text(
-                      'Resend OTP',
-                      style: TextStyle(color: Constants.kDarkOrangeColor),
-                    )),
-                SizedBox(
-                  height: 40,
-                ),
-                RoundedButton(
-                    text: 'Next',
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => LoginScreen()));
-                    }),
-              ],
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text('Enter Your OTP'),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Center(
+                    child: Container(
+                      padding: const EdgeInsets.only(top: 10.0, bottom: 8),
+                      decoration: BoxDecoration(
+                        color: Colors.transparent,
+                        // boxShadow: [
+                        //   BoxShadow(
+                        //     color: Color(0xffeeeeee),
+                        //     blurRadius: 10,
+                        //     offset: Offset(0, 4),
+                        //   ),
+                        // ],
+                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(
+                            color: Constants.kDarkOrangeColor, width: 1.5),
+                      ),
+                      child: OTPTextField(
+                        controller: otpController,
+                          length: 6,
+                          width: MediaQuery.of(context).size.width,
+                          textFieldAlignment: MainAxisAlignment.spaceAround,
+                          fieldWidth: 30,
+                          fieldStyle: FieldStyle.underline,
+                          otpFieldStyle: OtpFieldStyle(
+                            // backgroundColor: Colors.transparent,
+                            focusBorderColor: Constants.kDarkOrangeColor,
+                            disabledBorderColor: Constants.kGreyColor,
+                            enabledBorderColor: Constants.kDarkOrangeColor,
+                            //(here)
+                          ),
+                          outlineBorderRadius: 15,
+                          style: TextStyle(
+                            fontSize: 17,
+                            color: Colors.black,
+                          ),
+                          onChanged: (pin) {
+                            print("Changed: " + pin);
+                            log( pin.toString().length.toString());
+                            if(pin.toString().length == 6){
+                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>  LoginScreen()));
+
+                            }
+                          },
+                          onCompleted: (pin) {
+                            print("Completed: " + pin);
+                            // log( pin.toString().length.toString());
+                            // if(pin.toString().length == 6){
+                            //   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>  LoginScreen()));
+                            //
+                            // }
+                          }),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        'Resend OTP',
+                        style: TextStyle(color: Constants.kDarkOrangeColor),
+                      )),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  RoundedButton(
+                      text: 'Next',
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginScreen()));
+                      }),
+                ],
+              ),
             ),
           ),
         ),

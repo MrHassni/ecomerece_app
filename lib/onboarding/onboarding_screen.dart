@@ -142,12 +142,13 @@ class _OnbordingState extends State<Onbording> {
 
   Container buildDot(int index, BuildContext context) {
     return Container(
-      height: 10,
-      width: currentIndex == index ? 25 : 10,
+      height: 12,
+      width: 12,
       margin: EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color:  Constants.kDarkOrangeColor,
+        color: currentIndex == index ? Colors.grey.shade800 : Colors.grey,
+
       ),
     );
   }

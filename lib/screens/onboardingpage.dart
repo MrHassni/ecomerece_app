@@ -8,18 +8,18 @@ class UnbordingContent {
 
 List<UnbordingContent> contents = [
   UnbordingContent(
-      title: 'Amazing Deals & offers',
+      title: 'Lokking for Crockery Products',
       image: 'images/onboardingimg1.png',
-      discription: 'Find deals that are cheaper than local supermarket great discount, and cash back',
+      discription: 'Find Crocker Products in multiple varities in reasonable price,great dicount and coupons.',
   ),
   UnbordingContent(
-      title: 'Everyday Fresh & Healthy',
+      title: 'Transfer your payment Easily',
       image: 'images/onboardingimg2.png',
-      discription:  'Quickly search and select a wide range of products from everyday fresh and healthy grocery',
+      discription:  'Transfer Your payment By any Bank Account.',
   ),
   UnbordingContent(
-      title:'Deliver at Your Door',
+      title:'Deliver at Your Door step',
       image: 'images/onboardingimg3.png',
-      discription:'Safe and fast delivery for your valuable groceries at your door without any hustle',
+      discription:'Safe and fast delivery for your valuable crockery at your door without any hustle',
   ),
 ];

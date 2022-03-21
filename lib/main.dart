@@ -1,5 +1,6 @@
 import 'package:crockery_app/constant/constant.dart';
 import 'package:crockery_app/providers/navgation_provider.dart';
+import 'package:crockery_app/screens/enter_mob_num_screen.dart';
 import 'package:crockery_app/screens/splash_screen.dart';
 import 'package:crockery_app/widgets/bottom_navigation/bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
@@ -26,11 +27,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      // home: SplashScreen(),
+      home: SplashScreen(),
       // home: CartDetail(),
       // home: BottomNavigate(),
-
-      home: BottomNavigate(),
+// home:MobileNumber(),
+      // home: BottomNavigate(),
     );
   }
 }

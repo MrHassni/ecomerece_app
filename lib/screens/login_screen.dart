@@ -28,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
           padding: EdgeInsets.all(40),
           child: SingleChildScrollView(
             child: Column(
-              // mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
                   height: MediaQuery.of(context).size.height*0.25,

@@ -80,7 +80,7 @@ class _State extends State<CartDetail> with TickerProviderStateMixin {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => BottomNavigate(i: 10\,),
+                          builder: (context) => BottomNavigate(i: 10,),
                         ),
                       );
 
