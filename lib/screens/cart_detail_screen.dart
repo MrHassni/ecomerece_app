@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constant/constant.dart';
 import '../widgets/bottom_navigation/bottom_navigation_bar.dart';
+import '../widgets/top_bars/top_bar_with_buttons.dart';
 import '../widgets/top_bars/top_bar_without_button.dart';
 
 class CartDetail extends StatefulWidget {
@@ -28,9 +29,9 @@ class _State extends State<CartDetail> with TickerProviderStateMixin {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const TopBarWithoutButton(pageName: 'Cart Details'),
+              const TopBarWithButtons(showBackButton: false,pageDescription: 'Cart Details',pageName: 'Cart'),
               Padding(
-                padding: EdgeInsets.all(15),
+                padding: const EdgeInsets.all(15),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [

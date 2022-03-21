@@ -1,4 +1,3 @@
-
 import 'package:crockery_app/widgets/card_check_related_items.dart';
 import 'package:crockery_app/widgets/cart_detail_widget.dart';
 import 'package:crockery_app/widgets/top_bars/top_bar_without_button.dart';
@@ -16,8 +15,6 @@ class VoucherScreen extends StatefulWidget {
 }
 
 class _State extends State<VoucherScreen> with TickerProviderStateMixin {
-
-
   @override
   Widget build(BuildContext context) {
     // print(_allShopImg.length.toString());
@@ -26,32 +23,35 @@ class _State extends State<VoucherScreen> with TickerProviderStateMixin {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const TopBarWithoutButton(pageName: 'Voucher'),
+              const TopBarWithoutButton(pageName: 'Coupon'),
               Padding(
                 padding: const EdgeInsets.all(15),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Container(
-                      height: 35,
+                      height: 40,
                       width: MediaQuery.of(context).size.width * 0.85,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
                           border: Border.all(
-                              width: 1, color: Constants.kDarkOrangeColor, style: BorderStyle.solid)),
+                              width: 1,
+                              color: Constants.kDarkOrangeColor,
+                              style: BorderStyle.solid)),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           SizedBox(
-                            height: 35,
+                            height: 40,
                             width: MediaQuery.of(context).size.width * 0.6,
                             child: TextField(
                               textAlign: TextAlign.center,
                               // textAlignVertical: TextAlignVertical.center,
 
                               decoration: const InputDecoration(
-                                  hintText: 'Enter your Voucher Code',
-                                  hintStyle:  TextStyle(fontSize: 13),
-
+                                  contentPadding: EdgeInsets.only(bottom: 10),
+                                  hintText: 'Enter Your Coupon',
+                                  hintStyle: TextStyle(fontSize: 13),
                                   border: InputBorder.none),
                               onChanged: (value) {
                                 // Do something
@@ -59,16 +59,19 @@ class _State extends State<VoucherScreen> with TickerProviderStateMixin {
                             ),
                           ),
                           SizedBox(
-                            height: 35,
+                            height: 40,
                             // margin: EdgeInsets.only(top: 350,),
                             // margin: EdgeInsets.all(40),
                             // width: double.infinity,
                             child: MaterialButton(
-                              child: const Text('Apply',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 13),),
+                              child: const Text(
+                                'Apply',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 13),
+                              ),
                               onPressed: () {
-
-                              },
-
+                                Navigator.pop(context);
+                                },
                               color: Constants.kDarkOrangeColor,
                               textColor: Constants.kWhiteAccent,
                               shape: RoundedRectangleBorder(
@@ -76,37 +79,9 @@ class _State extends State<VoucherScreen> with TickerProviderStateMixin {
                               ),
                             ),
                           ),
-
                         ],
                       ),
                     ),
-
-                    Container(
-                      height: 35,
-                      margin: const EdgeInsets.only(top: 350,),
-                      // margin: EdgeInsets.all(40),
-                       width: MediaQuery.of(context).size.width * 0.85,
-
-                      child: MaterialButton(
-                        child: const Text('Continue',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => BottomNavigate(i: 19,),
-                            ),
-                          );
-
-                        },
-
-                        color: Constants.kDarkOrangeColor,
-                        textColor: Constants.kWhiteAccent,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                      ),
-                    ),
-
                   ],
                 ),
               ),

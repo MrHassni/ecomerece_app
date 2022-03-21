@@ -1,10 +1,5 @@
-
 import 'package:flutter/material.dart';
-
-import '../constant/constant.dart';
-import '../widgets/bottom_navigation/bottom_navigation_bar.dart';
 import '../widgets/category_widgets/mostpurchased.dart';
-import '../widgets/category_widgets/shopwidgets.dart';
 import '../widgets/top_bars/top_bar_with_buttons.dart';
 
 
@@ -36,7 +31,7 @@ class _State extends State< WishListScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children:  [
-              const TopBarWithButtons(pageName: 'Wish List', pageDescription: 'Your Wish List'),
+              const TopBarWithButtons(pageName: 'Wish List', pageDescription: 'Your Wish List',showBackButton: false),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 5,),
               child: const MostPurchased(),

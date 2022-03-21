@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../helper/navigator.dart';
 import '../screens/product_detail_screen.dart';
+import 'bottom_navigation/bottom_navigation_bar.dart';
 import 'buttons/cartbutton.dart';
 
 class FeaturedProducts extends StatefulWidget {
@@ -28,7 +29,7 @@ class _FeaturedProductsState extends State<FeaturedProducts> {
             return InkWell(
               onTap: (){
                 Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const ProductDetail()),
+                    builder: (context) =>  BottomNavigate(i: 9,)),
                 );
               },
               child: Card(

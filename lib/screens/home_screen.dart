@@ -83,6 +83,7 @@ class _HomeState extends State<Home> {
           child: Column(
             children: [
               TopBarWithButtons(
+                  showBackButton: false,
                   pageDescription: 'What do you want to buy?',
                   pageName: _userModel.userName == null || _userModel.userName == '' ? 'Welcome To Crockery Bazaar' : 'Hi, ' + _userModel.userName!),
               const SizedBox(
@@ -110,7 +111,7 @@ class _HomeState extends State<Home> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => BottomNavigate(i: 4),
+                              builder: (context) => BottomNavigate(i: 5),
                             ),
                           );
                         },
@@ -134,52 +135,21 @@ class _HomeState extends State<Home> {
                           //here home page four card navigate
                           if (index == 0) {
                             Provider.of<NavigationProvider>(context,listen: false).setTitleAndDisForSubOne('Gift Shop', 'Gift Shop Product Details');
-                            // Navigator.pushReplacement(
-                            //     NavigationService.navigatorKey.currentContext!,
-                            //     MaterialPageRoute(builder: (context) => BottomNavigate(i:4)));
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => BottomNavigate(
-                                  i: 5,
-                                ),
-                              ),
-                            );
                           } else if (index == 1) {
                             Provider.of<NavigationProvider>(context,listen: false).setTitleAndDisForSubOne('Dinning & Kitchen', 'Gift Shop Product Details');
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => BottomNavigate(
-                                  i: 5,
-                                ),
-                              ),
-                            );
                           } else if (index == 2) {
                             Provider.of<NavigationProvider>(context,listen: false).setTitleAndDisForSubOne('Home Decor', 'Gift Shop Product Details');
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => BottomNavigate(
-                                  i: 5,
-                                ),
-                              ),
-                            );
-                          } else if (index == 3) {
+                          } else {
                             Provider.of<NavigationProvider>(context,listen: false).setTitleAndDisForSubOne('Lighting', 'Gift Shop Product Details');
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => BottomNavigate(
-                                  i: 5,
-                                ),
+                          }
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => BottomNavigate(
+                                i: 6,
                               ),
-                            );
-                          }
-                          // else if(index==1){}
-                          else {
-                            print('invalid');
-                          }
+                            ),
+                          );
                         },
                         child: ShopListWidget(
                           index: index,

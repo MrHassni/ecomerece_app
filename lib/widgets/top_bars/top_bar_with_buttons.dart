@@ -1,14 +1,13 @@
-import 'package:crockery_app/screens/cart_detail_screen.dart';
-import 'package:crockery_app/screens/search_screen.dart';
 import 'package:flutter/material.dart';
-
 import '../../constant/constant.dart';
+
 
 
 class TopBarWithButtons extends StatelessWidget {
  final String pageName,pageDescription;
+final bool showBackButton;
 
-   const TopBarWithButtons({Key? key,required this.pageDescription,required this.pageName}) : super(key: key);
+   const TopBarWithButtons({Key? key,required this.pageDescription,required this.pageName, this.showBackButton = true}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +22,11 @@ class TopBarWithButtons extends StatelessWidget {
           children: [
             Row(
               children: [
+                showBackButton ? InkWell(
+                  child: Container(
+                      margin: const EdgeInsets.only(right: 5),
+                      child: const Icon(Icons.arrow_back_ios_outlined)),
+                ) : Container(),
                 Text(
                   pageName,
                   style: const TextStyle(
@@ -31,30 +35,11 @@ class TopBarWithButtons extends StatelessWidget {
                       fontWeight: FontWeight.bold),
                 ),
                 const Spacer(),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const SearchScreen()));
-                  },
-                  child: const Icon(
-                    Icons.search,
-                    color: Constants.kGrey55Color,
-                  ),
-                ),
-                const SizedBox(width: 7,),
                 const Icon(
                   Icons.notifications_none,
                   color: Constants.kDarkOrangeColor,
                 ),
-                const SizedBox(width: 7,),
-                InkWell(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const CartDetail()));
-                  },
-                  child: const Icon(
-                    Icons.shopping_cart_outlined,
-                    color: Constants.kDarkOrangeColor,
-                  ),
-                ),
+                // const SizedBox(width: 7,),
               ],
             ),
              const SizedBox(

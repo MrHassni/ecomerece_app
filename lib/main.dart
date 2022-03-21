@@ -1,8 +1,9 @@
+import 'package:crockery_app/constant/constant.dart';
 import 'package:crockery_app/providers/navgation_provider.dart';
-import 'package:crockery_app/screens/account_setting/change_password_screen.dart';
 import 'package:crockery_app/screens/splash_screen.dart';
 import 'package:crockery_app/widgets/bottom_navigation/bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_statusbarcolor_ns/flutter_statusbarcolor_ns.dart';
 import 'package:provider/provider.dart';
 import 'helper/navigator.dart';
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FlutterStatusbarcolor.setStatusBarColor(Constants.kDarkOrangeColor);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       navigatorKey: NavigationService.navigatorKey, // set property
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
       // home: CartDetail(),
       // home: BottomNavigate(),
 
-      home: SplashScreen(),
+      home: BottomNavigate(),
     );
   }
 }

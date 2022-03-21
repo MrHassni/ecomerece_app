@@ -13,6 +13,8 @@ import '../../widgets/buttons/long_rounded_button.dart';
 import 'add_email_screen.dart';
 
 class ProfileEditScreen extends StatefulWidget {
+  const ProfileEditScreen({Key? key}) : super(key: key);
+
   @override
   State<ProfileEditScreen> createState() => _ProfileEditScreenState();
 }
@@ -214,10 +216,10 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                                   );
 
                                 },
-                                child: Text('Add',style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),)),
+                                child: const Text('Add',style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),)),
                           ],
                         )),
-                    SizedBox(height: 50,),
+                    const SizedBox(height: 50,),
 
                     LongRoundButton(text: 'Save', onPressed: (){
                       // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>  LoginScreen()));

@@ -1,11 +1,15 @@
 
+import 'dart:developer';
+
 import 'package:crockery_app/providers/navgation_provider.dart';
 import 'package:crockery_app/widgets/category_widgets/cutleryitemwidget.dart';
 
 import 'package:crockery_app/widgets/slider.dart';
 import 'package:crockery_app/widgets/top_bars/top_bar_with_buttons.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:vertical_scrollable_tabview/vertical_scrollable_tabview.dart';
 
 import '../../constant/constant.dart';
 
@@ -30,7 +34,27 @@ class _State extends State<CutleryScreen> with TickerProviderStateMixin {
     'images/emollients.png',
     'images/emollentsone.png',
     'images/humectantsone.png',
-
+    'images/humectants.png',
+    'images/emollients.png',
+    'images/emollentsone.png',
+    'images/emollientstwo.png',
+    'images/humectants.png',
+    'images/emollients.png',
+    'images/emollentsone.png',
+    'images/humectantsone.png',
+    'images/humectants.png',
+    'images/emollients.png',
+    'images/emollentsone.png',
+    'images/emollientstwo.png',
+    'images/humectants.png',
+    'images/emollients.png',
+    'images/emollentsone.png',
+    'images/humectantsone.png',
+  ];
+  late final List _data = [
+    CutleryWidget(cutleryimg: cutleryImg,),
+    CutleryWidget(cutleryimg: cutleryImg,),
+    CutleryWidget(cutleryimg: cutleryImg,),
   ];
    TabController? _tabController ;
 
@@ -38,7 +62,7 @@ class _State extends State<CutleryScreen> with TickerProviderStateMixin {
   void initState() {
 // TODO: implement initState
     super.initState();
-    _tabController =  TabController(length: 6, vsync: this);
+    _tabController =  TabController(length: 3, vsync: this);
   }
 
   @override
@@ -50,7 +74,6 @@ class _State extends State<CutleryScreen> with TickerProviderStateMixin {
   bool showSearch = false;
   @override
   Widget build(BuildContext context) {
-    // print(_allShopImg.length.toString());
     return Consumer<NavigationProvider>(
       builder: (BuildContext context, navigationProvider, Widget? child) {
       return Scaffold(
@@ -59,84 +82,67 @@ class _State extends State<CutleryScreen> with TickerProviderStateMixin {
             child: Column(
               children: [
                 TopBarWithButtons(pageName: navigationProvider.title3!,pageDescription: navigationProvider.description3!),
-                Padding(padding: EdgeInsets.all(10),
+                Padding(padding: const EdgeInsets.all(10),
                   child: Column(
                     children:  [
-                      HorizontalSlider(),
+                      const HorizontalSlider(),
                       //Tab code wrriten here...
 
-                      Container(child:
-                      Column(
-                        children: <Widget>[
-                        SizedBox(
-                        height: 60,
-                        child: TabBar(
-                          tabs: const [
-                            Text(
-                              'Dinner Spoon',
-                              style: TextStyle(fontSize: 12),
-                            ),
-                            Text(
-                              'Soup Spoon',
-                              style: TextStyle(fontSize: 12),
-                            ),
-                            Text(
-                              'Ice-Cream Spoon',
-                              style: TextStyle(fontSize: 12),
-                            ),
-                            Text(
-                              'Knifes',
-                              style: TextStyle(fontSize: 12),
-                            ),
-                            Text(
-                              'Cocktail Spoon',
-                              style: TextStyle(fontSize: 12),
-                            ),
-                            Text(
-                              'Other',
-                              style: TextStyle(fontSize: 12),
-                            ),
-                          ],
-                          unselectedLabelColor: Constants.kGreyColor,
-                          indicatorColor: Constants.kLightOrangeColor,
-                          labelColor: Constants.kBlackColor,
-                          indicatorSize: TabBarIndicatorSize.tab,
-                          indicatorWeight: 3.0,
-                          indicatorPadding: EdgeInsets.all(10),
-                          isScrollable: true,
-                          controller: _tabController,
-                        ),
-                      ),
-                          SizedBox(
-                            height: MediaQuery.of(context).size.height,
-                            child: TabBarView(
-                                controller: _tabController,
-                                children: <Widget>[
-                                  CutleryWidget(cutleryimg: cutleryImg,),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height -290,
+                        child: VerticalScrollableTabView(
+                          tabController: _tabController!,
+                          listItemData:  _data,
+                          verticalScrollPosition: VerticalScrollPosition.begin,
+                          eachItemChild: (object, index) =>
+                              _data[index],
+                          slivers: [
+                            SliverAppBar(
+                              foregroundColor: Colors.transparent,
+                              backgroundColor: Colors.transparent,
+                              shadowColor: Colors.transparent,
+                              toolbarHeight: 0,
+                              collapsedHeight: 0,
+                              expandedHeight: 0,
+                              leading: Container(),
+                              pinned: true,
+                              flexibleSpace:  FlexibleSpaceBar(
+                                background: Container(
+                                  color: Colors.white,
+                                ),
+                                collapseMode: CollapseMode.pin,
+                              ),
 
-                                  Container(
-                                    child: const Text("sign up"),
+                              bottom: TabBar(
+                                isScrollable: true,
+                                controller: _tabController!,
+                                indicatorPadding: const EdgeInsets.symmetric(horizontal: 10.0),
+                                indicatorColor: Constants.kDarkOrangeColor,
+                                labelColor: Constants.kDarkOrangeColor,
+                                unselectedLabelColor: Colors.black,
+                                indicatorWeight:4.0,
+                                tabs: const [
+                                  Text(
+                                    'Dinner Spoon',
+                                    style: TextStyle(fontSize: 13),
                                   ),
-                                  Container(
-                                    child: const Text("abcd"),
+                                  Text(
+                                    'Soup Spoon',
+                                    style: TextStyle(fontSize: 13),
                                   ),
-                                  Container(
-                                    child: Text("abcdefg"),
-                                  ),
-                                  Container(
-                                    child: Text("abcdefghi"),
-                                  ),
-                                  Container(
-                                    child: Text("abcdefghij"),
+                                  Text(
+                                    'Ice-Cream Spoon',
+                                    style: TextStyle(fontSize: 13),
                                   ),
                                 ],
+                                onTap: (index) {
+                                  VerticalScrollableTabBarStatus.setIndex(index);
+                                },
+                              ),
                             ),
-                          ),
-
-                    ],
-                  ),
-
-                ),
+                          ],
+                        ),
+                      ),
 
                     ],
                 ),

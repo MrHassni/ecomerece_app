@@ -6,7 +6,7 @@ import '../../constant/constant.dart';
 import '../bottom_navigation/bottom_navigation_bar.dart';
 
 class CutleryWidget extends StatefulWidget {
-  CutleryWidget({required this.cutleryimg});
+  const CutleryWidget({required this.cutleryimg});
   final List cutleryimg;
 
   @override
@@ -15,7 +15,7 @@ class CutleryWidget extends StatefulWidget {
 
 class _CutleryWidgetState extends State<CutleryWidget> {
   // final String pic;
-  Color _favIconColor = Colors.red;
+  bool _addedToFav = false;
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +26,13 @@ class _CutleryWidgetState extends State<CutleryWidget> {
         mainAxisSpacing: 10,
         physics:  const NeverScrollableScrollPhysics(),
     crossAxisCount: 3,
-    children: List.generate(7,(index){
+    children: List.generate(13,(index){
       return InkWell(
         onTap: (){
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => BottomNavigate(i: 16,),
+              builder: (context) => BottomNavigate(i: 9,),
             ),
           );
         },
@@ -55,37 +55,25 @@ class _CutleryWidgetState extends State<CutleryWidget> {
                       child: Image.asset( widget.cutleryimg[index],
                         height: 75,
                         fit: BoxFit.cover,
-                        // width:MediaQuery.of(context).size.width * 0.4 ,
-                        // height: 150.0,
-                        // width: 100.0,
                       ),
                     ),
 
-                    // Container(
-                    //     decoration: const BoxDecoration(
-                    //       color: Colors.red,
-                    //         borderRadius: BorderRadius.only(
-                    //             topRight: Radius.circular(35),
-                    //             topLeft: Radius.circular(35)
-                    //         )
-                    //     ),
-                    //     child: Image.asset('images/img.png',)),
                     Container(
                       margin: const EdgeInsets.only(top: 10,left: 10),
                       child: InkWell(
-                        child: Icon(Icons.favorite_border,color: _favIconColor,),
+                        child:  Icon(_addedToFav ? Icons.favorite : Icons.favorite_border,color: _addedToFav ? Colors.red : Colors.white,),
 
                         onTap: () {
                           print('favorite icon clicked...');
 
-                          if(_favIconColor == Constants.kRedColor){
+                          if(_addedToFav == true){
                             setState(() {
-                              _favIconColor =Constants.kRedColor;
+                              _addedToFav =false;
                             });
 
                           }else{
                             setState(() {
-                              _favIconColor = Constants.kRedColor;
+                              _addedToFav = true;
                             });
 
                           }

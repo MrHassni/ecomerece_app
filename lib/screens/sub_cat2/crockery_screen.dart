@@ -1,4 +1,6 @@
 
+import 'dart:developer';
+
 import 'package:crockery_app/providers/navgation_provider.dart';
 import 'package:crockery_app/widgets/category_widgets/crockerywidget.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +57,6 @@ class _State extends State< CrockeryScreen> {
   bool showSearch = false;
   @override
   Widget build(BuildContext context) {
-    // print(_allShopImg.length.toString());
     return Consumer<NavigationProvider>(
         builder: (BuildContext context, navigationProvider, Widget? child) {
      return Scaffold(
@@ -101,7 +102,7 @@ class _State extends State< CrockeryScreen> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => BottomNavigate(i: 12,),
+                                    builder: (context) => BottomNavigate(i: 8,),
                                   ),
                                 );
 

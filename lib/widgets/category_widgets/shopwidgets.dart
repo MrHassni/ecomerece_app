@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../helper/navigator.dart';
 import '../../providers/navgation_provider.dart';
 import '../bottom_navigation/bottom_navigation_bar.dart';
 
@@ -67,7 +66,7 @@ class _ShopWidgetState extends State<ShopWidget> {
           context,
           MaterialPageRoute(
             builder: (context) => BottomNavigate(
-              i: 9,
+              i: 7,
             ),
           ),
         );

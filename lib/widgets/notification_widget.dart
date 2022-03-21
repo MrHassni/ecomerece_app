@@ -15,74 +15,43 @@ class _State extends State<NotificationWidget> {
     return  Card(
       elevation: 2,
       child: Container(
-
-        width: 300,
+        padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 15),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          // border: Border.all(
-          //     width: 1, color: Constants.kDarkOrangeColor, style: BorderStyle.solid)
         ),
-        child: Padding(
-          padding: EdgeInsets.all(10),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children:  [
-                  Text(
-                    'Order #${widget.orderId}',
-                    style: const TextStyle(
-                        fontFamily: 'Nuntio-Bold.ttf',
-                        fontWeight: FontWeight.bold,
-                        color: Constants.kBlackColor),
-                  ),
-                   const SizedBox(
-                     width: 200,
-                     child: Text('Your order is confirmed.Please check everything is okay',
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                          fontFamily: 'Nuntio-Light.ttf',
-                          color: Constants.kGraniteGreyColor),),
-                   ),
-                ],),
-              Padding(
-                padding: EdgeInsets.all(10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children:  [
-                    Text(
-                      'Order #${widget.orderId}',
-                      style: const TextStyle(
-                          fontFamily: 'Nuntio-Bold.ttf',
-                          fontWeight: FontWeight.bold,
-                          color: Constants.kBlackColor),
-                    ),
-                     const SizedBox(height: 30,
-                       width: 200,
-                       child: Text('Your order is confirmed.Please check everything is okay',
-                        style: TextStyle(
-                            fontFamily: 'Nuntio-Light.ttf',
-                            color: Constants.kGraniteGreyColor),),
-                     ),
-                    // const Text('March,6,2022',style: TextStyle(
-                    //     fontFamily: 'Nuntio-Light.ttf',
-                    //     color: Constants.kGraniteGreyColor),),
-                  ],
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children:  [
+                Text(
+                  'Order #${widget.orderId}',
+                  style: const TextStyle(
+                      fontFamily: 'Nuntio-Bold.ttf',
+                      fontWeight: FontWeight.bold,
+                      color: Constants.kBlackColor),
                 ),
-              ),
-              const Spacer(),
-              const Padding(
-                padding: EdgeInsets.only(right: 10,top: 10),
-                child: Text('2:45 PM',style: TextStyle(
-                    fontFamily: 'Nuntio-Light.ttf',
-                    // fontWeight: FontWeight.bold,
-                    fontSize: 10,
-                    color: Constants.kGraniteGreyColor),),
-              ),
-            ],
-          ),
+                  SizedBox(
+                   width: MediaQuery.of(context).size.width * 0.7,
+                   child: const Text('Your order is confirmed.Please check everything is okay',
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                        fontFamily: 'Nuntio-Light.ttf',
+                        color: Constants.kGraniteGreyColor),),
+                 ),
+              ],),
+            const Spacer(),
+            const Padding(
+              padding: EdgeInsets.only(right: 10,top: 10),
+              child: Text('2:45 PM',style: TextStyle(
+                  fontFamily: 'Nuntio-Light.ttf',
+                  // fontWeight: FontWeight.bold,
+                  fontSize: 10,
+                  color: Constants.kGraniteGreyColor),),
+            ),
+          ],
         ),
       ),
     );

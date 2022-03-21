@@ -1,4 +1,5 @@
 
+import 'package:crockery_app/screens/search_screen.dart';
 import 'package:crockery_app/screens/sub_cat1/book_screen.dart';
 import 'package:crockery_app/screens/sub_cat1/dinning&kitchen.dart';
 import 'package:crockery_app/screens/sub_cat1/giftshop_screen.dart';
@@ -40,31 +41,23 @@ class BottomNavigate  extends StatefulWidget {
 
 class _State extends State< BottomNavigate> {
   final List <Widget> _pages =[
-    const Home(),
-    const WishListScreen(),
-    OrderHistory(),
-    const SettingScreen(),
-    const AllCategoriesScreen(),
-     const GiftShopScreen(),
-    const DinningKitchenScreen(),
-    const BookScreen(),
-    const LightingScreen(),
-    const CrockeryScreen(),
-    const Table_shop_Screen(),
-    const Trolley_Cart__screen(),
-    const CutleryScreen(),
-    const BuffetSetScreen(),
-    const DinnerSetScreen(),
-    const DrinkWare(),
-    const ProductDetail(),
-    const CartDetail(),
-    const VoucherScreen(),
-    ChangeAddressAndPayment(),
-    OrderHistory(),
-    ProfileEditScreen(),
-    const AddressBookScreen(),
-    OrderHistory(),
-    NotificationScreen(),
+    const Home(),//0
+    const WishListScreen(),//1
+    const SearchScreen(),//2
+    const CartDetail(),//3
+    const SettingScreen(),//4
+    const AllCategoriesScreen(),//5
+    const GiftShopScreen(),//6
+    const CrockeryScreen(),//7
+    const CutleryScreen(),//8
+    const ProductDetail(),//9
+    const VoucherScreen(),//10
+    ChangeAddressAndPayment(),//11
+    OrderHistory(),//12
+    const ProfileEditScreen(),//13
+    const AddressBookScreen(),//14
+    OrderHistory(),//15
+    NotificationScreen(),//16
 
     // DealsScreen(),
     // AccountScreen(),
@@ -88,15 +81,16 @@ class _State extends State< BottomNavigate> {
 
       bottomNavigationBar: BottomNavigationBar(
       selectedItemColor:  const Color(0xFFAB4D24),
-        currentIndex:widget.i > 3 ? _selectedIndex : widget.i,
+        currentIndex:widget.i > 4 ? _selectedIndex : widget.i,
         onTap: _navigateBottomBar,
         type: BottomNavigationBarType.fixed,
 
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home,),label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.home_outlined,),label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.favorite_border),label: 'Wishlist'),
-          BottomNavigationBarItem(icon: Icon(Icons.card_giftcard),label: 'Orders'),
-          BottomNavigationBarItem(icon: Icon(Icons.settings),label: 'Setting'),
+          BottomNavigationBarItem(icon: Icon(Icons.search),label: 'Search'),
+          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart_outlined),label: 'Cart'),
+          BottomNavigationBarItem(icon: Icon(Icons.person_outline_outlined),label: 'Profile'),
         ],
       ),
     );
