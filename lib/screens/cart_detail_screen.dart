@@ -3,8 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constant/constant.dart';
 import '../widgets/bottom_navigation/bottom_navigation_bar.dart';
-import '../widgets/top_bars/top_bar_with_buttons.dart';
-import '../widgets/top_bars/top_bar_without_button.dart';
 
 class CartDetail extends StatefulWidget {
   const CartDetail({Key? key}) : super(key: key);
@@ -44,7 +42,7 @@ class _State extends State<CartDetail> with TickerProviderStateMixin {
                     Container(
                       margin: EdgeInsets.only(top: 20),
                       color: Colors.transparent,
-                      height: MediaQuery.of(context).size.height*0.5,
+                      height: MediaQuery.of(context).size.height*0.75,
                       width: MediaQuery.of(context).size.width,
                       // width: 150,
                       child: ListView.builder(
@@ -122,6 +120,34 @@ class _State extends State<CartDetail> with TickerProviderStateMixin {
                       child: FlatButton(
                         child: Text('Continue',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
                         onPressed: () {
+                        Column(
+                          children: const [
+                            Text('Subtotal',style: TextStyle(color: Constants.kLightGreyColor,fontSize: 16),),
+                            SizedBox(height: 10,),
+                            Text('Total',style: TextStyle(color: Constants.kBlackColor,fontWeight: FontWeight.bold,fontSize: 16),),
+                          ],
+                        ),
+                        // Spacer(),
+                        Column(
+                          children: const [
+                            Text('200',style: TextStyle(color: Constants.kLightGreyColor,fontSize: 16),),
+                            SizedBox(height: 10,),
+                            Text('Rs 240',style: TextStyle(color: Constants.kBlackColor,fontWeight: FontWeight.bold,fontSize: 16),),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 45,
+                  // margin: EdgeInsets.only(top: 40,left: 40,right: 40,bottom: 20),
+                  // margin: EdgeInsets.all(40),
+                  // width: double.infinity,
+                  width: MediaQuery.of(context).size.width,
+                  child: MaterialButton(
+                    child: Text('Continue',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
+                    onPressed: () {
 
                           },
 

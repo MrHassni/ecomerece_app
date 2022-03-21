@@ -30,8 +30,9 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       // backgroundColor: Colors.deepOrange[800],
       body: Center(
-        child: SizedBox(height: 100,
-          width: 100,
+        child: SizedBox(
+          height: MediaQuery.of(context).size.width *0.55,
+          width: MediaQuery.of(context).size.width *0.55,
           child: Image.asset('images/crockery_logo.png',
           ),
         ),

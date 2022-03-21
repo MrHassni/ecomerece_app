@@ -208,12 +208,12 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                   child: Text(ConfirmPassword),
                 ),
                 LongRoundButton(text: 'Change Password', onPressed: (){
-                  DialogUtils.showCustomDialog(context,
-                      title: "Gallary",
-                      okBtnText: "Save",
-                      cancelBtnText: "Cancel",
-                      okBtnFunction: () { } /* call method in which you have write your logic and save process  */);
-                  // child: Container(),
+                  // DialogUtils.showCustomDialog(context,
+                  //     title: "Are You sure about Delete a product?",
+                  //     okBtnText: "Confirm",
+                  //     cancelBtnText: "Cancel",
+                  //     okBtnFunction: () { } /* call method in which you have write your logic and save process  */);
+                  // // child: Container(),
                   // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>  LoginScreen()));
                 }),
               ],

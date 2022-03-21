@@ -52,10 +52,13 @@ class _OnbordingState extends State<Onbording> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
+
                           const Text('Crockery Bazar',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25,fontFamily:'Nuntio-Bold.ttf'),),
+                          // SizedBox(height: 5,),
                           Image.asset(
                             contents[i].image,
-                            height: MediaQuery.of(context).size.height*0.4,
+                            height: MediaQuery.of(context).size.height*0.3,
+                            // width:  MediaQuery.of(context).size.width*0.7,
                           ),
                           Text(
                             contents[i].title,
@@ -65,7 +68,7 @@ class _OnbordingState extends State<Onbording> {
                                 fontFamily:'Nuntio-Light.ttf'
                             ),
                           ),
-                          SizedBox(height: 20),
+                          // SizedBox(height: 10),
                           Text(
                             contents[i].discription,
                             textAlign: TextAlign.center,
@@ -117,7 +120,7 @@ class _OnbordingState extends State<Onbording> {
                   ),
                 ),
               ),
-              InkWell(
+             currentIndex == 2 ? Container() : InkWell(
                 onTap: (){
                   Navigator.pushReplacement(
                     context,

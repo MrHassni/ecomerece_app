@@ -14,24 +14,29 @@ class _State extends State<CartDetailsWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.zero,
+      height: 120,
       child: Card(
         elevation: 1,
         child: ListTile(contentPadding: const EdgeInsets.all(5),
           //leading: Icon(Icons.music_note),
           title: Row(
             children: [
-              Image.asset(
-                widget.cartDetial_Img,
-                height: 60,
-                width: 60,
+              Padding(
+                padding: EdgeInsets.only(bottom: 10,right: 10, ),
+                child: Image.asset(
+                  widget.cartDetial_Img,
+                  height: 120,
+                  width: 90,
+                ),
               ),
-              const SizedBox(
-                width: 10,
-              ),
+              SizedBox(width: 10,),
+
               Column(
-                // mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+
                   SizedBox(
                     height: 20,
                     width: MediaQuery.of(context).size.width * 0.27,
@@ -40,14 +45,14 @@ class _State extends State<CartDetailsWidget> {
                       style: TextStyle(
                           color: Constants.kBlackColor,
                           fontWeight: FontWeight.bold,
-                          fontSize: 14),
+                          fontSize: 16),
                     ),
                   ),
                   const Align(
-                      alignment: Alignment.centerLeft, child: Text('3x cup', style: TextStyle(color: Constants.kGreyColor,fontSize: 12),)),
+                      alignment: Alignment.centerLeft, child: Text('3x cup', style: TextStyle(color: Constants.kGreyColor,fontSize: 15),)),
                   const Text(
                     'Rs 500',
-                    style: TextStyle(color: Constants.kGreyColor,fontSize: 12),
+                    style: TextStyle(color: Constants.kGreyColor,fontSize: 15),
                   ),
                 ],
               ),
@@ -59,20 +64,33 @@ Spacer(),
                   Container(
                     padding: const EdgeInsets.all(3),
                     margin: const EdgeInsets.only(right: 5, left: 10),
-                    height: 20,
-                    width: 20,
-                    color: Constants.kLightGreenColor,
+                    height: 25,
+                    width: 25,
+                    decoration: BoxDecoration(
+                      color: Constants.kLightGreenColor,
+
+                        borderRadius: BorderRadius.circular(5.0) ,// use instead of BorderRadius.all(Radius.circular(20))
+                    ),
+
                     child:  Image.asset(
                      'images/minase.png',
                     ),
                   ),
-                  Text('1'),
+                  Container(
+                    height: 20,
+                      width: 20,
+                      child: Center(child: Text('1',style: TextStyle(fontSize: 16),))),
                   Container(
                       padding: const EdgeInsets.all(3),
                       margin: const EdgeInsets.only(right: 5,left: 10),
-                      height: 20,
-                      width: 20,
-                      color: Constants.kGreenColor,
+                      height: 25,
+                      width: 25,
+
+                      decoration: BoxDecoration(
+                        color: Constants.kGreenColor,
+
+                        borderRadius: BorderRadius.circular(5.0) ,// use instead of BorderRadius.all(Radius.circular(20))
+                      ),
                       child: Image.asset('images/add.png')),
 
                 ],
