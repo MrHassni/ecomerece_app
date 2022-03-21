@@ -1,4 +1,5 @@
 import 'package:crockery_app/screens/account_setting/change_password_screen.dart';
+import 'package:crockery_app/screens/cart_detail_screen.dart';
 import 'package:crockery_app/screens/enter_mob_num_screen.dart';
 import 'package:crockery_app/screens/enter_otp_screen.dart';
 import 'package:crockery_app/screens/login_screen.dart';
@@ -23,12 +24,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home: SplashScreen(),
+      // home: SplashScreen(),
       // home: CartDetail(),
       // home: BottomNavigate(),
 
       // home: DrinkWare(),
-      // home: MobileNumber(),
+      home: CartDetail(),
 
     );
   }

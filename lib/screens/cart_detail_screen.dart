@@ -74,7 +74,7 @@ class _State extends State<CartDetail> with TickerProviderStateMixin {
                 Container(
                   margin: EdgeInsets.only(top: 20),
                   color: Colors.transparent,
-                  height: MediaQuery.of(context).size.height*0.5,
+                  height: MediaQuery.of(context).size.height*0.75,
                   width: MediaQuery.of(context).size.width,
                   // width: 150,
                   child: ListView.builder(
@@ -126,17 +126,17 @@ class _State extends State<CartDetail> with TickerProviderStateMixin {
 
                         Column(
                           children: const [
-                            Text('Subtotal',style: TextStyle(color: Constants.kLightGreyColor),),
+                            Text('Subtotal',style: TextStyle(color: Constants.kLightGreyColor,fontSize: 16),),
                             SizedBox(height: 10,),
-                            Text('Total',style: TextStyle(color: Constants.kBlackColor,fontWeight: FontWeight.bold),),
+                            Text('Total',style: TextStyle(color: Constants.kBlackColor,fontWeight: FontWeight.bold,fontSize: 16),),
                           ],
                         ),
                         // Spacer(),
                         Column(
                           children: const [
-                            Text('200',style: TextStyle(color: Constants.kLightGreyColor),),
+                            Text('200',style: TextStyle(color: Constants.kLightGreyColor,fontSize: 16),),
                             SizedBox(height: 10,),
-                            Text('Rs 240',style: TextStyle(color: Constants.kBlackColor,fontWeight: FontWeight.bold),),
+                            Text('Rs 240',style: TextStyle(color: Constants.kBlackColor,fontWeight: FontWeight.bold,fontSize: 16),),
                           ],
                         ),
                       ],
@@ -148,8 +148,8 @@ class _State extends State<CartDetail> with TickerProviderStateMixin {
                   // margin: EdgeInsets.only(top: 40,left: 40,right: 40,bottom: 20),
                   // margin: EdgeInsets.all(40),
                   // width: double.infinity,
-                  width: 350,
-                  child: FlatButton(
+                  width: MediaQuery.of(context).size.width,
+                  child: MaterialButton(
                     child: Text('Continue',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
                     onPressed: () {
 
