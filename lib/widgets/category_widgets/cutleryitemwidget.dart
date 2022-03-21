@@ -1,4 +1,6 @@
 
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -64,7 +66,7 @@ class _CutleryWidgetState extends State<CutleryWidget> {
                         child:  Icon(_addedToFav ? Icons.favorite : Icons.favorite_border,color: _addedToFav ? Colors.red : Colors.white,),
 
                         onTap: () {
-                          print('favorite icon clicked...');
+                          log('favorite icon clicked...');
 
                           if(_addedToFav == true){
                             setState(() {

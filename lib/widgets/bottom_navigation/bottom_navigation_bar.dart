@@ -15,18 +15,10 @@ import 'package:crockery_app/screens/voucher_screen.dart';
 import 'package:crockery_app/screens/wish_list.dart';
 import 'package:crockery_app/screens/all_category/all_categoryies_screen.dart';
 import 'package:crockery_app/screens/product_detail_screen.dart';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../../screens/home_screen.dart';
 import '../../screens/sub_cat2/crockery_screen.dart';
-import '../../screens/sub_cat2/tabel_shop_screen.dart';
-import '../../screens/sub_cat2/trolley_cart_shop_screen.dart';
-import '../../screens/sub_cat3/buffet_set_screen.dart';
 import '../../screens/sub_cat3/cutlery_screen.dart';
-import '../../screens/sub_cat3/dinner_set_screen.dart';
-import '../../screens/sub_cat3/drinkware_screen.dart';
 
 
 
@@ -81,7 +73,7 @@ class _State extends State< BottomNavigate> {
 
       bottomNavigationBar: BottomNavigationBar(
       selectedItemColor:  const Color(0xFFAB4D24),
-        currentIndex:widget.i > 4 ? _selectedIndex : widget.i,
+        currentIndex:widget.i > 4 ? _selectedIndex :  widget.i,
         onTap: _navigateBottomBar,
         type: BottomNavigationBarType.fixed,
 

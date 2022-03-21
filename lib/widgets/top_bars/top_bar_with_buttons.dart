@@ -23,6 +23,9 @@ final bool showBackButton;
             Row(
               children: [
                 showBackButton ? InkWell(
+                  onTap: (){
+                    Navigator.pop(context);
+                  },
                   child: Container(
                       margin: const EdgeInsets.only(right: 5),
                       child: const Icon(Icons.arrow_back_ios_outlined)),

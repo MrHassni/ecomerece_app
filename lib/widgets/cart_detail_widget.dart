@@ -15,7 +15,7 @@ class _State extends State<CartDetailsWidget> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.zero,
-      height: 120,
+      height: 110,
       child: Card(
         elevation: 1,
         child: ListTile(contentPadding: const EdgeInsets.all(5),

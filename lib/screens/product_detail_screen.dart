@@ -2,6 +2,7 @@ import 'package:crockery_app/widgets/card_check_related_items.dart';
 import 'package:crockery_app/widgets/top_bars/top_bar_without_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import '../constant/constant.dart';
 
 import '../helper/radio_btn_model_size.dart';
@@ -234,30 +235,24 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                           ),
                         ),
 
-
-                        Row(
-                          children: const <Widget>[
-                            Icon(
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: RatingBar.builder(
+                            initialRating: 4,
+                            minRating: 1,
+                            itemSize: 25,
+                            direction: Axis.horizontal,
+                            allowHalfRating: true,
+                            itemCount: 5,
+                            itemPadding: const EdgeInsets.symmetric(horizontal: 0.0),
+                            itemBuilder: (context, _) => const Icon(
                               Icons.star,
                               color: Constants.kOrangeColor,
                             ),
-                            Icon(
-                              Icons.star,
-                              color: Constants.kOrangeColor,
-                            ),
-                            Icon(
-                              Icons.star,
-                              color: Constants.kOrangeColor,
-                            ),
-                            Icon(
-                              Icons.star,
-                              color: Constants.kOrangeColor,
-                            ),
-                            Icon(
-                              Icons.star_outline,
-                              color: Constants.kOrangeColor,
-                            ),
-                          ],
+                            onRatingUpdate: (rating) {
+                              print(rating);
+                            },
+                          ),
                         ),
                         const Padding(padding: EdgeInsets.only(top: 15,bottom: 15),
                           child: Text(
@@ -308,25 +303,24 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                               ],
                             ),
                             const Spacer(),
-                            const Icon(
-                              Icons.star,
-                              color: Constants.kOrangeColor,
-                            ),
-                            const Icon(
-                              Icons.star,
-                              color: Constants.kOrangeColor,
-                            ),
-                            const Icon(
-                              Icons.star,
-                              color: Constants.kOrangeColor,
-                            ),
-                            const Icon(
-                              Icons.star,
-                              color: Constants.kOrangeColor,
-                            ),
-                            const Icon(
-                              Icons.star_outline,
-                              color: Constants.kOrangeColor,
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: RatingBar.builder(
+                                initialRating: 4,
+                                minRating: 1,
+                                itemSize: 25,
+                                direction: Axis.horizontal,
+                                allowHalfRating: true,
+                                itemCount: 5,
+                                itemPadding: const EdgeInsets.symmetric(horizontal: 0.0),
+                                itemBuilder: (context, _) => const Icon(
+                                  Icons.star,
+                                  color: Constants.kOrangeColor,
+                                ),
+                                onRatingUpdate: (rating) {
+                                  print(rating);
+                                },
+                              ),
                             ),
                           ],
                         ),
