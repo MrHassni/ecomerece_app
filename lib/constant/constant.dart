@@ -6,7 +6,7 @@ class Constants {
   //colors
   static const kWhiteAccent = Color(0xFFFFFFFF);
   static const kGreyColor = Color(0xFF9E9E9E);
-  static const kBlackColor = Color(0xFF000000);
+  static const kBlackColor = Color(0xFF151212);
   static const kLightGreyColor = Color(0xFF9E9E9E);
   static const kGraniteGreyColor =Color(0xFF676767);
   static const kGrey55Color = Color(0xFF8C8C8C);
@@ -20,6 +20,7 @@ class Constants {
   static const kLightGreenColor = Color(0xFF94F1D5);
   static const kBlueColor = Color(0XFF00779E);
   static const kGreyLightColor = Color(0XFFEAEAEA);
+  static const kStarBlackColor = Color(0xff626262);
 
   //text
   // static const title = "Google Sign In";

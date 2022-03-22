@@ -8,6 +8,7 @@ import 'package:crockery_app/widgets/featureproduct.dart';
 import 'package:crockery_app/widgets/category_widgets/shopslistwidget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../models/user_model.dart';
 import '../widgets/bottom_navigation/bottom_navigation_bar.dart';
@@ -31,6 +32,7 @@ class _HomeState extends State<Home> {
     'Lighting',
 
   ];
+
 
   @override
   void initState() {

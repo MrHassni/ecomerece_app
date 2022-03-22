@@ -49,6 +49,7 @@ dependencies:
   intl_phone_number_input: ^0.7.0+2
   geolocator: ^8.2.0
   shared_preferences: ^2.0.13
+  pull_to_refresh: ^2.0.0
 
 
 
