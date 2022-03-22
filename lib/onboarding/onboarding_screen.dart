@@ -1,6 +1,7 @@
 import 'package:crockery_app/constant/constant.dart';
 import 'package:crockery_app/screens/enter_mob_num_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 import '../screens/onboardingpage.dart';
@@ -14,6 +15,8 @@ class Onbording extends StatefulWidget {
 class _OnbordingState extends State<Onbording> {
   int currentIndex = 0;
   PageController? _controller;
+
+
 
   @override
   void initState() {

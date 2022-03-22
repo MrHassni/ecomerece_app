@@ -19,6 +19,7 @@ class Constants {
   static const kGreenColor = Color(0xFF10BB88);
   static const kLightGreenColor = Color(0xFF94F1D5);
   static const kBlueColor = Color(0XFF00779E);
+  static const kGreyLightColor = Color(0XFFEAEAEA);
 
   //text
   // static const title = "Google Sign In";

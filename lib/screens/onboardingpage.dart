@@ -8,8 +8,8 @@ class UnbordingContent {
 
 List<UnbordingContent> contents = [
   UnbordingContent(
-      title: 'Lokking for Crockery Products',
-      image: 'images/onboardingimg1.png',
+      title: 'Looking for Crockery Products',
+      image: 'images/onboarding_img.png',
       discription: 'Find Crocker Products in multiple varities in reasonable price,great dicount and coupons.',
   ),
   UnbordingContent(

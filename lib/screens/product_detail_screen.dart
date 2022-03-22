@@ -410,7 +410,7 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                             ],
                           ),
                         ),
-                        Divider(
+                        const Divider(
                           height: 3,
                           color: Constants.kGreyColor,
                         ),

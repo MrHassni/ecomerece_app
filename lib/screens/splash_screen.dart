@@ -20,11 +20,11 @@ class _SplashScreenState extends State<SplashScreen> {
   //   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>  Onbording()));
   // }
   //
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   startTime();
-  // }
+  @override
+  void initState() {
+    super.initState();
+    startTime();
+  }
   startTime() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     bool? firstTime = prefs.getBool('first_time');

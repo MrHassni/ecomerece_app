@@ -51,9 +51,10 @@ class _State extends State<SearchScreen> with TickerProviderStateMixin {
                               // textAlignVertical: TextAlignVertical.center,
 
                               decoration: const InputDecoration(
-                                  hintText: 'Search Product',hintStyle: TextStyle(fontSize: 13,),
+                                  hintText: 'Search Product',
+                                  hintStyle: TextStyle(fontSize: 13,),
                                   prefixIcon: Icon(Icons.search),
-                                  // contentPadding: EdgeInsets.all(10),
+                                  contentPadding: EdgeInsets.all(14),
                                   border: InputBorder.none),
                               onChanged: (value) {
                                 // Do something
@@ -80,12 +81,15 @@ class _State extends State<SearchScreen> with TickerProviderStateMixin {
                     const Divider(height: 20,
                     color: Constants.kLightGreyColor,),
                     Padding(
-                      padding: const EdgeInsets.only(left: 10,right: 10),
+                      padding: const EdgeInsets.all(10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          Text('Search History',style: TextStyle(fontWeight: FontWeight.normal,fontSize: 14,fontStyle: FontStyle.italic),),
-                          Icon(Icons.delete,color: Constants.kLightGreyColor,),
+                        children: [
+                          Text('Search History',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,fontStyle: FontStyle.italic),),
+                          // Icon(Icons.delete,color: Constants.kLightGreyColor,),
+                          SizedBox(height: 20,
+                              width: 20,
+                              child: Image.asset('images/del_img.png')),
                         ],
                       ),
                     ),
@@ -100,7 +104,7 @@ class _State extends State<SearchScreen> with TickerProviderStateMixin {
                           // width: double.infinity,
                           width: 85,
                           decoration: BoxDecoration(
-                            color: Constants.kGreyColor,
+                            color: Constants.kGreyLightColor,
                             borderRadius: BorderRadius.circular(30),
 
                             // border: Border.all(
@@ -121,7 +125,7 @@ class _State extends State<SearchScreen> with TickerProviderStateMixin {
                           // width: double.infinity,
                           width: 85,
                           decoration: BoxDecoration(
-                            color: Constants.kGreyColor,
+                            color: Constants.kGreyLightColor,
                             borderRadius: BorderRadius.circular(30),
 
                             // border: Border.all(
