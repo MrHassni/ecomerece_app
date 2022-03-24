@@ -1,9 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../constant/constant.dart';
 import '../../widgets/bottom_navigation/bottom_navigation_bar.dart';
-import '../../widgets/category_widgets/shopwidgets.dart';
 import '../../widgets/top_bars/top_bar_with_buttons.dart';
 
 class SettingScreen extends StatefulWidget {
@@ -14,15 +16,66 @@ class SettingScreen extends StatefulWidget {
 }
 
 class _State extends State<SettingScreen> {
-  // final List mostPurchased =[
-  //   'images/study.png',
-  //   'images/emollient.png',
-  //   'images/gupshuptable.png',
-  //   'images/study.png',
-  //   'images/emollient.png',
-  //   'images/gupshuptable.png',
-  //
-  // ];
+
+
+  openEmail()async {
+    String toEmail ='anybody@gmail.com';
+
+    final urlAndroid = 'mailto:$toEmail?subject=${Uri.encodeFull('')}&body=${Uri.encodeFull('')}';
+    if(Platform.isIOS){
+      // for iOS phone only
+    //   if( await canLaunch(whatsappURLIos)){
+    // await launch(whatsappURLIos, forceSafariVC: false);
+    // }else{
+    // ScaffoldMessenger.of(context).showSnackBar(
+    // const SnackBar(content:  Text("Whatsapp Not Installed")));
+    //
+    // }
+
+    }else{
+    // android , web
+    if( await canLaunch(urlAndroid)){
+    await launch(urlAndroid);
+    }else{
+    ScaffoldMessenger.of(context).showSnackBar(
+    const SnackBar(content:  Text("Whatsapp Not Installed")));
+
+    }
+
+
+    }
+  }
+
+  openWhatsapp() async{
+    var whatsapp ="+923000000000";
+    var whatsappURlAndroid = "whatsapp://send?phone="+whatsapp+"&text= ";
+    var whatsappURLIos ="https://wa.me/$whatsapp?text=${Uri.parse('')}";
+    if(Platform.isIOS){
+      // for iOS phone only
+      if( await canLaunch(whatsappURLIos)){
+        await launch(whatsappURLIos, forceSafariVC: false);
+      }else{
+        ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content:  Text("Whatsapp Not Installed")));
+
+      }
+
+    }else{
+      // android , web
+      if( await canLaunch(whatsappURlAndroid)){
+        await launch(whatsappURlAndroid);
+      }else{
+        ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content:  Text("Whatsapp Not Installed")));
+
+      }
+
+
+    }
+
+  }
+
+
   @override
   Widget build(BuildContext context) {
     // print(_allShopImg.length.toString());
@@ -34,7 +87,7 @@ class _State extends State<SettingScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  SizedBox(height: 85,),
+                  const SizedBox(height: 85,),
                   InkWell(
                     onTap: (){
                       Navigator.push(
@@ -204,7 +257,7 @@ class _State extends State<SettingScreen> {
                   ),
                   //contact...
                   InkWell(
-                    onTap: (){},
+                    onTap: openWhatsapp,
                     child: Container(
                         padding: const EdgeInsets.all(20),
                         child: Row(
@@ -214,6 +267,34 @@ class _State extends State<SettingScreen> {
                               padding: EdgeInsets.only(left: 20),
                               child: Text(
                                 'Contact Us Via Whatsapp',
+                                style: TextStyle(
+                                    color: Constants.kGraniteGreyColor,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Nuntio-Bold.ttf',
+                                    fontSize: 15),
+                              ),
+                            ),
+                            Spacer(),
+                            Icon(Icons.arrow_forward_ios,color: Constants.kLightGreyColor,),
+                          ],
+                        )),
+                  ),
+                  const Divider(
+                    height: 0,
+                    color: Constants.kLightGreyColor,
+                  ),
+                  //contact...
+                  InkWell(
+                    onTap: openEmail,
+                    child: Container(
+                        padding: const EdgeInsets.all(20),
+                        child: Row(
+                          children: const [
+                            Icon(Icons.mail_outline,color: Constants.kLightGreyColor,),
+                            Padding(
+                              padding: EdgeInsets.only(left: 20),
+                              child: Text(
+                                'Contact Us Via Mail',
                                 style: TextStyle(
                                     color: Constants.kGraniteGreyColor,
                                     fontWeight: FontWeight.bold,
@@ -259,7 +340,7 @@ class _State extends State<SettingScreen> {
                     height: 0,
                     color: Constants.kLightGreyColor,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 25,
                   ),
                   InkWell(

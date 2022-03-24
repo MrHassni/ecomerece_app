@@ -1,8 +1,10 @@
+import 'dart:developer';
+
 import 'package:crockery_app/constant/constant.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:crockery_app/providers/cart_provider.dart';
+import 'package:crockery_app/shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
-import '../helper/navigator.dart';
-import '../screens/product_detail_screen.dart';
+import 'package:provider/provider.dart';
 import 'bottom_navigation/bottom_navigation_bar.dart';
 import 'buttons/cartbutton.dart';
 
@@ -16,6 +18,7 @@ class FeaturedProducts extends StatefulWidget {
 
 class _FeaturedProductsState extends State<FeaturedProducts> {
   Color _favIconColor = Constants.kWhiteAccent;
+  List<String> list =[];
 
   @override
   Widget build(BuildContext context) {
@@ -105,7 +108,14 @@ class _FeaturedProductsState extends State<FeaturedProducts> {
                             ),
                           ]),
                     ),
-                    CartButton(text: 'Add to Cart', onPressed: () {}),
+                    CartButton(text: 'Add to Cart', onPressed: () async {
+                      list.add('12345');
+                      // SharedPreferencesFunctions.saveProductIDsSharedPreference(list);
+                      // Provider.of<CartProvider>(context,listen: false).addProductToCart();
+                      // var s = await SharedPreferencesFunctions.getProductIDsSharedPreference();
+                      // log(s.toString());
+
+                    }),
                   ]),
                 ),
               ),

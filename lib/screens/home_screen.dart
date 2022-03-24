@@ -1,9 +1,6 @@
-import 'dart:developer';
-
 import 'package:crockery_app/constant/constant.dart';
 import 'package:crockery_app/models/product_model.dart';
 import 'package:crockery_app/providers/navgation_provider.dart';
-import 'package:crockery_app/screens/product_detail_screen.dart';
 import 'package:crockery_app/widgets/avilabeloffers.dart';
 import 'package:crockery_app/widgets/featureproduct.dart';
 import 'package:crockery_app/widgets/category_widgets/shopslistwidget.dart';
@@ -16,6 +13,8 @@ import '../widgets/slider.dart';
 import '../widgets/top_bars/top_bar_with_buttons.dart';
 
 class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
+
   @override
   State<Home> createState() => _HomeState();
 }
@@ -74,9 +73,6 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text("Home Page"),
-      // ),
       body: RefreshIndicator(
 
         triggerMode: RefreshIndicatorTriggerMode.anywhere,

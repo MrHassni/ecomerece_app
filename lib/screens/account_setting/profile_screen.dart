@@ -157,7 +157,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                                 );
 
                               },
-                              child: Text('Change',style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),)),
+                              child: Text('Change',style: const TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),)),
                         ],
                       ),),
                     SizedBox(height: 10,),
