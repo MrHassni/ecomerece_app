@@ -53,7 +53,7 @@ class _State extends State<CheckItemsWidget> {
                     ),
                     const Align(
                         alignment: Alignment.centerLeft, child: Text('RS 340',style: TextStyle(fontSize: 10),),),
-                    const Text(
+                     Text(
                       'RS 244',
                       style: TextStyle(color: Constants.kDarkOrangeColor,fontSize: 10),
                     ),
@@ -76,7 +76,7 @@ class _State extends State<CheckItemsWidget> {
                           MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(18.0),
-                                side: const BorderSide(
+                                side:  BorderSide(
                                   color: Constants.kDarkOrangeColor,
                                 )),
                           ),

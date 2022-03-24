@@ -54,7 +54,7 @@ class _State extends State<AddLocationScreen> {
                             //       builder: (context) => Home()),
                             //   );
                           },
-                          child: const Icon(
+                          child:  Icon(
                             Icons.arrow_back_ios,
                             color: Constants.kDarkOrangeColor,
                           )),
@@ -161,7 +161,7 @@ class _State extends State<AddLocationScreen> {
                       Material(
                         borderRadius: BorderRadius.circular(20),
                         elevation: 7,
-                        child:  const CircleAvatar(
+                        child:   CircleAvatar(
                           backgroundColor: Constants.kWhiteAccent,
                           child: Icon(Icons.home_outlined,color: Constants.kDarkOrangeColor,),
                         ),
@@ -175,7 +175,7 @@ class _State extends State<AddLocationScreen> {
                       Material(
                         borderRadius: BorderRadius.circular(20),
                         elevation: 7,
-                        child: const CircleAvatar(
+                        child:  CircleAvatar(
                           backgroundColor: Constants.kWhiteAccent,
                           child: Icon(Icons.shopping_bag_outlined,color: Constants.kDarkOrangeColor,),
                         ),
@@ -188,7 +188,7 @@ class _State extends State<AddLocationScreen> {
                       Material(
                         borderRadius: BorderRadius.circular(20),
                         elevation: 7,
-                        child: const CircleAvatar(
+                        child:  CircleAvatar(
                           backgroundColor: Constants.kWhiteAccent,
                           child: Icon(Icons.favorite_border,color: Constants.kDarkOrangeColor,),
                         ),
@@ -201,7 +201,7 @@ class _State extends State<AddLocationScreen> {
                       Material(
                         borderRadius: BorderRadius.circular(20),
                         elevation: 7,
-                        child: const CircleAvatar(
+                        child:  CircleAvatar(
                           backgroundColor: Constants.kWhiteAccent,
                           child: Icon(Icons.add,color: Constants.kDarkOrangeColor,),
 

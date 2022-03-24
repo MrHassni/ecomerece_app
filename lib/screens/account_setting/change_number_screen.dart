@@ -55,7 +55,7 @@ class _ChangeNumberScreenState extends State<ChangeNumberScreen> {
                       // margin: EdgeInsets.all(20),
                         child: TextField(
                           controller: OldPhoneNumController,
-                          decoration: const InputDecoration(
+                          decoration:  InputDecoration(
                             border: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: Constants.kDarkOrangeColor,
@@ -107,7 +107,7 @@ class _ChangeNumberScreenState extends State<ChangeNumberScreen> {
 
                         child: TextField(
                           controller: NewPhoneNumController,
-                          decoration: const InputDecoration(
+                          decoration:  InputDecoration(
                             border: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: Constants.kDarkOrangeColor,

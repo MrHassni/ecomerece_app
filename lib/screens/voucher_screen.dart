@@ -45,12 +45,12 @@ class _State extends State<VoucherScreen> with TickerProviderStateMixin {
                             height: 40,
                             width: MediaQuery.of(context).size.width * 0.6,
                             child: TextField(
-                              textAlign: TextAlign.center,
+                              textAlign: TextAlign.start,
                               // textAlignVertical: TextAlignVertical.center,
 
                               decoration: const InputDecoration(
-                                  contentPadding: EdgeInsets.only(bottom: 10),
-                                  hintText: 'Enter Your Coupon',
+                                  contentPadding: EdgeInsets.only(bottom: 10,left: 15),
+                                  hintText: 'Enter Your Coupon Code',
                                   hintStyle: TextStyle(fontSize: 13),
                                   border: InputBorder.none),
                               onChanged: (value) {

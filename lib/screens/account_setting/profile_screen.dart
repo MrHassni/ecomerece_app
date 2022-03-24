@@ -4,6 +4,7 @@ import 'package:crockery_app/constant/constant.dart';
 import 'package:crockery_app/screens/account_setting/change_email_screen.dart';
 import 'package:crockery_app/screens/account_setting/change_number_screen.dart';
 import 'package:crockery_app/screens/account_setting/change_password_screen.dart';
+import 'package:crockery_app/screens/enter_mob_num_screen.dart';
 import 'package:crockery_app/widgets/top_bars/top_bar_without_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -74,7 +75,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const TopBarWithoutButton(pageName: 'Profile'),
+              const TopBarWithoutButton(pageName: 'Account Details'),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: Column(
@@ -152,7 +153,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                           GestureDetector(
                               onTap: (){
                                 Navigator.push(context, MaterialPageRoute(
-                                    builder: (context) => ChangeNumberScreen()),
+                                    builder: (context) => MobileNumber()),
                                 );
 
                               },

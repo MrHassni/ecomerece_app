@@ -126,7 +126,7 @@ class _OptNumberState extends State<OptNumber> {
                   const SizedBox(
                     height: 15,
                   ),
-                  const Align(
+                   Align(
                       alignment: Alignment.centerRight,
                       child: Text(
                         'Resend OTP',

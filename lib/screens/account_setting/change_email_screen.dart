@@ -39,7 +39,7 @@ class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
                                 //       builder: (context) => Home()),
                                 //   );
                               },
-                              child: const Icon(
+                              child:  Icon(
                                 Icons.arrow_back_ios,
                                 color: Constants.kDarkOrangeColor,
                               )),
@@ -79,7 +79,7 @@ class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
                       // margin: EdgeInsets.all(20),
                         child: TextField(
                           controller: OldEmailNumController,
-                          decoration: const InputDecoration(
+                          decoration:  InputDecoration(
                             border: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: Constants.kDarkOrangeColor,
@@ -131,7 +131,7 @@ class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
 
                         child: TextField(
                           controller: NewEmailNumController,
-                          decoration: const InputDecoration(
+                          decoration:  InputDecoration(
                             border: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: Constants.kDarkOrangeColor,

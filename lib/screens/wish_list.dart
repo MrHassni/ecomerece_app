@@ -27,17 +27,22 @@ class _State extends State< WishListScreen> {
     // print(_allShopImg.length.toString());
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children:  [
-              const TopBarWithButtons(pageName: 'Wish List', pageDescription: 'Your Wish List',showBackButton: false),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 5,),
-              child: const MostPurchased(),
+        child: Stack(
+          children: [
+            SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children:  [
+                  const SizedBox(height: 85,),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 5,),
+                  child: const MostPurchased(),
+                ),
+                ],
+              ),
             ),
-            ],
-          ),
+            const TopBarWithButtons(pageName: 'Wish List', pageDescription: 'Your Wish List',showBackButton: false),
+          ],
         ),
       ),
     );

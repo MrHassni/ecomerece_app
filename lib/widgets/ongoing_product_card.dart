@@ -29,7 +29,7 @@ class _State extends State<OngoingProductWidget> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Center(
+               Center(
                 child: CircleAvatar(
                   radius: 20,
                   backgroundColor: Constants.kDarkOrangeColor,

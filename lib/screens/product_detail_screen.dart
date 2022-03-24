@@ -77,15 +77,15 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              TopBarWithoutButton(pageName: 'Product Detail'),
-              Padding(
+        child: Stack(
+          children: [
+            SingleChildScrollView(
+              child: Padding(
                 padding: EdgeInsets.all(15),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
+                    const SizedBox(height: 75,),
                     Container(
                       width: 219.0,
                       height: 219.0,
@@ -162,7 +162,7 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                     Padding(
                       padding: const EdgeInsets.only(top: 15),
                       child: Row(
-                        children: const <Widget>[
+                        children:  <Widget>[
                           Text(
                             'Nestle Nido Cup for Tea',
                             style: TextStyle(
@@ -437,74 +437,89 @@ class _State extends State<ProductDetail> with TickerProviderStateMixin {
                               physics: NeverScrollableScrollPhysics(),
                               itemCount: 3,
                               itemBuilder: (context, index) {
-                                return CheckItemsWidget();
+                                return const CheckItemsWidget();
                               }),
                         ),
                         // Divider(
                         //   height: 3,
                         //   color: Constants.kGreyColor,
                         // ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            CircleAvatar(
-                              // foregroundColor: Colors.red,
-                              radius: 25,
-                              backgroundColor: Constants.kWhiteAccent,
-                              child: Container(
-                                height: 28,
-                                width: 28,
-                                // radius: 15,
-                                // backgroundColor: Colors.white,
-                                // backgroundImage: AssetImage('images/whtsupimg.png'),
-                                decoration: const BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(30.0)),
-                                  color: Colors.transparent,
-                                ),
-                                child: FittedBox(
-                                  child: Image.asset(
-                                    'images/whtsupimg.png',
-                                  ),
-                                ),
-                              ),
-                            ),
-                            FlatButton(
-                              color: Constants.kOrangeColor,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12.0)),
-                              child: const Text(
-                                'Buy Now',
-                                style: TextStyle(color: Constants.kWhiteAccent),
-                              ),
-                              onPressed: () {},
-                            ),
-                            FlatButton(
-                              color: Constants.kDarkOrangeColor,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12.0)),
-                              child: const Text(
-                                'Add to Cart',
-                                style: TextStyle(color: Constants.kWhiteAccent),
-                              ),
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => BottomNavigate(i: 17,),
-                                  ),
-                                );
-                              },
-                            ),
-                          ],
-                        )
+                        SizedBox(height: 80,)
                       ],
                     ),
                   ],
                 ),
               ),
-            ],
-          ),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height - 65,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const TopBarWithoutButton(pageName: 'Product Detail'),
+                  Container(
+                    color: Colors.white,
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    height: 60,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        CircleAvatar(
+                          // foregroundColor: Colors.red,
+                          radius: 25,
+                          backgroundColor: Constants.kWhiteAccent,
+                          child: Container(
+                            height: 28,
+                            width: 28,
+                            // radius: 15,
+                            // backgroundColor: Colors.white,
+                            // backgroundImage: AssetImage('images/whtsupimg.png'),
+                            decoration: const BoxDecoration(
+                              borderRadius:
+                              BorderRadius.all(Radius.circular(30.0)),
+                              color: Colors.transparent,
+                            ),
+                            child: FittedBox(
+                              child: Image.asset(
+                                'images/whtsupimg.png',
+                              ),
+                            ),
+                          ),
+                        ),
+                        MaterialButton(
+                          color: Constants.kOrangeColor,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0)),
+                          child: const Text(
+                            'Buy Now',
+                            style: TextStyle(color: Constants.kWhiteAccent),
+                          ),
+                          onPressed: () {},
+                        ),
+                        MaterialButton(
+                          color: Constants.kDarkOrangeColor,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0)),
+                          child: const Text(
+                            'Add to Cart',
+                            style: TextStyle(color: Constants.kWhiteAccent),
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => BottomNavigate(i: 3,),
+                              ),
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

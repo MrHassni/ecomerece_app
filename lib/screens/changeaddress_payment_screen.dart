@@ -321,7 +321,7 @@ class _State extends State<ChangeAddressAndPayment>
                               height: 40,
                               child: TextField(
                                 controller: CardNumController,
-                                decoration: const InputDecoration(
+                                decoration:  InputDecoration(
                                   border: OutlineInputBorder(
                                     borderSide: BorderSide(color: Constants.kDarkOrangeColor,),
                                   ),
@@ -354,7 +354,7 @@ class _State extends State<ChangeAddressAndPayment>
                               height: 40,
                               child: TextField(
                                 controller: NameOnCardController,
-                                decoration: const InputDecoration(
+                                decoration:  InputDecoration(
                                   border: OutlineInputBorder(
                                     borderSide: BorderSide(color: Constants.kDarkOrangeColor,),
                                   ),
@@ -387,7 +387,7 @@ class _State extends State<ChangeAddressAndPayment>
                                 height: 40,
                                 child: TextField(
                                   controller: ExpirationDateController,
-                                  decoration: const InputDecoration(
+                                  decoration:  InputDecoration(
                                     border: OutlineInputBorder(
                                       borderSide: BorderSide(color: Constants.kDarkOrangeColor,),
                                     ),
@@ -419,7 +419,7 @@ class _State extends State<ChangeAddressAndPayment>
                                 height: 40,
                                 child: TextField(
                                   controller: SecurityCodeController,
-                                  decoration: const InputDecoration(
+                                  decoration:  InputDecoration(
                                     border: OutlineInputBorder(
                                       borderSide: BorderSide(color: Constants.kDarkOrangeColor,),
                                     ),
@@ -553,7 +553,7 @@ class _State extends State<ChangeAddressAndPayment>
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => BottomNavigate(i: 20,),
+                              builder: (context) => BottomNavigate(i: 3,),
                             ),
                           );
                         },

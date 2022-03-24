@@ -131,7 +131,7 @@ class _VerificationCodeState extends State<VerificationCode> {
                   ),
                 ),
                 const SizedBox(height: 15,),
-                const Align(alignment: Alignment.centerRight,
+                 Align(alignment: Alignment.centerRight,
                     child: Text('Resend OTP',style: TextStyle(color: Constants.kDarkOrangeColor),)),
                 SizedBox(height: 40,),
                 RoundedButton(text: 'Next', onPressed: (){

@@ -28,11 +28,11 @@ class _State extends State<PastProductWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              const Center(
+               Center(
                 child: CircleAvatar(
                   radius: 20,
                   backgroundColor: Constants.kDarkOrangeColor,
-                  child: Icon(
+                  child: const Icon(
                     Icons.shop,
                     color: Constants.kWhiteAccent,
                     size: 20,

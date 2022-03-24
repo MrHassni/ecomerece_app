@@ -25,121 +25,140 @@ class _State extends State<CartDetail> with TickerProviderStateMixin {
     // print(_allShopImg.length.toString());
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const TopBarWithButtons(showBackButton: false,pageDescription: 'Cart Details',pageName: 'Cart'),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(vertical: 5),
-                      child: const Align(alignment: Alignment.centerRight,
-                          child: Text('Empty Cart Now',style: TextStyle(
-                            color: Constants.kDarkOrangeColor,fontFamily: 'Nuntio-Light.ttf',fontWeight: FontWeight.bold
-                          ),)),
-                    ),
+        child: Stack(
+          children: [
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                 const SizedBox(height: 85,),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.symmetric(vertical: 5),
+                          child:  Align(alignment: Alignment.centerRight,
+                              child: Text('Empty Cart Now',style: TextStyle(
+                                color: Constants.kDarkOrangeColor,fontFamily: 'Nuntio-Light.ttf',fontWeight: FontWeight.bold
+                              ),)),
+                        ),
 
 //Cart here............
-                    Container(
-                      color: Colors.transparent,
-                      height: MediaQuery.of(context).size.height*0.75,
-                      width: MediaQuery.of(context).size.width,
-                      // width: 150,
-                      child: ListView.builder(
-                          scrollDirection: Axis.vertical,
-                          physics: NeverScrollableScrollPhysics(),
-                          itemCount: 4,
-                          itemBuilder: (context, index) {
-                            return
-                              Dismissible(
-                                secondaryBackground: Container(
-                                    alignment: Alignment.centerRight,
-                                    color: Colors.red[100],
-                                    child: Icon(Icons.delete,color: Colors.red,),
+                        Container(
+                          margin: const EdgeInsets.only(bottom: 20),
+                          width: MediaQuery.of(context).size.width,
+                          // width: 150,
+                          child: ListView.builder(
+                            shrinkWrap: true,
+                              scrollDirection: Axis.vertical,
+                              physics: const NeverScrollableScrollPhysics(),
+                              itemCount: 4,
+                              itemBuilder: (context, index) {
+                                return
+                                  Card(
+                                    margin: const EdgeInsets.symmetric(vertical: 5),
+                                    elevation: 4,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(0),
+                                    ),
+                                    child: Dismissible(
+                                      secondaryBackground: Container(
+                                        decoration: BoxDecoration(
+                                          color: Colors.red.shade100,
+                                          borderRadius: BorderRadius.circular(0)
+                                        ),
+                                          alignment: Alignment.centerRight,
+                                          child:  Padding(
+                                            padding: const EdgeInsets.only(right: 15.0),
+                                            child: Image.asset('images/delete_img_red.png',height: 25,width: 25,),
+                                          ),
+                                      ),
+                                      background: Container(
+                                        decoration: BoxDecoration(
+                                            color: Colors.red.shade100,
+                                            borderRadius: BorderRadius.circular(0)
+                                        ),
+                                      ),
+                                      direction: DismissDirection.endToStart,
+                                      key: ValueKey<String>(cartDetailImg[index]),
+                                      onDismissed: (DismissDirection direction) {
+                                        setState(() {
+                                          cartDetailImg.removeAt(index);
+                                        });
+                                      },
+                                      child:
+                                      CartDetailsWidget(cartDetial_Img: cartDetailImg[index]),
                                 ),
-                                direction: DismissDirection.endToStart,
-                                background: Container(
-                                  color: Colors.green,
-
-                                ),
-                                key: ValueKey<String>(cartDetailImg[index]),
-                                onDismissed: (DismissDirection direction) {
-                                  setState(() {
-                                    cartDetailImg.removeAt(index);
-                                  });
-                                },
-                                child:
-                                CartDetailsWidget(cartDetial_Img: cartDetailImg[index]),
-                            );
-                          }),
-                    ),
-                    InkWell(onTap: (){
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => BottomNavigate(i: 10,),
+                                  );
+                              }),
                         ),
-                      );
-
-                    },
-                        child: Image.asset('images/apply_coupon_code.png')),
-                    // SquarButton(onPressed: () {  }, text: 'Apply Coupon Code',),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20,left: 15,right: 15,bottom: 20),
-                      child: SizedBox(height: 150,
-                        child: Row(
-                          // crossAxisAlignment: CrossAxisAlignment.stretch,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-
-                            Column(
-                              children: const [
-                                Text('Subtotal',style: TextStyle(color: Constants.kLightGreyColor),),
-                                SizedBox(height: 10,),
-                                Text('Total',style: TextStyle(color: Constants.kBlackColor,fontWeight: FontWeight.bold),),
-                              ],
+                        InkWell(onTap: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => BottomNavigate(i: 10,),
                             ),
-                            // Spacer(),
-                            Column(
-                              children: const [
-                                Text('200',style: TextStyle(color: Constants.kLightGreyColor),),
-                                SizedBox(height: 10,),
-                                Text('Rs 240',style: TextStyle(color: Constants.kBlackColor,fontWeight: FontWeight.bold),),
-                              ],
-                            ),
+                          );
+
+                        },
+                            child: Image.asset('images/apply_coupon_code.png')),
+                        // SquarButton(onPressed: () {  }, text: 'Apply Coupon Code',),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 20,bottom: 20),
+                          child: Row(
+                            // crossAxisAlignment: CrossAxisAlignment.stretch,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const [
+                                  Text('Subtotal',style: TextStyle(color: Constants.kLightGreyColor),),
+                                  SizedBox(height: 10,),
+                                  Text('Total',style: TextStyle(color: Constants.kBlackColor,fontWeight: FontWeight.bold),),
+                                ],
+                              ),
+                              // Spacer(),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: const [
+                                  Text('200',style: TextStyle(color: Constants.kLightGreyColor),),
+                                  SizedBox(height: 10,),
+                                  Text('Rs 240',style: TextStyle(color: Constants.kBlackColor,fontWeight: FontWeight.bold),),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
                           ],
                         ),
                       ),
-                    ),
+                    Container(
+                      height: 50,
+                      margin: const EdgeInsets.symmetric(horizontal: 15),
+                      width: MediaQuery.of(context).size.width,
+                      child: MaterialButton(
+                        child: const Text('Continue',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
+                        onPressed: () {
+
+                              },
+
+                            color: Constants.kDarkOrangeColor,
+                            textColor: Constants.kWhiteAccent,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                          ),
+                        ),
+                  const SizedBox(height: 15,),
+
                       ],
                     ),
                   ),
-                SizedBox(
-                  height: 45,
-                  // margin: EdgeInsets.only(top: 40,left: 40,right: 40,bottom: 20),
-                  // margin: EdgeInsets.all(40),
-                  // width: double.infinity,
-                  width: MediaQuery.of(context).size.width,
-                  child: MaterialButton(
-                    child: Text('Continue',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
-                    onPressed: () {
-
-                          },
-
-                        color: Constants.kDarkOrangeColor,
-                        textColor: Constants.kWhiteAccent,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                      ),
-                    ),
-
-                  ],
-                ),
-              ),
+            const TopBarWithButtons(showBackButton: false,pageDescription: 'Cart Details',pageName: 'Cart'),
+          ],
+        ),
           ),
         );
   }

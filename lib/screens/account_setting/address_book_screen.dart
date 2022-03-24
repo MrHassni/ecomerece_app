@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../constant/constant.dart';
 import '../../widgets/bottom_navigation/bottom_navigation_bar.dart';
@@ -38,7 +39,7 @@ class _State extends State<AddressBookScreen> {
                   height: 60,
                   child: Row(
                     children: [
-                      const Icon(
+                       Icon(
                         Icons.shopping_bag_outlined,
                         color: Constants.kDarkOrangeColor,
                         size: 30,
@@ -87,26 +88,7 @@ class _State extends State<AddressBookScreen> {
                   height: 60,
                   child: Row(
                     children: [
-                      Container(
-                        height: 35,
-                        width: 35,
-                        // radius: 15,
-                        // backgroundColor: Colors.white,
-                        // backgroundImage: AssetImage('images/whtsupimg.png'),
-                        decoration: BoxDecoration(
-                          color: Constants.kWhiteAccent,
-                          border: Border.all(
-                              color: Constants.kDarkOrangeColor, width: 1),
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: SizedBox(
-                          height: 5,
-                          width: 5,
-                          child: Image.asset(
-                            'images/plus_img.png',
-                          ),
-                        ),
-                      ),
+                      Icon(Icons.local_hospital_outlined,color: Constants.kDarkOrangeColor,),
                       Padding(
                         padding: EdgeInsets.only(left: 20),
                         child: Column(
@@ -151,7 +133,7 @@ class _State extends State<AddressBookScreen> {
                   height: 60,
                   child: Row(
                     children: [
-                      const Icon(
+                       Icon(
                         Icons.shopping_bag_outlined,
                         color: Constants.kDarkOrangeColor,
                         size: 30,
@@ -200,7 +182,7 @@ class _State extends State<AddressBookScreen> {
                   height: 60,
                   child: Row(
                     children: [
-                      const Icon(
+                       Icon(
                         Icons.location_on_outlined,
                         color: Constants.kDarkOrangeColor,
                         size: 30,
@@ -249,7 +231,7 @@ class _State extends State<AddressBookScreen> {
                   height: 60,
                   child: Row(
                     children: [
-                      const Icon(
+                       Icon(
                         Icons.location_on_outlined,
                         color: Constants.kDarkOrangeColor,
                         size: 30,

@@ -55,7 +55,7 @@ class _AddEmailScreenState extends State<AddEmailScreen> {
                         // margin: EdgeInsets.all(20),
                         child: TextField(
                       controller: AddEmailController,
-                      decoration: const InputDecoration(
+                      decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Constants.kDarkOrangeColor,

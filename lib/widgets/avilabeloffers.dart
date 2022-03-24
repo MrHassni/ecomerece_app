@@ -201,7 +201,7 @@ class _AvailabelOffersState extends State<AvailabelOffers> {
                           ),
                           Row(
                             // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: const [
+                              children:  [
                                 Text(
                                   'Rs100',
                                   style: TextStyle(

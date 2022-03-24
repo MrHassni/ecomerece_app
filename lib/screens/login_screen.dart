@@ -48,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     // margin: EdgeInsets.all(20),
                     child: TextField(
                   controller: PhoneNumController,
-                  decoration: const InputDecoration(
+                  decoration:  InputDecoration(
                     border: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Constants.kDarkOrangeColor,
@@ -89,7 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   // margin: EdgeInsets.all(20),
                     child: TextField(
                       controller: PasswordController,
-                      decoration: const InputDecoration(
+                      decoration:  InputDecoration(
                         border: OutlineInputBorder(
                           borderSide: BorderSide(color: Constants.kDarkOrangeColor,),
                         ),

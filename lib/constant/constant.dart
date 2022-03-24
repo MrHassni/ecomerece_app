@@ -12,7 +12,7 @@ class Constants {
   static const kGrey55Color = Color(0xFF8C8C8C);
   static const kOrangeColor = Color(0xFFF37A20);
   static const kLightOrangeColor = Color(0xFFffac81);
-  static const kDarkOrangeColor = Color(0xFFAB4D24);
+  static Color kDarkOrangeColor = const Color(0xFFAB4D24).withOpacity(0.85);
   static const kWhite54Color =Colors.white54;
   static const kBorderColor = Color(0xFFEFEFEF);
   static const kRedColor = Colors.red;

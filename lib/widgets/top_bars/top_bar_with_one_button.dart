@@ -27,7 +27,7 @@ class TopBarWithOneButton extends StatelessWidget {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: const Icon(
+                  child:  Icon(
                     Icons.arrow_back_ios,
                     color: Constants.kDarkOrangeColor,
                   )),

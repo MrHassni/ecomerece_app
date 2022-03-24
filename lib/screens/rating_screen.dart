@@ -90,7 +90,7 @@ class _RatingScreenState extends State<RatingScreen> {
                             //       builder: (context) => Home()),
                             //   );
                           },
-                          child: const Icon(
+                          child:  Icon(
                             Icons.arrow_back_ios,
                             color: Constants.kDarkOrangeColor,
                           )),

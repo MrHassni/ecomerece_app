@@ -16,7 +16,7 @@ class CartButton extends StatelessWidget {
     onPressed: onPressed,
     color: Constants.kDarkOrangeColor,
     height: 30,
-    minWidth: 100,
+    minWidth: 110,
     shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(30.0)),
     child: Text(

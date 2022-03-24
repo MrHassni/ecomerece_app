@@ -46,7 +46,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
                     // margin: EdgeInsets.all(20),
                     child: TextField(
                       controller: PasswordController,
-                      decoration: const InputDecoration(
+                      decoration:  InputDecoration(
                         border: OutlineInputBorder(
                           borderSide: BorderSide(color: Constants.kDarkOrangeColor,),
                         ),
@@ -83,7 +83,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
 
                     child: TextField(
                       controller: ConfirmPasswordController,
-                      decoration: const InputDecoration(
+                      decoration:  InputDecoration(
                         border: OutlineInputBorder(
                           borderSide: BorderSide(color: Constants.kDarkOrangeColor,),
                         ),

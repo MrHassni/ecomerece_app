@@ -14,8 +14,7 @@ class LongRoundButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialButton(
     onPressed: onPressed,
-    height: 35,
-    minWidth: 300,
+    height: 50,
     color:Constants.kDarkOrangeColor ,
     shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(30.0)),

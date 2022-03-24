@@ -1,8 +1,5 @@
 import 'package:crockery_app/constant/constant.dart';
 import 'package:crockery_app/providers/navgation_provider.dart';
-import 'package:crockery_app/screens/enter_mob_num_screen.dart';
-import 'package:crockery_app/screens/fillter_screen.dart';
-import 'package:crockery_app/screens/search_screen.dart';
 import 'package:crockery_app/screens/splash_screen.dart';
 import 'package:crockery_app/widgets/bottom_navigation/bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
@@ -11,10 +8,12 @@ import 'package:provider/provider.dart';
 import 'helper/navigator.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(create: (context) => NavigationProvider(),),
-  ],
-  child: const MyApp()));
+    ChangeNotifierProvider(
+      create: (context) => NavigationProvider(),
+    ),
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -32,8 +31,8 @@ class MyApp extends StatelessWidget {
       // home: SplashScreen(),
       // home: CartDetail(),
       // home: BottomNavigate(),
-      home:  FilterScreen(),
-      // home: BottomNavigate(),
+
+      home: SplashScreen(),
     );
   }
 }

@@ -151,11 +151,11 @@ class _State extends State< AllCategoriesScreen> {
                             color: Constants.kGreyColor,
                           ),
                         ),
-                        const Icon(
+                         Icon(
                           Icons.doorbell_outlined,
                           color:Constants.kDarkOrangeColor,
                         ),
-                        const Icon(
+                         Icon(
                           Icons.shopping_cart,
                           color:Constants.kDarkOrangeColor,
                         ),
@@ -182,7 +182,7 @@ class _State extends State< AllCategoriesScreen> {
                     // controller: searchEditingController,
                     decoration: InputDecoration(
                         focusColor:Constants.kDarkOrangeColor,
-                        prefixIcon: const Icon(
+                        prefixIcon:  Icon(
                           Icons.search,
                           color: Constants.kDarkOrangeColor,
                         ),
@@ -195,12 +195,12 @@ class _State extends State< AllCategoriesScreen> {
                         //   //borderSide: const BorderSide(),
                         // ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
+                          borderSide:  BorderSide(
                               color: Constants.kDarkOrangeColor, width: 2.0),
                           borderRadius: BorderRadius.circular(25.0),
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
+                          borderSide:  BorderSide(
                               color:Constants.kDarkOrangeColor, width: 2.0),
                           borderRadius: BorderRadius.circular(25.0),
                         ),

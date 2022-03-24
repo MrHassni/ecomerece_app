@@ -1,18 +1,16 @@
 import 'package:crockery_app/constant/constant.dart';
-import 'package:crockery_app/screens/enter_mob_num_screen.dart';
+import 'package:crockery_app/widgets/bottom_navigation/bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
-
 import '../screens/onboardingpage.dart';
-import '../screens/home_screen.dart';
 
-class Onbording extends StatefulWidget {
+class OnBoarding extends StatefulWidget {
+  const OnBoarding({Key? key}) : super(key: key);
+
   @override
-  _OnbordingState createState() => _OnbordingState();
+  _OnBoardingState createState() => _OnBoardingState();
 }
 
-class _OnbordingState extends State<Onbording> {
+class _OnBoardingState extends State<OnBoarding> {
   int currentIndex = 0;
   PageController? _controller;
 
@@ -57,7 +55,6 @@ class _OnbordingState extends State<Onbording> {
                         children: [
 
                           const Text('Crockery Bazar',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25,fontFamily:'Nuntio-Bold.ttf'),),
-                          // SizedBox(height: 5,),
                           Image.asset(
                             contents[i].image,
                             height: MediaQuery.of(context).size.height*0.3,
@@ -94,25 +91,23 @@ class _OnbordingState extends State<Onbording> {
                       (index) => buildDot(index, context),
                 ),
               ),
-              Container(
+              SizedBox(
                 height: 50,
-                // margin: EdgeInsets.only(top: 40,left: 40,right: 40,bottom: 20),
-                // margin: EdgeInsets.all(40),
                 width: double.infinity,
-                child: FlatButton(
+                child: MaterialButton(
                   child: Text(
-                      currentIndex == contents.length - 1 ? "Let's  Get  Started" : "Next",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
+                      currentIndex == contents.length - 1 ? "Let's  Get  Started" : "Next",style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
                   onPressed: () {
                     if (currentIndex == contents.length - 1) {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => MobileNumber(),
+                          builder: (_) => BottomNavigate(),
                         ),
                       );
                     }
                     _controller!.nextPage(
-                      duration: Duration(milliseconds: 100),
+                      duration: const Duration(milliseconds: 100),
                       curve: Curves.bounceIn,
                     );
                   },
@@ -128,13 +123,13 @@ class _OnbordingState extends State<Onbording> {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => MobileNumber(),
+                      builder: (_) => BottomNavigate(),
                     ),
                   );
                 },
                 child: Container(
-                    margin: EdgeInsets.only(top: 20,bottom: 20),
-                    child: Text('Skip',style: TextStyle(fontSize: 12),)),
+                    margin: const EdgeInsets.only(top: 20,bottom: 20),
+                    child: const Text('Skip',style: TextStyle(fontSize: 12),)),
               ),
             ],
           ),
@@ -147,7 +142,7 @@ class _OnbordingState extends State<Onbording> {
     return Container(
       height: 12,
       width: 12,
-      margin: EdgeInsets.only(right: 5),
+      margin: const EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: currentIndex == index ? Colors.grey.shade800 : Colors.grey,

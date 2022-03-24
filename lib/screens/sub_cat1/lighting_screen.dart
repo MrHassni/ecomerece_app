@@ -114,7 +114,7 @@ class _State extends State< LightingScreen> {
                         //     builder: (context) => DealsScreen()),
                         // );
                       },
-                      child:const Text(' View all ',
+                      child: Text(' View all ',
                           style: TextStyle(
                               color: Constants.kDarkOrangeColor,
                               fontWeight: FontWeight.bold,
